@@ -17,7 +17,10 @@ class NotifierEnseignantType extends AbstractType
         $builder
             
         ->add('enseignant', EntityType::class, array('class' => 'App\Entity\Enseignant',
-                                                     'choice_label' => 'Nom',
+          
+                                                    'choice_label' => function ($enseignant) {
+                                                        return $enseignant->getPrenom() . ' ' . $enseignant->getNom();},
+                                                        
                                                      'placeholder' => 'Choisissez un enseignant',
                                                      'label' => false,
                                                      

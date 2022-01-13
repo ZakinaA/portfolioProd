@@ -4817,3 +4817,14 @@ a157d8,127.0.0.1,GET,http://localhost/portfolioV2/public/login_success,164206841
 e2fe3a,127.0.0.1,GET,http://localhost/portfolioV2/public/avatar/etudiant/74.png,1642068417,,404
 31388c,127.0.0.1,GET,http://localhost/portfolioV2/public/logout,1642068420,,302
 263995,127.0.0.1,GET,http://localhost/portfolioV2/public/login,1642068420,,200
+e0aee9,127.0.0.1,POST,http://localhost/portfolioV2/public/login,1642070207,,302
+abd0fd,127.0.0.1,GET,http://localhost/portfolioV2/public/login_success,1642070207,,200
+fff564,127.0.0.1,GET,http://localhost/portfolioV2/public/admin/listPromoEtudiants,1642070210,,200
+5bd06a,127.0.0.1,GET,http://localhost/portfolioV2/public/admin/listEnseignants,1642070211,,200
+3e4a1a,127.0.0.1,GET,http://localhost/portfolioV2/public/admin/listPromoEtudiants,1642070212,,200
+734b8b,127.0.0.1,GET,http://localhost/portfolioV2/public/logout,1642070239,,302
+be1d0b,127.0.0.1,GET,http://localhost/portfolioV2/public/login,1642070239,,200
+46390f,127.0.0.1,POST,http://localhost/portfolioV2/public/login,1642070244,,302
+a41784,127.0.0.1,GET,http://localhost/portfolioV2/public/login_success,1642070245,,200
+83691f,127.0.0.1,GET,http://localhost/portfolioV2/public/rp/showEditAdd/12,1642070709,,200
+f037a8,127.0.0.1,GET,http://localhost/portfolioV2/public/rp/commentaire/notifierEnseignant/12,1642070712,,200
