@@ -92,12 +92,12 @@ class RegisterController extends AbstractController
             $e->setSpecialite($specialite);
 
             $user->setEtudiant($e);
-            $user->setToken($this->generateToken());
+            //$user->setToken($this->generateToken());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
 
-            $this->mailer->sendEmail($user, $user->getToken());
+            //$this->mailer->sendEmail($user, $user->getToken());
             //$this->addFlash('Yep', 'check ta bal et confirme le mail');
             return $this->render('register/redirectionMailConfirm.html.twig', [
                 'pEtudiant' =>  $user->getEtudiant(),

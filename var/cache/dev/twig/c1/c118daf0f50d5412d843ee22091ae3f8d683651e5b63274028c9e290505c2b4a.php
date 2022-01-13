@@ -72,10 +72,9 @@ Hey ";
         echo " ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["pEtudiant"]) || array_key_exists("pEtudiant", $context) ? $context["pEtudiant"] : (function () { throw new RuntimeError('Variable "pEtudiant" does not exist.', 6, $this->source); })()), "nom", [], "any", false, false, false, 6), "html", null, true);
         echo ". </br>
-Check ta messagerie et active le lien de confirmation pour accéder à l'appli.
 </br>
-Et tu pourras y retourner <a href=\"";
-        // line 9
+Tu pourras te connecter <a href=\"";
+        // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\">ici</a>
 dès que que l'administrateur aura validé ton compte.
@@ -100,7 +99,7 @@ dès que que l'administrateur aura validé ton compte.
 
     public function getDebugInfo()
     {
-        return array (  79 => 9,  71 => 6,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  78 => 8,  71 => 6,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -111,10 +110,9 @@ dès que que l'administrateur aura validé ton compte.
 {% block contenuPublic %}
 
 Hey {{pEtudiant.prenom}} {{pEtudiant.nom}}. </br>
-Check ta messagerie et active le lien de confirmation pour accéder à l'appli.
 </br>
-Et tu pourras y retourner <a href=\"{{ path('app_login')}}\">ici</a>
+Tu pourras te connecter <a href=\"{{ path('app_login')}}\">ici</a>
 dès que que l'administrateur aura validé ton compte.
-{% endblock %}", "register/redirectionMailConfirm.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\register\\redirectionMailConfirm.html.twig");
+{% endblock %}", "register/redirectionMailConfirm.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\register\\redirectionMailConfirm.html.twig");
     }
 }
