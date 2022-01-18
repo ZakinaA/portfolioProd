@@ -63,4 +63,20 @@ class EnseignantController extends AbstractController
     
     }
 
+
+
+
+    /**
+     * Liste toutes les RP non archivées
+     * classées par promo et par étudiant
+     */
+    public function listRP(): Response
+    {
+        
+        return $this->render('enseignant/home.html.twig');
+    }
+
+
+
+
 }

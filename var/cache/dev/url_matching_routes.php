@@ -32,6 +32,7 @@ return [
         '/etudiant/rpsArchivees' => [[['_route' => 'etudiantRpsArchivees', '_controller' => 'App\\Controller\\EtudiantController::getLesRPArchivées'], null, null, null, false, false, null]],
         '/enseignant/home' => [[['_route' => 'enseignantHome', '_controller' => 'App\\Controller\\EnseignantController::home'], null, null, null, false, false, null]],
         '/enseignant/promo/list' => [[['_route' => 'listPromos', '_controller' => 'App\\Controller\\PromotionController::list'], null, null, null, true, false, null]],
+        '/enseignant/rp/list' => [[['_route' => 'listToutesLesRpPromosEnCours', '_controller' => 'App\\Controller\\EnseignantController::listRP'], null, null, null, false, false, null]],
         '/enseignant/showEdit' => [[['_route' => 'showEditEnseignant', '_controller' => 'App\\Controller\\EnseignantController::showEdit'], null, null, null, false, false, null]],
         '/admin/addUserEnseignant' => [[['_route' => 'adduserEnseignant', '_controller' => 'App\\Controller\\AdminController::addUserEnseignant'], null, null, null, false, false, null]],
         '/admin/listEnseignants' => [[['_route' => 'listEnseignants', '_controller' => 'App\\Controller\\AdminController::listEnseignants'], null, null, null, false, false, null]],

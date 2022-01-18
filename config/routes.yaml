@@ -168,6 +168,12 @@ listRpParEtudiant:
   path: /enseignant/etudiant/rp/list/{idEtudiant}
   controller: App\Controller\RpController::listParEtudiant
 
+# Liste toutes les RP non archivées
+# classées par promo et par étudiant
+listToutesLesRpPromosEnCours:
+  path: /enseignant/rp/list
+  controller: App\Controller\EnseignantController::listRP
+
 # Permet de valider une rp
 validerRp:
   path: /enseignant/rp/valider/{idRp<\d+>?0}
