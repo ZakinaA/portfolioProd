@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* baseEnseignant.html.twig */
+/* enseignant/baseEnseignant.html.twig */
 class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9e2179 extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "baseEnseignant.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "enseignant/baseEnseignant.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "baseEnseignant.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "enseignant/baseEnseignant.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "baseEnseignant.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "enseignant/baseEnseignant.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -151,8 +151,8 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
           <span class=\"heading\">Mon activité</span>
           
           <ul class=\"list-unstyled\">
-            <li><a href=\"#exampledropdownDropdown\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
-              <ul   id=\"exampledropdownDropdown\" class=\"collapse list-unstyled \">
+            <li><a href=\"#realisation\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
+              <ul   id=\"realisation\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
         // line 40
         echo "\">Réalisations en cours????</a></li>
@@ -165,8 +165,8 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
               </ul>
             </li>
             
-            <li><a href=\"#exampledropdownDropdown\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"icon-grid\"></i>Stages </a>
-              <ul id=\"exampledropdownDropdown\" class=\"collapse list-unstyled \">
+            <li><a href=\"#stage\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"icon-grid\"></i>Stages </a>
+              <ul id=\"stage\" class=\"collapse list-unstyled \">
                 <li><a href=\"#\">Stages</a></li>
                 <li><a href=\"#\">xxxx</a></li>
                 <li><a href=\"#\">Carnet de bord ???</a></li>
@@ -207,7 +207,7 @@ test contenu enseignant
 
     public function getTemplateName()
     {
-        return "baseEnseignant.html.twig";
+        return "enseignant/baseEnseignant.html.twig";
     }
 
     public function isTraitable()
@@ -259,16 +259,16 @@ test contenu enseignant
           <span class=\"heading\">Mon activité</span>
           
           <ul class=\"list-unstyled\">
-            <li><a href=\"#exampledropdownDropdown\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
-              <ul   id=\"exampledropdownDropdown\" class=\"collapse list-unstyled \">
+            <li><a href=\"#realisation\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
+              <ul   id=\"realisation\" class=\"collapse list-unstyled \">
                 <li><a href=\"{#{ path('etudiantRps')}#}\">Réalisations en cours????</a></li>
                 <li><a href=\"{#{ path('etudiantRpsArchivees')}#}\">Réalisations archivées???</a></li>
                 <li><a href=\"{#{ path('rpShowEditAdd')}#}\">xxxxx</a></li>
               </ul>
             </li>
             
-            <li><a href=\"#exampledropdownDropdown\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"icon-grid\"></i>Stages </a>
-              <ul id=\"exampledropdownDropdown\" class=\"collapse list-unstyled \">
+            <li><a href=\"#stage\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"icon-grid\"></i>Stages </a>
+              <ul id=\"stage\" class=\"collapse list-unstyled \">
                 <li><a href=\"#\">Stages</a></li>
                 <li><a href=\"#\">xxxx</a></li>
                 <li><a href=\"#\">Carnet de bord ???</a></li>
@@ -282,6 +282,6 @@ test contenu enseignant
 {% block contenu %}  
 test contenu enseignant
 {% endblock %}
-", "baseEnseignant.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\enseignant\\baseEnseignant.html.twig");
+", "enseignant/baseEnseignant.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\enseignant\\baseEnseignant.html.twig");
     }
 }

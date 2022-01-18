@@ -276,6 +276,6 @@ class __TwigTemplate_3365ae3d524770a5d29838039ec4f452ae4866bced1ce2cd589786fe32e
 {% block contenu %}  
  contenu admin
 {% endblock %}
-", "admin/baseAdmin.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\admin\\baseAdmin.html.twig");
+", "admin/baseAdmin.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\admin\\baseAdmin.html.twig");
     }
 }

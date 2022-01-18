@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* ./titreRp.html.twig */
+/* titreRp.html.twig */
 class __TwigTemplate_371d3762c523a084c3cfe0261136de77bacb17bfbaf0225fecf50d34fdbb1183 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_371d3762c523a084c3cfe0261136de77bacb17bfbaf0225fecf50d34fdb
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./titreRp.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "titreRp.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./titreRp.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "titreRp.html.twig"));
 
         // line 1
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
@@ -77,7 +77,7 @@ class __TwigTemplate_371d3762c523a084c3cfe0261136de77bacb17bfbaf0225fecf50d34fdb
 
     public function getTemplateName()
     {
-        return "./titreRp.html.twig";
+        return "titreRp.html.twig";
     }
 
     public function isTraitable()
@@ -102,6 +102,6 @@ class __TwigTemplate_371d3762c523a084c3cfe0261136de77bacb17bfbaf0225fecf50d34fdb
 
 
 
-", "./titreRp.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\titreRp.html.twig");
+", "titreRp.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\titreRp.html.twig");
     }
 }

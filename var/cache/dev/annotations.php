@@ -114,6 +114,8 @@ return [[
 '[C]App%5CController%5CRpController%23desarchiver' => 1,
 'App%5CController%5CRpController%23listParEtudiant' => 0,
 '[C]App%5CController%5CRpController%23listParEtudiant' => 1,
+'App%5CController%5CRpController%23valider' => 0,
+'[C]App%5CController%5CRpController%23valider' => 1,
 'App%5CController%5CRegisterController' => 0,
 '[C]App%5CController%5CRegisterController' => 1,
 'App%5CController%5CRegisterController%23__construct' => 0,
@@ -170,6 +172,8 @@ return [[
 '[C]App%5CController%5CRpActiviteController%23rpActiviteRemove' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
+'App%5CController%5CSecurityController%23index' => 0,
+'[C]App%5CController%5CSecurityController%23index' => 1,
 'App%5CController%5CSecurityController%23login' => 0,
 '[C]App%5CController%5CSecurityController%23login' => 1,
 'App%5CController%5CSecurityController%23logout' => 0,
@@ -1466,7 +1470,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1625153603,
+1 => 1642529141,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
