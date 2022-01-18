@@ -59,10 +59,10 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 2]), "html", null, true);
         echo "\"><span>SISR 2</span></a>
                       <div class=\"progress\">
-                        <div role=\"progressbar\" style=\"width: 50%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
                       </div>
                     </div>
-                    <div class=\"number\"><strong>58</strong></div>
+                    <!--<div class=\"number\"><strong>58</strong></div>-->
                   </div>
                 
                 </div>
@@ -74,9 +74,11 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
         // line 28
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 2]), "html", null, true);
         echo "\">SLAM 2</a></span>
-                      
+                      <div class=\"progress\">
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-red\"></div>
+                      </div>
                     </div>
-                    <div class=\"number\"><strong>70</strong></div>
+                    <!--div class=\"number\"><strong>70</strong></div>-->
                   </div>
                 </div>
                 <!-- Item -->
@@ -84,14 +86,14 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-green\"><i class=\"icon-bill\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
-        // line 38
+        // line 40
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 1]), "html", null, true);
         echo "\">SISR 1</a></span>
                       <div class=\"progress\">
-                        <div role=\"progressbar\" style=\"width: 40%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
                       </div>
                     </div>
-                    <div class=\"number\"><strong>40</strong></div>
+                    <!--<div class=\"number\"><strong>40</strong></div>-->
                   </div>
                 </div>
                 <!-- Item -->
@@ -99,14 +101,14 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-orange\"><i class=\"icon-check\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
-        // line 50
+        // line 52
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 1]), "html", null, true);
         echo "\">SLAM 1</a></span>
                       <div class=\"progress\">
-                        <div role=\"progressbar\" style=\"width: 50%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
                       </div>
                     </div>
-                    <div class=\"number\"><strong>50</strong></div>
+                    <!--<div class=\"number\"><strong>50</strong></div>-->
                   </div>
                 </div>
               </div>
@@ -136,7 +138,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
 
     public function getDebugInfo()
     {
-        return array (  103 => 50,  88 => 38,  75 => 28,  59 => 15,  43 => 1,);
+        return array (  105 => 52,  90 => 40,  75 => 28,  59 => 15,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -157,10 +159,10 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-violet\"><i class=\"icon-user\"></i></div>
                     <div class=\"title\"> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 2 }) }}\"><span>SISR 2</span></a>
                       <div class=\"progress\">
-                        <div role=\"progressbar\" style=\"width: 50%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
                       </div>
                     </div>
-                    <div class=\"number\"><strong>58</strong></div>
+                    <!--<div class=\"number\"><strong>58</strong></div>-->
                   </div>
                 
                 </div>
@@ -169,9 +171,11 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-red\"><i class=\"icon-padnote\"></i></div>
                     <div class=\"title\"><span> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 2 }) }}\">SLAM 2</a></span>
-                      
+                      <div class=\"progress\">
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-red\"></div>
+                      </div>
                     </div>
-                    <div class=\"number\"><strong>70</strong></div>
+                    <!--div class=\"number\"><strong>70</strong></div>-->
                   </div>
                 </div>
                 <!-- Item -->
@@ -180,10 +184,10 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-green\"><i class=\"icon-bill\"></i></div>
                     <div class=\"title\"><span> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 1 }) }}\">SISR 1</a></span>
                       <div class=\"progress\">
-                        <div role=\"progressbar\" style=\"width: 40%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
                       </div>
                     </div>
-                    <div class=\"number\"><strong>40</strong></div>
+                    <!--<div class=\"number\"><strong>40</strong></div>-->
                   </div>
                 </div>
                 <!-- Item -->
@@ -192,10 +196,10 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-orange\"><i class=\"icon-check\"></i></div>
                     <div class=\"title\"><span> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 1 }) }}\">SLAM 1</a></span>
                       <div class=\"progress\">
-                        <div role=\"progressbar\" style=\"width: 50%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
+                        <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
                       </div>
                     </div>
-                    <div class=\"number\"><strong>50</strong></div>
+                    <!--<div class=\"number\"><strong>50</strong></div>-->
                   </div>
                 </div>
               </div>
