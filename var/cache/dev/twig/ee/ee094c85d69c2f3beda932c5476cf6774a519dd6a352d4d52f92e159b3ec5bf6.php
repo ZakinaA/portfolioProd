@@ -148,13 +148,13 @@ class __TwigTemplate_e6033c4d7a6013072d5e695f4df30c7800e0f75275ab2afc56e5afad0ae
                                         <div class=\"col-md-4\">
                                             ";
         // line 48
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 48, $this->source); })()), "etudiant", [], "any", false, false, false, 48), "niveau", [], "any", false, false, false, 48), 'row', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 48, $this->source); })()), "etudiant", [], "any", false, false, false, 48), "nom", [], "any", false, false, false, 48), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
                                         </div>
                                         <div class=\"col-md-3\">
                                             ";
         // line 51
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "etudiant", [], "any", false, false, false, 51), "specialite", [], "any", false, false, false, 51), 'row', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 51, $this->source); })()), "etudiant", [], "any", false, false, false, 51), "prenom", [], "any", false, false, false, 51), 'row', ["attr" => ["class" => "form-control"]]);
         echo "
                                         </div>
                                     </div>
@@ -168,13 +168,13 @@ class __TwigTemplate_e6033c4d7a6013072d5e695f4df30c7800e0f75275ab2afc56e5afad0ae
                                         <div class=\"col-md-5\">
                                             ";
         // line 62
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), "etudiant", [], "any", false, false, false, 62), "nom", [], "any", false, false, false, 62), 'row', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 62, $this->source); })()), "etudiant", [], "any", false, false, false, 62), "niveau", [], "any", false, false, false, 62), 'row', ["attr" => ["class" => "form-control"]]);
         echo " 
                                         </div>
                                         <div class=\"col-md-4\">
                                             ";
         // line 65
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 65, $this->source); })()), "etudiant", [], "any", false, false, false, 65), "prenom", [], "any", false, false, false, 65), 'row', ["attr" => ["class" => "form-control"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 65, $this->source); })()), "etudiant", [], "any", false, false, false, 65), "specialite", [], "any", false, false, false, 65), 'row', ["attr" => ["class" => "form-control"]]);
         echo " 
                                         </div>
                                         <div class=\"col-md-3\">
@@ -323,10 +323,10 @@ class __TwigTemplate_e6033c4d7a6013072d5e695f4df30c7800e0f75275ab2afc56e5afad0ae
                                             {{ form_row(form.etudiant.promotion, {'attr' : {'class' : 'form-control'}}) }} 
                                         </div> 
                                         <div class=\"col-md-4\">
-                                            {{ form_row(form.etudiant.niveau, {'attr' : {'class' : 'form-control'}}) }}
+                                            {{ form_row(form.etudiant.nom, {'attr' : {'class' : 'form-control'}}) }}
                                         </div>
                                         <div class=\"col-md-3\">
-                                            {{ form_row(form.etudiant.specialite, {'attr' : {'class' : 'form-control'}}) }}
+                                            {{ form_row(form.etudiant.prenom, {'attr' : {'class' : 'form-control'}}) }}
                                         </div>
                                     </div>
                                 </div>
@@ -337,10 +337,10 @@ class __TwigTemplate_e6033c4d7a6013072d5e695f4df30c7800e0f75275ab2afc56e5afad0ae
                                 <div class=\"col-sm-11\">
                                     <div class=\"row\">
                                         <div class=\"col-md-5\">
-                                            {{ form_row(form.etudiant.nom, {'attr' : {'class' : 'form-control'}}) }} 
+                                            {{ form_row(form.etudiant.niveau, {'attr' : {'class' : 'form-control'}}) }} 
                                         </div>
                                         <div class=\"col-md-4\">
-                                            {{ form_row(form.etudiant.prenom, {'attr' : {'class' : 'form-control'}}) }} 
+                                            {{ form_row(form.etudiant.specialite, {'attr' : {'class' : 'form-control'}}) }} 
                                         </div>
                                         <div class=\"col-md-3\">
                                             {{ form_row(form.etudiant.dateNaiss, {'attr' : {'class' : 'form-control'}}) }} 
@@ -397,6 +397,6 @@ class __TwigTemplate_e6033c4d7a6013072d5e695f4df30c7800e0f75275ab2afc56e5afad0ae
     </div>
 <!--/section-->
 
-{% endblock %}", "etudiant/showEdit.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\etudiant\\showEdit.html.twig");
+{% endblock %}", "etudiant/showEdit.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\etudiant\\showEdit.html.twig");
     }
 }

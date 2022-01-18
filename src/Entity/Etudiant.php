@@ -31,6 +31,7 @@ class Etudiant
 
     /**
      * @ORM\Column(type="date", nullable=true)
+     * 
      */
     private $dateNaiss;
 

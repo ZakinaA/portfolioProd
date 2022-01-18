@@ -63,7 +63,9 @@ class RegisterController extends AbstractController
             $e = new etudiant();
             $e->setNom($form->get('nom')->getData());
             $e->setPrenom($form->get('prenom')->getData());
-            $e->setDateNaiss($form->get('dateNaiss')->getData());
+            //$e->setDateNaiss($form->get('dateNaiss')->getData());
+
+            $e->setSpecialite($form->get('specialite')->getData()); 
 
             $repository = $this->getDoctrine()->getRepository(Niveau::class);
             $niveau = $repository->find(1);
@@ -86,10 +88,6 @@ class RegisterController extends AbstractController
             $repository = $this->getDoctrine()->getRepository(Niveau::class);
             $niveau = $repository->find(1);
             $e->setNiveau($niveau);
-
-            $repository = $this->getDoctrine()->getRepository(Specialite::class);
-            $specialite = $repository->find(1);
-            $e->setSpecialite($specialite);
 
             $user->setEtudiant($e);
             //$user->setToken($this->generateToken());

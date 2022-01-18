@@ -99,12 +99,19 @@ class __TwigTemplate_cce37bd6acbfed530e3598006bc5872d84d5366c0f5f0f5a395d146ec2b
         echo "
                   </div>
 
-                  <div class=\"form-group\">
+\t\t\t\t\t        <div class=\"form-group\">
 \t\t\t\t\t        ";
         // line 24
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "dateNaiss", [], "any", false, false, false, 24), 'row', ["attr" => ["class" => "input-material"]]);
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 24, $this->source); })()), "specialite", [], "any", false, false, false, 24), 'row', ["attr" => ["class" => "input-material"]]);
         echo "
                   </div>
+
+       
+
+                  <!--div class=\"form-group\"-->
+\t\t\t\t\t        ";
+        // line 31
+        echo "                  <!--/div-->
 
                   <div class=\"form-group terms-conditions\">
                   <input id=\"register-agree\" name=\"registerAgree\" type=\"checkbox\" required value=\"1\" data-msg=\"Your agreement is required\" class=\"checkbox-template\">
@@ -116,13 +123,13 @@ class __TwigTemplate_cce37bd6acbfed530e3598006bc5872d84d5366c0f5f0f5a395d146ec2b
                   </div>
                   
                   <small>Vous avez déjà un compte ? </small><a href=\"";
-        // line 36
+        // line 42
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\" class=\"signup\">Login</a>
 \t\t\t\t        
                 ";
-        // line 38
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 38, $this->source); })()), 'form_end');
+        // line 44
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 44, $this->source); })()), 'form_end');
         echo "\t\t   
           ";
         
@@ -145,7 +152,7 @@ class __TwigTemplate_cce37bd6acbfed530e3598006bc5872d84d5366c0f5f0f5a395d146ec2b
 
     public function getDebugInfo()
     {
-        return array (  125 => 38,  120 => 36,  105 => 24,  98 => 20,  91 => 16,  84 => 12,  77 => 8,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  132 => 44,  127 => 42,  114 => 31,  105 => 24,  98 => 20,  91 => 16,  84 => 12,  77 => 8,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -172,9 +179,15 @@ class __TwigTemplate_cce37bd6acbfed530e3598006bc5872d84d5366c0f5f0f5a395d146ec2b
 \t\t\t\t\t        {{ form_row(form.prenom, {'attr' : {'class' : 'input-material'}}) }}
                   </div>
 
-                  <div class=\"form-group\">
-\t\t\t\t\t        {{ form_row(form.dateNaiss, {'attr' : {'class' : 'input-material'}}) }}
+\t\t\t\t\t        <div class=\"form-group\">
+\t\t\t\t\t        {{ form_row(form.specialite, {'attr' : {'class' : 'input-material'}}) }}
                   </div>
+
+       
+
+                  <!--div class=\"form-group\"-->
+\t\t\t\t\t        {#{ form_row(form.dateNaiss, {'attr' : {'class' : 'input-material'}}) }#}
+                  <!--/div-->
 
                   <div class=\"form-group terms-conditions\">
                   <input id=\"register-agree\" name=\"registerAgree\" type=\"checkbox\" required value=\"1\" data-msg=\"Your agreement is required\" class=\"checkbox-template\">
@@ -189,6 +202,6 @@ class __TwigTemplate_cce37bd6acbfed530e3598006bc5872d84d5366c0f5f0f5a395d146ec2b
 \t\t\t\t        
                 {{ form_end(form) }}\t\t   
           {% endblock %}
-   ", "register/registration.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\register\\registration.html.twig");
+   ", "register/registration.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\register\\registration.html.twig");
     }
 }

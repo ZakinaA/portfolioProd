@@ -13,6 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class RegistrationType extends AbstractType
 {
@@ -32,10 +33,10 @@ class RegistrationType extends AbstractType
                         'message' => 'Veuillez saisir un mot de passe valide',
                     ]),
                     new Length([
-                        'min' => 2,
+                        'min' => 8,
                         'minMessage' => 'Votre mot de passe doit contenir au moins {{ limit }} caractères',
                         // max length allowed by Symfony for security reasons
-                        'max' => 4096,
+                        'max' => 16,
                     ]),
                 ],
             ]);
@@ -43,14 +44,17 @@ class RegistrationType extends AbstractType
             $builder
             ->add('nom', TextType::class, ['mapped' => false, 'label' =>'Nom'])
             ->add('prenom', TextType::class, ['mapped' => false, 'label' =>'Prénom'])
-            ->add('dateNaiss', DateType::class, array('input' => 'datetime',
+            /*->add('dateNaiss', DateType::class, array('input' => 'datetime',
             'widget' => 'single_text',
             'mapped' => false,
             'required'=> true,
             'label' =>'date de naissance',
-            'placeholder' => 'jj/mm/aaaa'))
+            'placeholder' => 'jj/mm/aaaa'))*/
+
+            ->add('specialite', EntityType::class, array('mapped' => false, 'class' => 'App\Entity\Specialite','choice_label' => 'nom'))
             ;
-       
+
+           
     }
 
     public function configureOptions(OptionsResolver $resolver)

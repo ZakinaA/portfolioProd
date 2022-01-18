@@ -67,12 +67,10 @@ class __TwigTemplate_efb80ff1a1beec074335eaf329bfa8233c3a9f9e94cddda9e62d2c3abc5
         // line 5
         echo "
 Hey  </br>
-Tu n'as pas activé le lien de confirmation dans ta bal
-</br>
-ou tes professeurs n'ont pas encore validé ton compte !
+Tes professeurs n'ont pas encore validé ton compte !
 
 Tu pourras te connecter après <a href=\"";
-        // line 11
+        // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
         echo "\">ici</a>
 ";
@@ -96,7 +94,7 @@ Tu pourras te connecter après <a href=\"";
 
     public function getDebugInfo()
     {
-        return array (  76 => 11,  68 => 5,  58 => 4,  35 => 1,);
+        return array (  74 => 9,  68 => 5,  58 => 4,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -107,11 +105,9 @@ Tu pourras te connecter après <a href=\"";
 {% block contenuPublic %}
 
 Hey  </br>
-Tu n'as pas activé le lien de confirmation dans ta bal
-</br>
-ou tes professeurs n'ont pas encore validé ton compte !
+Tes professeurs n'ont pas encore validé ton compte !
 
 Tu pourras te connecter après <a href=\"{{ path('app_login')}}\">ici</a>
-{% endblock %}", "register/userNonValide.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\register\\userNonValide.html.twig");
+{% endblock %}", "register/userNonValide.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\register\\userNonValide.html.twig");
     }
 }

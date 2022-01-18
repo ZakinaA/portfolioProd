@@ -25,13 +25,12 @@ class EtudiantType extends AbstractType
             ])
             ->add('dateNaiss', DateType::class, array('input' => 'datetime',
                                                           'widget' => 'single_text',
-                                                          'disabled' => $options['champDesactive'],
                                                           'label' =>'date de naissance',
                                                           'placeholder' => 'jj/mm/aaaa'))
             
             ->add('promotion', EntityType::class, array('class' => 'App\Entity\Promotion','choice_label' => 'annee', 'disabled' => $options['champDesactive'],))
-            ->add('niveau', EntityType::class, array('class' => 'App\Entity\Niveau','choice_label' => 'nomLong','disabled' => $options['champDesactive'],))
-            ->add('specialite', EntityType::class, array('class' => 'App\Entity\Specialite','choice_label' => 'nom','disabled' => $options['champDesactive'],))
+            ->add('niveau', EntityType::class, array('class' => 'App\Entity\Niveau','choice_label' => 'nomLong'))
+            ->add('specialite', EntityType::class, array('class' => 'App\Entity\Specialite','choice_label' => 'nom',))
             /*
             ->add('mobile', TextType::class, array('required' => false))
             ->add('sexe', TextType::class, array('required' => false))
