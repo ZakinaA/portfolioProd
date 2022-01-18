@@ -148,17 +148,27 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                     echo " ";
                 }
                 echo "</td>
-                            <td>images action</td>
-                          </tr>
+                            <td>";
+                // line 36
+                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "archivage", [], "any", false, false, false, 36), 0))) {
+                    echo "<a class=\"text\" href=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpArchiver", ["idRp" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
+                    echo "\">archiver ";
+                } else {
+                    echo "<a class=\"text\" href=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpDesarchiver", ["idRp" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
+                    echo "\">désarchiver";
+                }
+                echo "</a></td>                          </tr>
                         ";
             }
-            // line 39
+            // line 38
             echo "                      ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['i'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 40
+        // line 39
         echo "                    </tbody>
                 </table>
             </div>
@@ -187,7 +197,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                     <tbody>
           
                       ";
-        // line 77
+        // line 76
         echo "                    </tbody>
                 </table>
             </div>
@@ -217,7 +227,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
 
     public function getDebugInfo()
     {
-        return array (  191 => 77,  162 => 40,  156 => 39,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  201 => 76,  172 => 39,  166 => 38,  153 => 36,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -257,8 +267,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                             <td>{{app.user.etudiant.rps[i].activites.count}}</td>
                             <td>{{app.user.etudiant.rps[i].dateDebut | date(\"d/m/Y\")}}</td>
                             <td>{{app.user.etudiant.rps[i].statut.libelle}} {% if app.user.etudiant.rps[i].statut.id == 2%} de {{app.user.etudiant.rps[i].enseignant.prenom}} {{app.user.etudiant.rps[i].enseignant.nom}} {% endif %}</td>
-                            <td>images action</td>
-                          </tr>
+                            <td>{% if app.user.etudiant.rps[i].archivage == 0 %}<a class=\"text\" href=\"{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\">archiver {% else %}<a class=\"text\" href=\"{{ path('rpDesarchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\">désarchiver{% endif %}</a></td>                          </tr>
                         {% endif %}
                       {% endfor %}
                     </tbody>
@@ -306,6 +315,6 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
   </div>   
 
 
-{% endblock %}", "etudiant/home.html.twig", "C:\\wamp64\\www\\portfolio\\templates\\etudiant\\home.html.twig");
+{% endblock %}", "etudiant/home.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\etudiant\\home.html.twig");
     }
 }

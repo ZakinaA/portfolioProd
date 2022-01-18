@@ -33,8 +33,7 @@
                             <td>{{app.user.etudiant.rps[i].activites.count}}</td>
                             <td>{{app.user.etudiant.rps[i].dateDebut | date("d/m/Y")}}</td>
                             <td>{{app.user.etudiant.rps[i].statut.libelle}} {% if app.user.etudiant.rps[i].statut.id == 2%} de {{app.user.etudiant.rps[i].enseignant.prenom}} {{app.user.etudiant.rps[i].enseignant.nom}} {% endif %}</td>
-                            <td>images action</td>
-                          </tr>
+                            <td>{% if app.user.etudiant.rps[i].archivage == 0 %}<a class="text" href="{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}">archiver {% else %}<a class="text" href="{{ path('rpDesarchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}">désarchiver{% endif %}</a></td>                          </tr>
                         {% endif %}
                       {% endfor %}
                     </tbody>
