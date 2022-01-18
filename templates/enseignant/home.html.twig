@@ -47,7 +47,7 @@
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td>images action</td>
+                            <td><a class="text" href="{{ path('validerRp', { 'idRp': rp.id }) }}">Valider</a></td>
                           </tr>
                         {#% endif %#}
                       {% endfor %}

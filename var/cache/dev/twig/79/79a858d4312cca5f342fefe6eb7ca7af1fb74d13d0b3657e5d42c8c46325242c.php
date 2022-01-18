@@ -161,7 +161,10 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 49), "libelle", [], "any", false, false, false, 49), "html", null, true);
             echo "</td>
-                            <td>images action</td>
+                            <td><a class=\"text\" href=\"";
+            // line 50
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+            echo "\">Valider</a></td>
                           </tr>
                         ";
             // line 53
@@ -238,7 +241,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
 
     public function getDebugInfo()
     {
-        return array (  213 => 91,  203 => 82,  174 => 54,  168 => 53,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
+        return array (  216 => 91,  206 => 82,  177 => 54,  171 => 53,  166 => 50,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -292,7 +295,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date(\"d/m/Y\")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td>images action</td>
+                            <td><a class=\"text\" href=\"{{ path('validerRp', { 'idRp': rp.id }) }}\">Valider</a></td>
                           </tr>
                         {#% endif %#}
                       {% endfor %}

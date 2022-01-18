@@ -181,4 +181,30 @@ class RpController extends AbstractController
     }
 
 
+    /*
+     * Permet de valider une rp
+     */
+    public function valider($idRp): Response
+    {  
+        $user = $this->getUser();  
+        $repository = $this->getDoctrine()->getRepository(RP::class);
+        $rp = $repository->find($idRp);
+        /*if ($rp->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
+            throw $this->createAccessDeniedException();
+        }*/
+
+        //récupération du statut validé
+        $repository = $this->getDoctrine()->getRepository(Statut::class);
+        $statut = $repository->find(4);
+
+        $rp->setStatut($statut);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->persist($rp);
+        $entityManager->flush();
+        $this->addFlash('success', 'La rp '. $rp->getLibCourt(). ' a été validée');
+        //return $this->redirectToRoute('some_other_route', array('entity' => $entity));
+        return $this->redirectToRoute('enseignantHome');    
+        //return $this->render('etudiant/listRPs.html.twig', ['lesRps' => $user->getEtudiant()->getRPs()]); 
+    } 
+
 }

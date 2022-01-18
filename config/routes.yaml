@@ -168,6 +168,11 @@ listRpParEtudiant:
   path: /enseignant/etudiant/rp/list/{idEtudiant}
   controller: App\Controller\RpController::listParEtudiant
 
+# Permet de valider une rp
+validerRp:
+  path: /enseignant/rp/valider/{idRp<\d+>?0}
+  controller: App\Controller\RpController::valider
+
 showEditEnseignant:
   path: /enseignant/showEdit
   controller: App\Controller\EnseignantController::showEdit

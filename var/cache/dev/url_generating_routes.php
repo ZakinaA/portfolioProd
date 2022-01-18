@@ -51,6 +51,7 @@ return [
     'listEtudiantsParPromo' => [['idSpecialite', 'idNiveau'], ['_controller' => 'App\\Controller\\PromotionController::listEtudiantsParPromo'], [], [['variable', '/', '[^/]++', 'idNiveau', true], ['variable', '/', '[^/]++', 'idSpecialite', true], ['text', '/enseignant/promo/etudiants/list']], [], []],
     'addCommentaireRp' => [['idRp'], ['_controller' => 'App\\Controller\\RpCommentaireController::addCommentaire'], [], [['variable', '/', '[^/]++', 'idRp', true], ['text', '/enseignant/rp/commentaire/add']], [], []],
     'listRpParEtudiant' => [['idEtudiant'], ['_controller' => 'App\\Controller\\RpController::listParEtudiant'], [], [['variable', '/', '[^/]++', 'idEtudiant', true], ['text', '/enseignant/etudiant/rp/list']], [], []],
+    'validerRp' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/enseignant/rp/valider']], [], []],
     'showEditEnseignant' => [[], ['_controller' => 'App\\Controller\\EnseignantController::showEdit'], [], [['text', '/enseignant/showEdit']], [], []],
     'adduserEnseignant' => [[], ['_controller' => 'App\\Controller\\AdminController::addUserEnseignant'], [], [['text', '/admin/addUserEnseignant']], [], []],
     'listEnseignants' => [[], ['_controller' => 'App\\Controller\\AdminController::listEnseignants'], [], [['text', '/admin/listEnseignants']], [], []],
