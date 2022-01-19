@@ -91,6 +91,10 @@ class Etudiant
      */
     private $rPs;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Stage::class, mappedBy="etudiant", orphanRemoval=true)
+     */
+    private $stages;
 
     public function __construct()
     {
@@ -306,6 +310,37 @@ class Etudiant
            
         }
         return count($lesActEnreg);
+    }
+
+
+     /**
+     * @return Collection|Stage[]
+     */
+    public function getStages(): Collection
+    {
+        return $this->stages;
+    }
+
+    public function addStage(Stage $stage): self
+    {
+        if (!$this->stages->contains($stage)) {
+            $this->stages[] = $stage;
+            $stage->setEtudiant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStage(Stage $stage): self
+    {
+        if ($this->stages->removeElement($stage)) {
+            // set the owning side to null (unless already changed)
+            if ($stage->getEtudiant() === $this) {
+                $stage->setEtudiant(null);
+            }
+        }
+
+        return $this;
     }
     
 }

@@ -66,10 +66,10 @@ class Enseignant extends \App\Entity\Enseignant implements \Doctrine\ORM\Proxy\P
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'rPs', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'matiere', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'niveau'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'rPs', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'matiere', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'stages'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'rPs', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'matiere', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'niveau'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'rPs', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'matiere', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Enseignant' . "\0" . 'stages'];
     }
 
     /**
@@ -310,6 +310,39 @@ class Enseignant extends \App\Entity\Enseignant implements \Doctrine\ORM\Proxy\P
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setNiveau', [$niveau]);
 
         return parent::setNiveau($niveau);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStages(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStages', []);
+
+        return parent::getStages();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addStage(\App\Entity\Stage $stage): \App\Entity\Enseignant
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addStage', [$stage]);
+
+        return parent::addStage($stage);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeStage(\App\Entity\Stage $stage): \App\Entity\Enseignant
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeStage', [$stage]);
+
+        return parent::removeStage($stage);
     }
 
 }

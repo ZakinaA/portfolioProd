@@ -19,6 +19,23 @@ class PromotionRepository extends ServiceEntityRepository
         parent::__construct($registry, Promotion::class);
     }
 
+    public function listPromotionsParSpecialite($specialite)
+    {
+        $qb = $this->createQueryBuilder('p')
+            ->join('p.etudiants', 'e')
+            ->join('e.specialite', 's')
+            ->andwhere('s.code = :pSpecialite')
+            ->setParameter('pSpecialite', 'A')
+            
+            ->andwhere('p.statut = :pStatutPromo')
+            ->setParameter('pStatutPromo', 'AC')
+           ->getQuery();
+
+       return $qb->execute();
+
+
+        
+    }
     // /**
     //  * @return Promotion[] Returns an array of Promotion objects
     //  */

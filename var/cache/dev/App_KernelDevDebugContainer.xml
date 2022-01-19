@@ -423,6 +423,27 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\SecurityController"/>
       </call>
     </service>
+    <service id="App\Controller\SemaineStageController" class="App\Controller\SemaineStageController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\SemaineStageController"/>
+      </call>
+    </service>
+    <service id="App\Controller\StageController" class="App\Controller\StageController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\StageController"/>
+      </call>
+    </service>
+    <service id="App\Controller\TacheSemaineController" class="App\Controller\TacheSemaineController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\TacheSemaineController"/>
+      </call>
+    </service>
     <service id="App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true">
       <tag name="doctrine.fixture.orm"/>
     </service>
@@ -469,6 +490,15 @@
     <service id="App\Form\RpActiviteType" class="App\Form\RpActiviteType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\SemaineStageType" class="App\Form\SemaineStageType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\StageType" class="App\Form\StageType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
+    <service id="App\Form\TacheSemaineType" class="App\Form\TacheSemaineType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\UserEnseignantType" class="App\Form\UserEnseignantType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -495,11 +525,19 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\DomaineTacheRepository" class="App\Repository\DomaineTacheRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\EnseignantRepository" class="App\Repository\EnseignantRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
     <service id="App\Repository\EtudiantRepository" class="App\Repository\EtudiantRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\JourRepository" class="App\Repository\JourRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -539,6 +577,10 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\SemaineStageRepository" class="App\Repository\SemaineStageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\SourceRepository" class="App\Repository\SourceRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -547,7 +589,15 @@
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
+    <service id="App\Repository\StageRepository" class="App\Repository\StageRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
     <service id="App\Repository\StatutRepository" class="App\Repository\StatutRepository" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\TacheSemaineRepository" class="App\Repository\TacheSemaineRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -1065,6 +1115,9 @@
         <argument>App\Form\RegistrationType</argument>
         <argument>App\Form\ResetPasswordRequestFormType</argument>
         <argument>App\Form\RpActiviteType</argument>
+        <argument>App\Form\SemaineStageType</argument>
+        <argument>App\Form\StageType</argument>
+        <argument>App\Form\TacheSemaineType</argument>
         <argument>App\Form\UserEnseignantType</argument>
         <argument>App\Form\UserEtudiantType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -1424,7 +1477,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.HvWYQHN"/>
+      <argument type="service" id=".service_locator.iydv31F"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -4458,7 +4511,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.WCrwEOD"/>
+      <argument type="service" id=".service_locator..KQgYnh"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -5693,6 +5746,15 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SemaineStageController" class="App\Controller\SemaineStageController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SemaineStageController" class="App\Controller\SemaineStageController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\SemaineStageController" class="App\Controller\SemaineStageController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\StageController" class="App\Controller\StageController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\StageController" class="App\Controller\StageController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\StageController" class="App\Controller\StageController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\TacheSemaineController" class="App\Controller\TacheSemaineController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\TacheSemaineController" class="App\Controller\TacheSemaineController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\TacheSemaineController" class="App\Controller\TacheSemaineController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\DataFixtures\AppFixtures" class="App\DataFixtures\AppFixtures" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.App\DataFixtures\UserFixtures" class="App\DataFixtures\UserFixtures" autowire="true" abstract="true"/>
@@ -5723,6 +5785,12 @@
     <service id=".abstract.instanceof.App\Form\ResetPasswordRequestFormType" class="App\Form\ResetPasswordRequestFormType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\RpActiviteType" class="App\Form\RpActiviteType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\RpActiviteType" class="App\Form\RpActiviteType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SemaineStageType" class="App\Form\SemaineStageType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\SemaineStageType" class="App\Form\SemaineStageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StageType" class="App\Form\StageType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\StageType" class="App\Form\StageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TacheSemaineType" class="App\Form\TacheSemaineType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\TacheSemaineType" class="App\Form\TacheSemaineType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserEnseignantType" class="App\Form\UserEnseignantType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\UserEnseignantType" class="App\Form\UserEnseignantType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\UserEtudiantType" class="App\Form\UserEtudiantType" autowire="true" abstract="true"/>
@@ -5737,10 +5805,14 @@
     <service id=".abstract.instanceof.App\Repository\CommentaireRepository" class="App\Repository\CommentaireRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\CompetenceRepository" class="App\Repository\CompetenceRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\CompetenceRepository" class="App\Repository\CompetenceRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\DomaineTacheRepository" class="App\Repository\DomaineTacheRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\DomaineTacheRepository" class="App\Repository\DomaineTacheRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EnseignantRepository" class="App\Repository\EnseignantRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EnseignantRepository" class="App\Repository\EnseignantRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\EtudiantRepository" class="App\Repository\EtudiantRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\EtudiantRepository" class="App\Repository\EtudiantRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\JourRepository" class="App\Repository\JourRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\JourRepository" class="App\Repository\JourRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\LocalisationRepository" class="App\Repository\LocalisationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\LocalisationRepository" class="App\Repository\LocalisationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MatiereRepository" class="App\Repository\MatiereRepository" autowire="true" abstract="true"/>
@@ -5759,12 +5831,18 @@
     <service id=".abstract.instanceof.App\Repository\RPRepository" class="App\Repository\RPRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\ResetPasswordRequestRepository" class="App\Repository\ResetPasswordRequestRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SemaineStageRepository" class="App\Repository\SemaineStageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\SemaineStageRepository" class="App\Repository\SemaineStageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SourceRepository" class="App\Repository\SourceRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SourceRepository" class="App\Repository\SourceRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\SpecialiteRepository" class="App\Repository\SpecialiteRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StageRepository" class="App\Repository\StageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\StageRepository" class="App\Repository\StageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\StatutRepository" class="App\Repository\StatutRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\StatutRepository" class="App\Repository\StatutRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\TacheSemaineRepository" class="App\Repository\TacheSemaineRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\TacheSemaineRepository" class="App\Repository\TacheSemaineRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Security\Core\Authorization\Voter\VoterInterface.0.App\Security\RPVoter" class="App\Security\RPVoter" autowire="true" abstract="true"/>
@@ -6184,7 +6262,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.HvWYQHN" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.iydv31F" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ActiviteType" type="service_closure" id="App\Form\ActiviteType"/>
@@ -6200,6 +6278,9 @@
         <argument key="App\Form\RegistrationType" type="service_closure" id="App\Form\RegistrationType"/>
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
         <argument key="App\Form\RpActiviteType" type="service_closure" id="App\Form\RpActiviteType"/>
+        <argument key="App\Form\SemaineStageType" type="service_closure" id="App\Form\SemaineStageType"/>
+        <argument key="App\Form\StageType" type="service_closure" id="App\Form\StageType"/>
+        <argument key="App\Form\TacheSemaineType" type="service_closure" id="App\Form\TacheSemaineType"/>
         <argument key="App\Form\UserEnseignantType" type="service_closure" id="App\Form\UserEnseignantType"/>
         <argument key="App\Form\UserEtudiantType" type="service_closure" id="App\Form\UserEtudiantType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service_closure" id="form.type.entity"/>
@@ -6370,7 +6451,7 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service_closure" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.WCrwEOD" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator..KQgYnh" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\ActiviteRepository" type="service_closure" id="App\Repository\ActiviteRepository"/>
@@ -6378,8 +6459,10 @@
         <argument key="App\Repository\CadreRepository" type="service_closure" id="App\Repository\CadreRepository"/>
         <argument key="App\Repository\CommentaireRepository" type="service_closure" id="App\Repository\CommentaireRepository"/>
         <argument key="App\Repository\CompetenceRepository" type="service_closure" id="App\Repository\CompetenceRepository"/>
+        <argument key="App\Repository\DomaineTacheRepository" type="service_closure" id="App\Repository\DomaineTacheRepository"/>
         <argument key="App\Repository\EnseignantRepository" type="service_closure" id="App\Repository\EnseignantRepository"/>
         <argument key="App\Repository\EtudiantRepository" type="service_closure" id="App\Repository\EtudiantRepository"/>
+        <argument key="App\Repository\JourRepository" type="service_closure" id="App\Repository\JourRepository"/>
         <argument key="App\Repository\LocalisationRepository" type="service_closure" id="App\Repository\LocalisationRepository"/>
         <argument key="App\Repository\MatiereRepository" type="service_closure" id="App\Repository\MatiereRepository"/>
         <argument key="App\Repository\NiveauRPRepository" type="service_closure" id="App\Repository\NiveauRPRepository"/>
@@ -6389,9 +6472,12 @@
         <argument key="App\Repository\RPActiviteRepository" type="service_closure" id="App\Repository\RPActiviteRepository"/>
         <argument key="App\Repository\RPRepository" type="service_closure" id="App\Repository\RPRepository"/>
         <argument key="App\Repository\ResetPasswordRequestRepository" type="service_closure" id="App\Repository\ResetPasswordRequestRepository"/>
+        <argument key="App\Repository\SemaineStageRepository" type="service_closure" id="App\Repository\SemaineStageRepository"/>
         <argument key="App\Repository\SourceRepository" type="service_closure" id="App\Repository\SourceRepository"/>
         <argument key="App\Repository\SpecialiteRepository" type="service_closure" id="App\Repository\SpecialiteRepository"/>
+        <argument key="App\Repository\StageRepository" type="service_closure" id="App\Repository\StageRepository"/>
         <argument key="App\Repository\StatutRepository" type="service_closure" id="App\Repository\StatutRepository"/>
+        <argument key="App\Repository\TacheSemaineRepository" type="service_closure" id="App\Repository\TacheSemaineRepository"/>
         <argument key="App\Repository\UserRepository" type="service_closure" id="App\Repository\UserRepository"/>
       </argument>
     </service>
@@ -6524,6 +6610,24 @@
     <service id=".service_locator.5nX7ca3.App\Controller\SecurityController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\SecurityController"/>
       <argument>App\Controller\SecurityController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\SemaineStageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\SemaineStageController"/>
+      <argument>App\Controller\SemaineStageController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\StageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\StageController"/>
+      <argument>App\Controller\StageController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\TacheSemaineController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\TacheSemaineController"/>
+      <argument>App\Controller\TacheSemaineController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>

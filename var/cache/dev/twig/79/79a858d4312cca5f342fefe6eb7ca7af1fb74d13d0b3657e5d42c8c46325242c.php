@@ -192,27 +192,58 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             <div class=\"table-responsive\">   
                 <table class=\"table table-striped table-sm\">
                     <thead>
+                     
                       <tr>
                         <th>Entreprise</th>
-                        <th>Réferent</th>
-                        <th>Mission</th>
-                        <th>Date</th>
+                        <th>Lieu</th>
+                        <th>Nom tuteur</th>
+                        <th>Mail tuteur</th>
+                        <th>Tel tuteur</th>
+                        <th>sujet </th>
                       </tr>
                     </thead>
                     <tbody>
           
                       ";
-        // line 82
-        echo "                          <tr>
-                            <th scope=\"row\"></th>
-                            <td><a class=\"text\" href=\"\"></a></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+        // line 84
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 84, $this->source); })()), "user", [], "any", false, false, false, 84), "enseignant", [], "any", false, false, false, 84), "stages", [], "any", false, false, false, 84));
+        foreach ($context['_seq'] as $context["_key"] => $context["stage"]) {
+            // line 85
+            echo "                          <tr>
+                            <td><a class=\"text\" href=\"";
+            // line 86
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showStage", ["idStage" => twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 86)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomEntreprise", [], "any", false, false, false, 86), "html", null, true);
+            echo "</a></td>
+                            <td>";
+            // line 87
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "lieu", [], "any", false, false, false, 87), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 88
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomTuteur", [], "any", false, false, false, 88), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 89
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "mailTuteur", [], "any", false, false, false, 89), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 90
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "telTuteur", [], "any", false, false, false, 90), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 91
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "sujet", [], "any", false, false, false, 91), "html", null, true);
+            echo "</td>
                           </tr>
                       ";
-        // line 91
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 94
         echo "                    </tbody>
                 </table>
             </div>
@@ -241,7 +272,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
 
     public function getDebugInfo()
     {
-        return array (  216 => 91,  206 => 82,  177 => 54,  171 => 53,  166 => 50,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
+        return array (  247 => 94,  238 => 91,  234 => 90,  230 => 89,  226 => 88,  222 => 87,  216 => 86,  213 => 85,  209 => 84,  177 => 54,  171 => 53,  166 => 50,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -317,25 +348,28 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             <div class=\"table-responsive\">   
                 <table class=\"table table-striped table-sm\">
                     <thead>
+                     
                       <tr>
                         <th>Entreprise</th>
-                        <th>Réferent</th>
-                        <th>Mission</th>
-                        <th>Date</th>
+                        <th>Lieu</th>
+                        <th>Nom tuteur</th>
+                        <th>Mail tuteur</th>
+                        <th>Tel tuteur</th>
+                        <th>sujet </th>
                       </tr>
                     </thead>
                     <tbody>
           
-                      {#% for stage in app.user.etudiant.stages %\"#}
+                      {% for stage in app.user.enseignant.stages %}
                           <tr>
-                            <th scope=\"row\"></th>
-                            <td><a class=\"text\" href=\"\"></a></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><a class=\"text\" href=\"{{ path('showStage', { 'idStage': stage.id }) }}\">{{stage.nomEntreprise}}</a></td>
+                            <td>{{stage.lieu}}</td>
+                            <td>{{stage.nomTuteur}}</td>
+                            <td>{{stage.mailTuteur}}</td>
+                            <td>{{stage.telTuteur}}</td>
+                            <td>{{stage.sujet}}</td>
                           </tr>
-                      {#% endfor %#}
+                      {% endfor %}
                     </tbody>
                 </table>
             </div>

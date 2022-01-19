@@ -45,6 +45,11 @@ class Enseignant
      */
     private $niveau;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Stage::class, mappedBy="enseignant")
+     */
+    private $stages;
+
     public function __construct()
     {
         $this->rPs = new ArrayCollection();
@@ -134,6 +139,35 @@ class Enseignant
 
         return $this;
     }
+    
+    /**
+     * @return Collection|Stage[]
+     */
+    public function getStages(): Collection
+    {
+        return $this->stages;
+    }
 
+    public function addStage(Stage $stage): self
+    {
+        if (!$this->stages->contains($stage)) {
+            $this->stages[] = $stage;
+            $stage->setEnseignant($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStage(Stage $stage): self
+    {
+        if ($this->stages->removeElement($stage)) {
+            // set the owning side to null (unless already changed)
+            if ($stage->getEnseignant() === $this) {
+                $stage->setEnseignant(null);
+            }
+        }
+
+        return $this;
+    }
 
 }

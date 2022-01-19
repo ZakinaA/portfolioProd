@@ -30,10 +30,11 @@ return [
         '/etudiant/home' => [[['_route' => 'etudiantHome', '_controller' => 'App\\Controller\\EtudiantController::home'], null, null, null, false, false, null]],
         '/etudiant/rps' => [[['_route' => 'etudiantRps', '_controller' => 'App\\Controller\\EtudiantController::getLesRP'], null, null, null, false, false, null]],
         '/etudiant/rpsArchivees' => [[['_route' => 'etudiantRpsArchivees', '_controller' => 'App\\Controller\\EtudiantController::getLesRPArchivées'], null, null, null, false, false, null]],
+        '/etudiant/stages' => [[['_route' => 'etudiantStages', '_controller' => 'App\\Controller\\StageController::getLesStagesByEtudiant'], null, null, null, false, false, null]],
         '/enseignant/home' => [[['_route' => 'enseignantHome', '_controller' => 'App\\Controller\\EnseignantController::home'], null, null, null, false, false, null]],
         '/enseignant/promo/list' => [[['_route' => 'listPromos', '_controller' => 'App\\Controller\\PromotionController::list'], null, null, null, true, false, null]],
-        '/enseignant/rp/list' => [[['_route' => 'listToutesLesRpPromosEnCours', '_controller' => 'App\\Controller\\EnseignantController::listRP'], null, null, null, false, false, null]],
         '/enseignant/showEdit' => [[['_route' => 'showEditEnseignant', '_controller' => 'App\\Controller\\EnseignantController::showEdit'], null, null, null, false, false, null]],
+        '/enseignant/stages' => [[['_route' => 'listeStagesSuivis', '_controller' => 'App\\Controller\\StageController::getLesStagesSuivis'], null, null, null, false, false, null]],
         '/admin/addUserEnseignant' => [[['_route' => 'adduserEnseignant', '_controller' => 'App\\Controller\\AdminController::addUserEnseignant'], null, null, null, false, false, null]],
         '/admin/listEnseignants' => [[['_route' => 'listEnseignants', '_controller' => 'App\\Controller\\AdminController::listEnseignants'], null, null, null, false, false, null]],
         '/admin/listPromoEtudiants' => [[['_route' => 'listPromoEtudiants', '_controller' => 'App\\Controller\\AdminController::listPromoEtudiants'], null, null, null, false, false, null]],
@@ -83,24 +84,35 @@ return [
                     .')'
                 .')'
                 .'|/confirmMail/([^/]++)(*:624)'
-                .'|/enseignant/(?'
-                    .'|rp/(?'
-                        .'|show/([^/]++)(*:666)'
-                        .'|commentaire/add/([^/]++)(*:698)'
-                        .'|valider(?:/(\\d+))?(*:724)'
+                .'|/e(?'
+                    .'|tudiant/stage/add(?'
+                        .'|(?:/(\\d+))?(*:668)'
+                        .'|Tache(?:/(\\d+)(?:/(\\d+))?)?(*:703)'
                     .')'
-                    .'|promo/etudiants/list/([^/]++)/([^/]++)(*:771)'
-                    .'|etudiant/rp/list/([^/]++)(*:804)'
+                    .'|nseignant/(?'
+                        .'|rp/(?'
+                            .'|show/([^/]++)(*:744)'
+                            .'|commentaire/add/([^/]++)(*:776)'
+                            .'|list/([^/]++)(*:797)'
+                            .'|valider(?:/(\\d+))?(*:823)'
+                        .')'
+                        .'|promo/etudiants/list/([^/]++)/([^/]++)(*:870)'
+                        .'|etudiant/rp/list/([^/]++)(*:903)'
+                        .'|stage/s(?'
+                            .'|how/([^/]++)(*:933)'
+                            .'|emaine/show/([^/]++)/([^/]++)(*:970)'
+                        .')'
+                    .')'
                 .')'
                 .'|/admin/(?'
                     .'|s(?'
                         .'|howEditE(?'
-                            .'|nseignant/([^/]++)(*:856)'
-                            .'|tudiant/([^/]++)(*:880)'
+                            .'|nseignant/([^/]++)(*:1024)'
+                            .'|tudiant/([^/]++)(*:1049)'
                         .')'
-                        .'|upprimerCompte/([^/]++)(*:912)'
+                        .'|upprimerCompte/([^/]++)(*:1082)'
                     .')'
-                    .'|validerCompte/([^/]++)(*:943)'
+                    .'|validerCompte/([^/]++)(*:1114)'
                 .')'
             .')/?$}sDu',
     ],
@@ -127,15 +139,20 @@ return [
         555 => [[['_route' => 'rpCommentaireList', 'idRp' => '0', '_controller' => 'App\\Controller\\RpCommentaireController::rpCommentaireList'], ['idRp'], null, null, false, true, null]],
         592 => [[['_route' => 'rpCommentaireNotifierEnseignant', 'idRp' => '0', '_controller' => 'App\\Controller\\RpCommentaireController::rpNotifier'], ['idRp'], null, null, false, true, null]],
         624 => [[['_route' => 'confirmMail', '_controller' => 'App\\Controller\\RegisterController::confirmMail'], ['token'], null, null, false, true, null]],
-        666 => [[['_route' => 'showRp', '_controller' => 'App\\Controller\\RpController::show'], ['idRp'], null, null, false, true, null]],
-        698 => [[['_route' => 'addCommentaireRp', '_controller' => 'App\\Controller\\RpCommentaireController::addCommentaire'], ['idRp'], null, null, false, true, null]],
-        724 => [[['_route' => 'validerRp', 'idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp'], null, null, false, true, null]],
-        771 => [[['_route' => 'listEtudiantsParPromo', '_controller' => 'App\\Controller\\PromotionController::listEtudiantsParPromo'], ['idSpecialite', 'idNiveau'], null, null, false, true, null]],
-        804 => [[['_route' => 'listRpParEtudiant', '_controller' => 'App\\Controller\\RpController::listParEtudiant'], ['idEtudiant'], null, null, false, true, null]],
-        856 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
-        880 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
-        912 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
-        943 => [
+        668 => [[['_route' => 'stageAddEdit', 'idStage' => '0', '_controller' => 'App\\Controller\\StageController::addEdit'], ['idStage'], null, null, false, true, null]],
+        703 => [[['_route' => 'tacheSemaineAddEdit', 'idStage' => '0', 'numSemaine' => '0', '_controller' => 'App\\Controller\\SemaineStageController::addEditTache'], ['idStage', 'numSemaine'], null, null, false, true, null]],
+        744 => [[['_route' => 'showRp', '_controller' => 'App\\Controller\\RpController::show'], ['idRp'], null, null, false, true, null]],
+        776 => [[['_route' => 'addCommentaireRp', '_controller' => 'App\\Controller\\RpCommentaireController::addCommentaire'], ['idRp'], null, null, false, true, null]],
+        797 => [[['_route' => 'listToutesLesRpPromosEnCours', '_controller' => 'App\\Controller\\EnseignantController::listRp'], ['idSpecialite'], null, null, false, true, null]],
+        823 => [[['_route' => 'validerRp', 'idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp'], null, null, false, true, null]],
+        870 => [[['_route' => 'listEtudiantsParPromo', '_controller' => 'App\\Controller\\PromotionController::listEtudiantsParPromo'], ['idSpecialite', 'idNiveau'], null, null, false, true, null]],
+        903 => [[['_route' => 'listRpParEtudiant', '_controller' => 'App\\Controller\\RpController::listParEtudiant'], ['idEtudiant'], null, null, false, true, null]],
+        933 => [[['_route' => 'showStage', '_controller' => 'App\\Controller\\StageController::showStage'], ['idStage'], null, null, false, true, null]],
+        970 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
+        1024 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
+        1049 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
+        1082 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
+        1114 => [
             [['_route' => 'validerCompte', '_controller' => 'App\\Controller\\AdminController::validerCompte'], ['email'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

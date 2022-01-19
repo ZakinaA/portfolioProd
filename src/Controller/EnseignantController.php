@@ -7,7 +7,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Form\UserEnseignantType;
-
+use App\Entity\Promotion;
+use App\Entity\Specialite;
 
 class EnseignantController extends AbstractController
 {
@@ -69,12 +70,15 @@ class EnseignantController extends AbstractController
     /**
      * Liste toutes les RP non archivées
      * classées par promo et par étudiant
-     * méthode à implémenter
      */
-    public function listRP(): Response
-    {
+    public function listRp($idSpecialite): Response
+    {   
+        $repository = $this->getDoctrine()->getRepository(Specialite::class);
+        $specialite =  $repository->find($idSpecialite);
 
-        return $this->render('enseignant/home.html.twig');
+        $repository = $this->getDoctrine()->getRepository(Promotion::class);
+        $promotionsEnCours =  $repository->listPromotionsParSpecialite($specialite);
+        return $this->render('enseignant/listRp.html.twig', [ 'promotions' => $promotionsEnCours]); 
     }
 
 

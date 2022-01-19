@@ -137,7 +137,38 @@ rpCommentaireNotifierEnseignant:
   #path: /etudiant/rps
   #controller: App\Controller\EtudiantController::getLesRP
 
+
+
+#Liste les stages  d'un étudiant connecté
+etudiantStages:
+  path: /etudiant/stages
+  controller: App\Controller\StageController::getLesStagesByEtudiant
+  
+#Permet à un étudiant connecté d'ajouter ou de modifier un stage
+stageAddEdit:
+  path: etudiant/stage/add/{idStage<\d+>?0}
+  controller: App\Controller\StageController::addEdit
+
+#Permet à un étudiant connecté d'ajouter une tache sur une semaine de son stage
+tacheSemaineAddEdit:
+  path: etudiant/stage/addTache/{idStage<\d+>?0}/{numSemaine<\d+>?0}
+  controller: App\Controller\SemaineStageController::addEditTache
+
+
+
+
+
+
+
+
+
+
+
+
+
+##################################################################################
 ###### Routes enseignant ############
+###################################################################################
 enseignantHome:
   path: /enseignant/home
   controller: App\Controller\EnseignantController::home
@@ -171,8 +202,8 @@ listRpParEtudiant:
 # Liste toutes les RP non archivées
 # classées par promo et par étudiant
 listToutesLesRpPromosEnCours:
-  path: /enseignant/rp/list
-  controller: App\Controller\EnseignantController::listRP
+  path: /enseignant/rp/list/{idSpecialite}
+  controller: App\Controller\EnseignantController::listRp
 
 # Permet de valider une rp
 validerRp:
@@ -182,6 +213,27 @@ validerRp:
 showEditEnseignant:
   path: /enseignant/showEdit
   controller: App\Controller\EnseignantController::showEdit
+
+
+
+
+#Liste des stages des étudiants dont l'enseignant assure le suivi
+listeStagesSuivis:
+  path: /enseignant/stages
+  controller: App\Controller\StageController::getLesStagesSuivis
+
+#consultation d'un stage dont l'enseignant assure le suivi
+showStage:
+  path: /enseignant/stage/show/{idStage}
+  controller: App\Controller\StageController::showStage
+
+#consultation de l'activité d'une semaine de stage d'un étudiant
+showSemaineStage:
+  path: /enseignant/stage/semaine/show/{idStage}/{numSemaine}
+  controller: App\Controller\SemaineStageController::showSemaine
+
+
+
 ###### Routes admin ############
 
 adduserEnseignant:

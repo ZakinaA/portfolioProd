@@ -66,10 +66,10 @@ class Etudiant extends \App\Entity\Etudiant implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'mobile', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'numRue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'copos', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'cheminPhoto', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'promotion', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'specialite', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rPs'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'mobile', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'numRue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'copos', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'cheminPhoto', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'promotion', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'specialite', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rPs', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'stages'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'mobile', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'numRue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'copos', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'cheminPhoto', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'promotion', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'specialite', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rPs'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'nom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'prenom', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'dateNaiss', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'mobile', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'sexe', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'numRue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rue', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'copos', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'ville', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'cheminPhoto', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'promotion', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'niveau', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'specialite', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'rPs', '' . "\0" . 'App\\Entity\\Etudiant' . "\0" . 'stages'];
     }
 
     /**
@@ -519,6 +519,39 @@ class Etudiant extends \App\Entity\Etudiant implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'getNbActivites', []);
 
         return parent::getNbActivites();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getStages(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getStages', []);
+
+        return parent::getStages();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addStage(\App\Entity\Stage $stage): \App\Entity\Etudiant
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addStage', [$stage]);
+
+        return parent::addStage($stage);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removeStage(\App\Entity\Stage $stage): \App\Entity\Etudiant
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeStage', [$stage]);
+
+        return parent::removeStage($stage);
     }
 
 }
