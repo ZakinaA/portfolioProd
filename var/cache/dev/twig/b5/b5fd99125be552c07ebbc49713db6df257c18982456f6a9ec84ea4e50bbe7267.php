@@ -221,9 +221,13 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         // line 112
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/charts-home.js"), "html", null, true);
         echo "\"></script>
+    <script src=\"";
+        // line 113
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/tri.js"), "html", null, true);
+        echo "\"></script>
     <!-- Main File-->
     <script src=\"";
-        // line 114
+        // line 115
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
         echo "\"></script>
  
@@ -349,7 +353,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     public function getDebugInfo()
     {
-        return array (  323 => 85,  304 => 80,  283 => 70,  271 => 57,  261 => 56,  251 => 53,  241 => 52,  227 => 114,  222 => 112,  218 => 111,  214 => 110,  210 => 109,  206 => 108,  202 => 107,  198 => 106,  177 => 87,  175 => 86,  173 => 85,  165 => 80,  155 => 72,  153 => 70,  143 => 63,  138 => 60,  136 => 56,  132 => 54,  130 => 52,  117 => 44,  113 => 43,  92 => 25,  87 => 23,  82 => 21,  77 => 19,  70 => 15,  65 => 13,  60 => 11,  48 => 1,);
+        return array (  327 => 85,  308 => 80,  287 => 70,  275 => 57,  265 => 56,  255 => 53,  245 => 52,  231 => 115,  226 => 113,  222 => 112,  218 => 111,  214 => 110,  210 => 109,  206 => 108,  202 => 107,  198 => 106,  177 => 87,  175 => 86,  173 => 85,  165 => 80,  155 => 72,  153 => 70,  143 => 63,  138 => 60,  136 => 56,  132 => 54,  130 => 52,  117 => 44,  113 => 43,  92 => 25,  87 => 23,  82 => 21,  77 => 19,  70 => 15,  65 => 13,  60 => 11,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -466,6 +470,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
     <script src=\"{{ asset('vendor/chart.js/Chart.min.js')}}\"></script>
     <script src=\"{{ asset('vendor/jquery-validation/jquery.validate.min.js')}}\"></script>
     <script src=\"{{ asset('js/charts-home.js')}}\"></script>
+    <script src=\"{{ asset('js/tri.js')}}\"></script>
     <!-- Main File-->
     <script src=\"{{ asset('js/front.js')}}\"></script>
  

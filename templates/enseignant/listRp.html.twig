@@ -34,7 +34,7 @@
                           {% for e in p.etudiants  %}
                            {% for rp in e.rps  %}
                             <tr>
-                              <td>{{e.nom}} </td>
+                              <td>{{e.nom}} <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span> </td>
                               <td>{{e.prenom}}</td>
                               <td>{{e.specialite.nom}}</td>
                               <td> <a href="{{ path('listRpParEtudiant', {'idEtudiant': e.id  }) }}">{{rp.libcourt}}</a></td>

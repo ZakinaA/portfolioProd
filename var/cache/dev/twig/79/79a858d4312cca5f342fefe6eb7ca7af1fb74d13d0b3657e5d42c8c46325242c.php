@@ -114,13 +114,13 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                 <table class=\"table table-striped table-sm\" id=\"table_rp\" >
                     <thead>
                       <tr>
-                        <th>Etudiant</th>
-                        <th>Source</th>
-                        <th>Libellé</th>
-                        <th>Nombre d'activités</th>
-                        <th>Date</th>
-                        <th>Statut</th>
-                        <th>Action</th>
+                        <th>Etudiant <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Libellé <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Nombre d'activités <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Date <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Statut <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Action <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                       </tr>
                     </thead>
                     <tbody id=\"tbody_rp\">
@@ -307,13 +307,13 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                 <table class=\"table table-striped table-sm\" id=\"table_rp\" >
                     <thead>
                       <tr>
-                        <th>Etudiant</th>
-                        <th>Source</th>
-                        <th>Libellé</th>
-                        <th>Nombre d'activités</th>
-                        <th>Date</th>
-                        <th>Statut</th>
-                        <th>Action</th>
+                        <th>Etudiant <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Libellé <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Nombre d'activités <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Date <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Statut <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                        <th>Action <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                       </tr>
                     </thead>
                     <tbody id=\"tbody_rp\">
@@ -377,6 +377,6 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
     </div>
   </div>   
 
-{% endblock %}", "enseignant/home.html.twig", "C:\\wamp64\\www\\portfolioV2-Copie\\templates\\enseignant\\home.html.twig");
+{% endblock %}", "enseignant/home.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\enseignant\\home.html.twig");
     }
 }

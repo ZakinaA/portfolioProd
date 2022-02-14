@@ -67,7 +67,7 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
 
         echo "<a href=\"";
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etudiantRps");
-        echo "\">Réalisations professionnelles </a>";
+        echo "\">Réalisations professionnelles  </a>";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -122,11 +122,11 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
                         <table class=\"table table-striped table-sm\">
                           <thead>
                             <tr>
-                              <th>Source</th>
-                              <th>Libellé</th>
-                              <th>Nombre d'activités</th>
-                              <th>Date</th>
-                              <th>Statut</th>
+                              <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Libelle<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Action</th>
                             </tr>
                           </thead>
@@ -220,7 +220,7 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
     public function getSourceContext()
     {
         return new Source("{% extends \"baseEtudiant.html.twig\" %}
-{% block titreContenu %}<a href=\"{{ path('etudiantRps')}}\">Réalisations professionnelles </a>{% endblock %}
+{% block titreContenu %}<a href=\"{{ path('etudiantRps')}}\">Réalisations professionnelles  </a>{% endblock %}
 
 
 {% block contenu%}
@@ -248,11 +248,11 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
                         <table class=\"table table-striped table-sm\">
                           <thead>
                             <tr>
-                              <th>Source</th>
-                              <th>Libellé</th>
-                              <th>Nombre d'activités</th>
-                              <th>Date</th>
-                              <th>Statut</th>
+                              <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Libelle<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Action</th>
                             </tr>
                           </thead>

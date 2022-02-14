@@ -98,12 +98,12 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                 <table class=\"table table-striped table-sm\">
                     <thead>
                       <tr>
-                        <th>Source</th>
-                        <th>Libellé</th>
-                        <th>Nombre d'activités</th>
-                        <th>Date</th>
-                        <th>Statut</th>
-                        <th>Action</th>
+                              <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Libelle<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -249,12 +249,12 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                 <table class=\"table table-striped table-sm\">
                     <thead>
                       <tr>
-                        <th>Source</th>
-                        <th>Libellé</th>
-                        <th>Nombre d'activités</th>
-                        <th>Date</th>
-                        <th>Statut</th>
-                        <th>Action</th>
+                              <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Libelle<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                       </tr>
                     </thead>
                     <tbody>
