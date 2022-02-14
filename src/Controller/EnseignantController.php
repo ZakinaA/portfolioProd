@@ -9,6 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Form\UserEnseignantType;
 use App\Entity\Promotion;
 use App\Entity\Specialite;
+use App\Entity\Rp;
 
 class EnseignantController extends AbstractController
 {
@@ -81,7 +82,18 @@ class EnseignantController extends AbstractController
         return $this->render('enseignant/listRp.html.twig', [ 'promotions' => $promotionsEnCours]); 
     }
 
-
+    /**
+     * Liste toutes les RP  archivées
+     * classées 
+     */
+    public function listRpsArchivees(): Response
+    {   
+        $repository = $this->getDoctrine()->getRepository(RP::class);
+        $lesRps = $repository->findBy(
+            ['archivage' => 1], array('dateModif'=>'desc'));
+       
+        return $this->render('enseignant/listRpsArchivees.html.twig', [ 'lesRps' => $lesRps]); 
+    }
 
 
 }

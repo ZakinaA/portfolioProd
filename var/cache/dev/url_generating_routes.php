@@ -57,6 +57,7 @@ return [
     'listToutesLesRpPromosEnCours' => [['idSpecialite'], ['_controller' => 'App\\Controller\\EnseignantController::listRp'], [], [['variable', '/', '[^/]++', 'idSpecialite', true], ['text', '/enseignant/rp/list']], [], []],
     'validerRp' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/enseignant/rp/valider']], [], []],
     'showEditEnseignant' => [[], ['_controller' => 'App\\Controller\\EnseignantController::showEdit'], [], [['text', '/enseignant/showEdit']], [], []],
+    'listRpsArchivees' => [[], ['_controller' => 'App\\Controller\\EnseignantController::listRpsArchivees'], [], [['text', '/enseignant/listRpsArchivees']], [], []],
     'listeStagesSuivis' => [[], ['_controller' => 'App\\Controller\\StageController::getLesStagesSuivis'], [], [['text', '/enseignant/stages']], [], []],
     'showStage' => [['idStage'], ['_controller' => 'App\\Controller\\StageController::showStage'], [], [['variable', '/', '[^/]++', 'idStage', true], ['text', '/enseignant/stage/show']], [], []],
     'showSemaineStage' => [['idStage', 'numSemaine'], ['_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], [], [['variable', '/', '[^/]++', 'numSemaine', true], ['variable', '/', '[^/]++', 'idStage', true], ['text', '/enseignant/stage/semaine/show']], [], []],

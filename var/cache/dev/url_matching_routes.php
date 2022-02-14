@@ -34,6 +34,7 @@ return [
         '/enseignant/home' => [[['_route' => 'enseignantHome', '_controller' => 'App\\Controller\\EnseignantController::home'], null, null, null, false, false, null]],
         '/enseignant/promo/list' => [[['_route' => 'listPromos', '_controller' => 'App\\Controller\\PromotionController::list'], null, null, null, true, false, null]],
         '/enseignant/showEdit' => [[['_route' => 'showEditEnseignant', '_controller' => 'App\\Controller\\EnseignantController::showEdit'], null, null, null, false, false, null]],
+        '/enseignant/listRpsArchivees' => [[['_route' => 'listRpsArchivees', '_controller' => 'App\\Controller\\EnseignantController::listRpsArchivees'], null, null, null, false, false, null]],
         '/enseignant/stages' => [[['_route' => 'listeStagesSuivis', '_controller' => 'App\\Controller\\StageController::getLesStagesSuivis'], null, null, null, false, false, null]],
         '/admin/addUserEnseignant' => [[['_route' => 'adduserEnseignant', '_controller' => 'App\\Controller\\AdminController::addUserEnseignant'], null, null, null, false, false, null]],
         '/admin/listEnseignants' => [[['_route' => 'listEnseignants', '_controller' => 'App\\Controller\\AdminController::listEnseignants'], null, null, null, false, false, null]],

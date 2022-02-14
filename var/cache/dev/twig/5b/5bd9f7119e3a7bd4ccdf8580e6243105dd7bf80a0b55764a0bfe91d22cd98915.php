@@ -171,7 +171,8 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
         echo "\">SLAM 1</a></li>
                 <li><a href=\"";
         // line 44
-        echo "\">xxxxx</a></li>
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsArchivees");
+        echo "\">rp archivées</a></li>
               </ul>
             </li>
             
@@ -227,7 +228,7 @@ test contenu enseignant
 
     public function getDebugInfo()
     {
-        return array (  198 => 60,  174 => 44,  170 => 43,  166 => 42,  162 => 41,  158 => 40,  141 => 28,  137 => 27,  128 => 24,  126 => 23,  122 => 22,  111 => 13,  100 => 12,  86 => 7,  80 => 6,  74 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  199 => 60,  174 => 44,  170 => 43,  166 => 42,  162 => 41,  158 => 40,  141 => 28,  137 => 27,  128 => 24,  126 => 23,  122 => 22,  111 => 13,  100 => 12,  86 => 7,  80 => 6,  74 => 5,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -275,7 +276,7 @@ test contenu enseignant
                 <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'menu' }) }}\">SLAM 2</a></li>
                 <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'menu' }) }}\">SISR 1</a></li>
                 <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'menu' }) }}\">SLAM 1</a></li>
-                <li><a href=\"{#{ path('rpShowEditAdd')}#}\">xxxxx</a></li>
+                <li><a href=\"{{ path('listRpsArchivees')}}\">rp archivées</a></li>
               </ul>
             </li>
             
