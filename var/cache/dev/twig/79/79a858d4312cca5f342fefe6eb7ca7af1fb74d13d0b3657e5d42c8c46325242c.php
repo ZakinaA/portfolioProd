@@ -87,19 +87,18 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "contenu"));
 
         // line 5
+        echo "
+";
+        // line 6
         echo twig_include($this->env, $context, "./promotion/listPromos.html.twig");
         echo "
+
 </br>
 
    <div class=\"col-lg-12\">
       <div class=\"card\">
                     
-        <div class=\"card-close\">
-          <div class=\"dropdown\">
-            <button type=\"button\" id=\"closeCard3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle\"><i class=\"fa fa-ellipsis-v\"></i></button>
-            <div aria-labelledby=\"closeCard3\" class=\"dropdown-menu dropdown-menu-right has-shadow\"><a href=\"#\" class=\"dropdown-item remove\"> <i class=\"fa fa-times\"></i>Close</a><a href=\"#\" class=\"dropdown-item edit\"> <i class=\"fa fa-gear\"></i>Edit</a></div>
-          </div>
-        </div>\t 
+     \t 
 
         <div class=\"card-header d-flex align-items-center\">
             <h3 class=\"h4\"> Réalisations professionnelles à viser </h3>
@@ -125,61 +124,61 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                     </thead>
                     <tbody id=\"tbody_rp\">
                       ";
-        // line 41
+        // line 38
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 41, $this->source); })()), "user", [], "any", false, false, false, 41), "enseignant", [], "any", false, false, false, 41), "rps", [], "any", false, false, false, 41));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 38, $this->source); })()), "user", [], "any", false, false, false, 38), "enseignant", [], "any", false, false, false, 38), "rps", [], "any", false, false, false, 38));
         foreach ($context['_seq'] as $context["_key"] => $context["rp"]) {
-            // line 42
+            // line 39
             echo "                        ";
-            // line 43
+            // line 40
             echo "                          <tr>
                             <td>";
-            // line 44
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "etudiant", [], "any", false, false, false, 44), "prenom", [], "any", false, false, false, 44), "html", null, true);
+            // line 41
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "etudiant", [], "any", false, false, false, 41), "prenom", [], "any", false, false, false, 41), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "etudiant", [], "any", false, false, false, 44), "nom", [], "any", false, false, false, 44), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "etudiant", [], "any", false, false, false, 41), "nom", [], "any", false, false, false, 41), "html", null, true);
             echo " </td>
                             <td>";
-            // line 45
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "source", [], "any", false, false, false, 45), "libelle", [], "any", false, false, false, 45), "html", null, true);
+            // line 42
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "source", [], "any", false, false, false, 42), "libelle", [], "any", false, false, false, 42), "html", null, true);
             echo " </td>
                             <td><a class=\"text\" href=\"";
-            // line 46
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 46)]), "html", null, true);
+            // line 43
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 43)]), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rp"], "libcourt", [], "any", false, false, false, 46), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rp"], "libcourt", [], "any", false, false, false, 43), "html", null, true);
             echo "</a></td>
                             <td>";
+            // line 44
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "activites", [], "any", false, false, false, 44), "count", [], "any", false, false, false, 44), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 45
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rp"], "dateDebut", [], "any", false, false, false, 45), "d/m/Y"), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 46
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 46), "libelle", [], "any", false, false, false, 46), "html", null, true);
+            echo "</td>
+                            <td>";
             // line 47
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "activites", [], "any", false, false, false, 47), "count", [], "any", false, false, false, 47), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 48
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rp"], "dateDebut", [], "any", false, false, false, 48), "d/m/Y"), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 49
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 49), "libelle", [], "any", false, false, false, 49), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 50
-            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 50), "id", [], "any", false, false, false, 50), 4))) {
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 47), "id", [], "any", false, false, false, 47), 4))) {
                 echo "-";
             } else {
                 echo "<a class=\"text\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 47)]), "html", null, true);
                 echo "\">Valider</a>";
             }
             echo "</td>
                           </tr>
                         ";
-            // line 53
+            // line 50
             echo "                      ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rp'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 54
+        // line 51
         echo "                    </tbody>
                 </table>
             </div>
@@ -211,37 +210,37 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                     <tbody>
           
                       ";
-        // line 84
+        // line 81
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 84, $this->source); })()), "user", [], "any", false, false, false, 84), "enseignant", [], "any", false, false, false, 84), "stages", [], "any", false, false, false, 84));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 81, $this->source); })()), "user", [], "any", false, false, false, 81), "enseignant", [], "any", false, false, false, 81), "stages", [], "any", false, false, false, 81));
         foreach ($context['_seq'] as $context["_key"] => $context["stage"]) {
-            // line 85
+            // line 82
             echo "                          <tr>
                             <td><a class=\"text\" href=\"";
-            // line 86
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showStage", ["idStage" => twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 86)]), "html", null, true);
+            // line 83
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showStage", ["idStage" => twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 83)]), "html", null, true);
             echo "\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomEntreprise", [], "any", false, false, false, 86), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomEntreprise", [], "any", false, false, false, 83), "html", null, true);
             echo "</a></td>
                             <td>";
+            // line 84
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "lieu", [], "any", false, false, false, 84), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 85
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomTuteur", [], "any", false, false, false, 85), "html", null, true);
+            echo "</td>
+                            <td>";
+            // line 86
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "mailTuteur", [], "any", false, false, false, 86), "html", null, true);
+            echo "</td>
+                            <td>";
             // line 87
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "lieu", [], "any", false, false, false, 87), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "telTuteur", [], "any", false, false, false, 87), "html", null, true);
             echo "</td>
                             <td>";
             // line 88
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomTuteur", [], "any", false, false, false, 88), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 89
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "mailTuteur", [], "any", false, false, false, 89), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 90
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "telTuteur", [], "any", false, false, false, 90), "html", null, true);
-            echo "</td>
-                            <td>";
-            // line 91
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "sujet", [], "any", false, false, false, 91), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "sujet", [], "any", false, false, false, 88), "html", null, true);
             echo "</td>
                           </tr>
                       ";
@@ -249,7 +248,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stage'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 94
+        // line 91
         echo "                    </tbody>
                 </table>
             </div>
@@ -278,7 +277,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
 
     public function getDebugInfo()
     {
-        return array (  253 => 94,  244 => 91,  240 => 90,  236 => 89,  232 => 88,  228 => 87,  222 => 86,  219 => 85,  215 => 84,  183 => 54,  177 => 53,  166 => 50,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
+        return array (  252 => 91,  243 => 88,  239 => 87,  235 => 86,  231 => 85,  227 => 84,  221 => 83,  218 => 82,  214 => 81,  182 => 51,  176 => 50,  165 => 47,  161 => 46,  157 => 45,  153 => 44,  147 => 43,  143 => 42,  137 => 41,  134 => 40,  132 => 39,  128 => 38,  93 => 6,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -287,18 +286,15 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
 {% block titreContenu %}<a href=\"{{ path('enseignantHome')}}\">Accueil </a>{% endblock %}
 
 {% block contenu%}
+
 {{ include('./promotion/listPromos.html.twig') }}
+
 </br>
 
    <div class=\"col-lg-12\">
       <div class=\"card\">
                     
-        <div class=\"card-close\">
-          <div class=\"dropdown\">
-            <button type=\"button\" id=\"closeCard3\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"dropdown-toggle\"><i class=\"fa fa-ellipsis-v\"></i></button>
-            <div aria-labelledby=\"closeCard3\" class=\"dropdown-menu dropdown-menu-right has-shadow\"><a href=\"#\" class=\"dropdown-item remove\"> <i class=\"fa fa-times\"></i>Close</a><a href=\"#\" class=\"dropdown-item edit\"> <i class=\"fa fa-gear\"></i>Edit</a></div>
-          </div>
-        </div>\t 
+     \t 
 
         <div class=\"card-header d-flex align-items-center\">
             <h3 class=\"h4\"> Réalisations professionnelles à viser </h3>

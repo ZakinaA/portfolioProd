@@ -184,7 +184,7 @@ listPromos:
 
 # liste les rp d'une promo en cours (slam1, sisr2)
 listEtudiantsParPromo:
-  path: /enseignant/promo/etudiants/list/{idSpecialite}/{idNiveau}
+  path: /enseignant/promo/etudiants/list/{idSpecialite}/{idNiveau}/{source}
   controller: App\Controller\PromotionController::listEtudiantsParPromo
  
 # Permet à l'enseignant d'ajouter un commentaire
