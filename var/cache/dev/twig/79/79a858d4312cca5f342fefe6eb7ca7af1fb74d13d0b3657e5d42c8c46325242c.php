@@ -161,10 +161,16 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             // line 49
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 49), "libelle", [], "any", false, false, false, 49), "html", null, true);
             echo "</td>
-                            <td><a class=\"text\" href=\"";
+                            <td>";
             // line 50
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 50)]), "html", null, true);
-            echo "\">Valider</a></td>
+            if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rp"], "statut", [], "any", false, false, false, 50), "id", [], "any", false, false, false, 50), 4))) {
+                echo "-";
+            } else {
+                echo "<a class=\"text\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 50)]), "html", null, true);
+                echo "\">Valider</a>";
+            }
+            echo "</td>
                           </tr>
                         ";
             // line 53
@@ -272,7 +278,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
 
     public function getDebugInfo()
     {
-        return array (  247 => 94,  238 => 91,  234 => 90,  230 => 89,  226 => 88,  222 => 87,  216 => 86,  213 => 85,  209 => 84,  177 => 54,  171 => 53,  166 => 50,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
+        return array (  253 => 94,  244 => 91,  240 => 90,  236 => 89,  232 => 88,  228 => 87,  222 => 86,  219 => 85,  215 => 84,  183 => 54,  177 => 53,  166 => 50,  162 => 49,  158 => 48,  154 => 47,  148 => 46,  144 => 45,  138 => 44,  135 => 43,  133 => 42,  129 => 41,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -326,7 +332,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date(\"d/m/Y\")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td><a class=\"text\" href=\"{{ path('validerRp', { 'idRp': rp.id }) }}\">Valider</a></td>
+                            <td>{% if rp.statut.id==4 %}-{% else %}<a class=\"text\" href=\"{{ path('validerRp', { 'idRp': rp.id }) }}\">Valider</a>{% endif %}</td>
                           </tr>
                         {#% endif %#}
                       {% endfor %}

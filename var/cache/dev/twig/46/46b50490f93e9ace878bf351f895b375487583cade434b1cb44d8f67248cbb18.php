@@ -107,12 +107,12 @@ class __TwigTemplate_6774c8b828c592e45b6cfabd612dfb9ef6e99e73c86b59fd0664f297bbf
                         <table class=\"table table-striped table-sm\">
                           <thead>
                             <tr>
-                              <th>Source</th>
-                              <th>Libellé</th>
-                              <th>Nombre d'activités</th>
-                              <th>Date</th>
-                              <th>Statut</th>
-                              <th>Archivée</th>
+                              <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Libellé <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Archivée<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -216,12 +216,12 @@ class __TwigTemplate_6774c8b828c592e45b6cfabd612dfb9ef6e99e73c86b59fd0664f297bbf
                         <table class=\"table table-striped table-sm\">
                           <thead>
                             <tr>
-                              <th>Source</th>
-                              <th>Libellé</th>
-                              <th>Nombre d'activités</th>
-                              <th>Date</th>
-                              <th>Statut</th>
-                              <th>Archivée</th>
+                              <th>Source <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Libellé <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Archivée<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                             </tr>
                           </thead>
                           <tbody>

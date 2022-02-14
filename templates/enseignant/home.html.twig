@@ -47,7 +47,7 @@
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td><a class="text" href="{{ path('validerRp', { 'idRp': rp.id }) }}">Valider</a></td>
+                            <td>{% if rp.statut.id==4 %}-{% else %}<a class="text" href="{{ path('validerRp', { 'idRp': rp.id }) }}">Valider</a>{% endif %}</td>
                           </tr>
                         {#% endif %#}
                       {% endfor %}
