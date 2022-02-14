@@ -115,7 +115,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
             // line 29
             echo "                        ";
-            if (twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 29), "etudiant", [], "any", false, true, false, 29), "rps", [], "any", false, true, false, 29), $context["i"], [], "array", true, true, false, 29)) {
+            if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, ($context["app"] ?? null), "user", [], "any", false, true, false, 29), "etudiant", [], "any", false, true, false, 29), "rps", [], "any", false, true, false, 29), $context["i"], [], "array", true, true, false, 29) && (0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 29, $this->source); })()), "user", [], "any", false, false, false, 29), "etudiant", [], "any", false, false, false, 29), "rps", [], "any", false, false, false, 29), $context["i"], [], "array", false, false, false, 29), "archivage", [], "any", false, false, false, 29), 0)))) {
                 // line 30
                 echo "                          <tr>
                             <th scope=\"row\">";
@@ -260,7 +260,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                     <tbody>
                       <!-- on n'affiche que 7 rp -->
                       {% for i in 0..7 %}
-                        {% if app.user.etudiant.rps[i] is defined %}
+                        {% if (app.user.etudiant.rps[i] is defined) and (app.user.etudiant.rps[i].archivage == 0) %}
                           <tr>
                             <th scope=\"row\">{{app.user.etudiant.rps[i].source.libelle}} </th>
                             <td><a class=\"text\" href=\"{{ path('rpShowEditAdd', { 'idRp': app.user.etudiant.rps[i].id }) }}\">{{app.user.etudiant.rps[i].libcourt}}</a></td>

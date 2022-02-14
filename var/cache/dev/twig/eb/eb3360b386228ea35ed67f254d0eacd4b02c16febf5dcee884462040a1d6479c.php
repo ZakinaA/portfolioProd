@@ -127,7 +127,7 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                                <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Action</th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                             </tr>
                           </thead>
                           <tbody>
@@ -253,7 +253,7 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                                <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Action</th>
+                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                             </tr>
                           </thead>
                           <tbody>

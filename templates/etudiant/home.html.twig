@@ -26,7 +26,7 @@
                     <tbody>
                       <!-- on n'affiche que 7 rp -->
                       {% for i in 0..7 %}
-                        {% if app.user.etudiant.rps[i] is defined %}
+                        {% if (app.user.etudiant.rps[i] is defined) and (app.user.etudiant.rps[i].archivage == 0) %}
                           <tr>
                             <th scope="row">{{app.user.etudiant.rps[i].source.libelle}} </th>
                             <td><a class="text" href="{{ path('rpShowEditAdd', { 'idRp': app.user.etudiant.rps[i].id }) }}">{{app.user.etudiant.rps[i].libcourt}}</a></td>
