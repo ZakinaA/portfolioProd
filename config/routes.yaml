@@ -149,25 +149,11 @@ stageAddEdit:
   path: etudiant/stage/add/{idStage<\d+>?0}
   controller: App\Controller\StageController::addEdit
 
-#Permet à un étudiant connecté d'ajouter une tache sur une semaine de son stage
-tacheSemaineAddEdit:
-  path: etudiant/stage/addTache/{idStage<\d+>?0}/{numSemaine<\d+>?0}
-  controller: App\Controller\SemaineStageController::addEditTache
 
-#Permet à un étudiant connecté d'ajouter une tache sur une semaine de son stage
-tacheSemaineAdd:
-  path: etudiant/stage/tache/add/{idStage<\d+>?0}/{numSemaine<\d+>?0}
-  controller: App\Controller\TacheSemaineController::add
-
-
-
+#Permet à un étudiant connecté de renseigner sa semaine de stage en ajoutant des taches
 showEditSemaineStage:
     path: etudiant/stage/showEditSemaineStage/{idStage<\d+>?0}/{numSemaine<\d+>?0}
     controller: App\Controller\StageController::showEditSemaineStage
-
-
-
-
 
 
 
