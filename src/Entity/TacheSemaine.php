@@ -45,7 +45,7 @@ class TacheSemaine
     private $tacheSemaines;
 
     /**
-     * @ORM\ManyToOne(targetEntity=SemaineStage::class, inversedBy="tacheSemaines")
+     * @ORM\ManyToOne(targetEntity=SemaineStage::class, inversedBy="tacheSemaines", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $semaineStage;

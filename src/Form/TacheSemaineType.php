@@ -6,6 +6,8 @@ use App\Entity\TacheSemaine;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class TacheSemaineType extends AbstractType
 {
@@ -13,10 +15,11 @@ class TacheSemaineType extends AbstractType
     {
         $builder
             ->add('description')
-            ->add('domaineTache', EntityType::class, array('class' => 'App\Entity\DomaineTache','choice_label' => 'jour', 'disabled' => $options['champDesactive'],))
+            ->add('domaineTache', EntityType::class, array('class' => 'App\Entity\DomaineTache','choice_label' => 'libelle'))
             //->add('domaineTache')
-            //->add('jour')
+            ->add('jour', EntityType::class, array('class' => 'App\Entity\Jour','choice_label' => 'nom'))
             //->add('semaineStage')
+            ->add('ajouter', SubmitType::class, array('label' => 'Ajouter Tache'))
         ;
     }
 

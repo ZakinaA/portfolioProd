@@ -8,11 +8,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\SemaineStage ;
 use App\Entity\Stage ;
+use App\Entity\TacheSemaine ;
 use App\Form\SemaineStageType;
+use App\Form\TacheSemaineType;
 
 class SemaineStageController extends AbstractController
 {
-     /*
+
+    /*
      * Permet à un étudiant d'ajouter ou de modifier des tâches lors d'une semaine de stage
      */
     public function addEditTache(Request $request, $idStage, $numSemaine): Response
@@ -29,23 +32,37 @@ class SemaineStageController extends AbstractController
 
         $semaineStage = $stage->getSemaineStage($numSemaine);
 
+        // si la semaine de stage est null, c'est qu'elle n'a pas encore été créée, on l'instancie donc
+        if ( $semaineStage == null){
+            echo ('sem  stage non défini');
+            $semaineStage = new SemaineStage();
+            $semaineStage->setNumSemaine($numSemaine);
+            $tache = new TacheSemaine();
+            $semaineStage->addTacheSemaine($tache);
+            
+        }
+
         $formSemaineStage = $this->createForm(SemaineStageType::class, $semaineStage);
         $formSemaineStage->handleRequest($request);  
+
+        $tache = new TacheSemaine();
+        $formTache = $this->createForm(TacheSemaineType::class);
 
         if ($formSemaineStage->isSubmitted() && $formSemaineStage->isValid()) 
         {    
             $semaineStage = $formSemaineStage->getData();
-           
+            $semaineStage->setStage($stage);
+
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($stage);
+            $entityManager->persist($semaineStage);
             $entityManager->flush();
             $this->addFlash('success', 'Informations enregistrées avec succès !');                      
-            return $this->render('semaine_stage/addEdit.html.twig', array('form' => $formSemaineStage->createView(), 'semaineStage'=>$semaineStage, 'stage'=>$stage, 'templateTwigParent' => 'baseEtudiant.html.twig'));   
+            return $this->render('semaine_stage/addEdit.html.twig', array('form' => $formSemaineStage->createView(),'formTache' => $formTache->createView(), 'semaineStage'=>$semaineStage, 'stage'=>$stage, 'templateTwigParent' => 'baseEtudiant.html.twig'));   
             //return $this->redirectToRoute('etudiantRps');    
         }
         else
         {
-            return $this->render('semaine_stage/addEdit.html.twig', array('form' => $formSemaineStage->createView(),'semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEtudiant.html.twig'));   
+            return $this->render('semaine_stage/addEdit.html.twig', array('form' => $formSemaineStage->createView(),'formTache' => $formTache->createView(),'semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEtudiant.html.twig'));   
 
         }          
     }

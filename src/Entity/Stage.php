@@ -528,24 +528,6 @@ class Stage
         }
 
         return $this;
-    }
-
-    // fonction permettant de renvoyer la semaine de stage en fonction du numéro de semaine
-    public function getSemaineStage($numSemaine)
-    {
-        foreach($this->semaineStages as $semaineStage)
-        {
-            if ($semaineStage->getNumSemaine() == $numSemaine)
-            {
-                return $semaineStage ;
-            }
-            else
-            {
-                $semaineStage = new SemaineStage();
-                $semaineStage->setNumSemaine($numSemaine);
-                return $semaineStage ;
-            }
-        }
-    }
+    }   
 
 }

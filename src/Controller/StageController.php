@@ -7,12 +7,76 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Stage ;
+use App\Entity\TacheSemaine ;
 use App\Form\StageType;
-
+use App\Form\SemaineStageType;
+use App\Form\TacheSemaineType;
+use App\Entity\SemaineStage ;
 
 class StageController extends AbstractController
 {
 
+
+    public function showEditSemaineStage(Request $request, $idStage, $numSemaine)
+    {
+          
+        $stage = $this->getDoctrine()
+        ->getRepository(Stage::class)
+        ->find($idStage);
+
+        //$semaine = $stage->getSemaineParNumero($numSemaine);
+        $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
+        $semaine = $repository->findOneBy(
+            ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
+
+        if ($semaine==null){
+            $semaine = new SemaineStage();
+            
+        }
+       
+        $semaines = $this->getDoctrine()
+        ->getRepository(SemaineStage::class)
+        ->findByStage($idStage);
+
+        $formSemaine = $this->createForm(SemaineStageType::class, $semaine);
+        $formSemaine->handleRequest($request);
+        $semaine = $formSemaine->getData();
+        $semaine->setNumSemaine($numSemaine);
+        $semaine->setStage($stage);
+
+        $tache = new TacheSemaine();
+        //$tache->setSemaineStage($semaine);
+        $formTache = $this->createForm(TacheSemaineType::class, $tache);
+        $formTache->handleRequest($request);
+
+        /*$semaine = $this->getDoctrine()
+        ->getRepository(SemaineStage::class)
+        ->find($semaine->getId());*/
+
+        $tache->setSemaineStage($semaine);
+
+        if ($formTache->isSubmitted()) {
+            $tache = $formTache->getData();
+            $tache->setSemaineStage($semaine);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($tache);
+            $entityManager->flush();
+            return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
+        }
+        elseif ($formSemaine->isSubmitted()){
+            $semaine = $formSemaine->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($semaine);
+            $entityManager->flush();
+            return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
+        }
+        else
+        {
+            //return $this->render('stage/semaine.html.twig', array('formSemaine' => $formSemaine->createView(),'pEtudiant' => $etudiant, 'formTache' => $formTache->createView(), 'pStage' => $stage, 'pSemaine' => $semaine, 'pSemaines' => $semaines, 'pTaches' => $allTaches)); 
+            return $this->render('stage/showEditSemaineStage.html.twig', array('formSemaine' => $formSemaine->createView(), 'formTache' => $formTache->createView(), 'stage' => $stage, 'semaine' => $semaine ));     
+        }
+
+    }
     /**
     * Liste les stages  d'un étudiant connecté
     */
@@ -32,13 +96,14 @@ class StageController extends AbstractController
         // paramètre par défaut de la route à 0. Si 0, on crée une nouvelle rp
         if ($idStage == 0)
         {
-            $stage = new Stage();         
+            $stage = new Stage();       
         }
         else
         {
            // on est en modification
             $repository = $this->getDoctrine()->getRepository(Stage::class);
             $stage = $repository->find($idStage);
+           
             
             if ($stage->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
                 throw $this->createAccessDeniedException();
@@ -61,6 +126,7 @@ class StageController extends AbstractController
             {    
                 $stage = $formStage->getData();
                 $stage->setEtudiant($etudiant);
+
             
                 $entityManager = $this->getDoctrine()->getManager();
                 $entityManager->persist($stage);
