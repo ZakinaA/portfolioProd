@@ -226,7 +226,7 @@ showStage:
 
 #consultation de l'activité d'une semaine de stage d'un étudiant
 showSemaineStage:
-  path: /enseignant/stage/semaine/show/{idStage}/{numSemaine}
+  path: /etudiant/stage/semaine/show/{idStage}/{numSemaine}
   controller: App\Controller\SemaineStageController::showSemaine
 
 

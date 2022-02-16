@@ -60,7 +60,7 @@ return [
     'listRpsArchivees' => [[], ['_controller' => 'App\\Controller\\EnseignantController::listRpsArchivees'], [], [['text', '/enseignant/listRpsArchivees']], [], []],
     'listeStagesSuivis' => [[], ['_controller' => 'App\\Controller\\StageController::getLesStagesSuivis'], [], [['text', '/enseignant/stages']], [], []],
     'showStage' => [['idStage'], ['_controller' => 'App\\Controller\\StageController::showStage'], [], [['variable', '/', '[^/]++', 'idStage', true], ['text', '/enseignant/stage/show']], [], []],
-    'showSemaineStage' => [['idStage', 'numSemaine'], ['_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], [], [['variable', '/', '[^/]++', 'numSemaine', true], ['variable', '/', '[^/]++', 'idStage', true], ['text', '/enseignant/stage/semaine/show']], [], []],
+    'showSemaineStage' => [['idStage', 'numSemaine'], ['_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], [], [['variable', '/', '[^/]++', 'numSemaine', true], ['variable', '/', '[^/]++', 'idStage', true], ['text', '/etudiant/stage/semaine/show']], [], []],
     'adduserEnseignant' => [[], ['_controller' => 'App\\Controller\\AdminController::addUserEnseignant'], [], [['text', '/admin/addUserEnseignant']], [], []],
     'listEnseignants' => [[], ['_controller' => 'App\\Controller\\AdminController::listEnseignants'], [], [['text', '/admin/listEnseignants']], [], []],
     'showEditEnseignantAdmin' => [['idUser'], ['_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], [], [['variable', '/', '[^/]++', 'idUser', true], ['text', '/admin/showEditEnseignant']], [], []],
