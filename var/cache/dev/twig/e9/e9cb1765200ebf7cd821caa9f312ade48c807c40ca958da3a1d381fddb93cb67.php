@@ -238,7 +238,6 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
         echo "\">Nouveau stage</a></li>
                 <li><a href=\"";
         // line 72
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("tacheSemaineAddEdit");
         echo "\">Carnet de bord</a></li>
               </ul>
             </li>    
@@ -307,7 +306,7 @@ test contenu etudiant
 
     public function getDebugInfo()
     {
-        return array (  276 => 98,  241 => 72,  237 => 71,  233 => 70,  224 => 64,  220 => 63,  216 => 62,  199 => 50,  195 => 49,  186 => 46,  184 => 45,  180 => 44,  169 => 35,  158 => 34,  144 => 29,  138 => 28,  132 => 27,  128 => 25,  118 => 24,  104 => 19,  97 => 15,  85 => 10,  81 => 9,  74 => 5,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  275 => 98,  241 => 72,  237 => 71,  233 => 70,  224 => 64,  220 => 63,  216 => 62,  199 => 50,  195 => 49,  186 => 46,  184 => 45,  180 => 44,  169 => 35,  158 => 34,  144 => 29,  138 => 28,  132 => 27,  128 => 25,  118 => 24,  104 => 19,  97 => 15,  85 => 10,  81 => 9,  74 => 5,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -383,7 +382,7 @@ test contenu etudiant
               <ul id=\"stage\" class=\"collapse list-unstyled \">
                 <li><a href=\"{{ path('etudiantStages')}}\">Mes stages</a></li>
                 <li><a href=\"{{ path('stageAddEdit')}}\">Nouveau stage</a></li>
-                <li><a href=\"{{ path('tacheSemaineAddEdit')}}\">Carnet de bord</a></li>
+                <li><a href=\"{#{ path('tacheSemaineAddEdit')}#}\">Carnet de bord</a></li>
               </ul>
             </li>    
           </ul>

@@ -23,7 +23,7 @@
                         <!-- Breadcrumb-->
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">Info</a></li>                           
+                                <li class="breadcrumb-item active"><a href="{{ path('showSemaineStage', {'idStage': stage.id, 'numSemaine': i}) }}">Info</a></li>                           
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
