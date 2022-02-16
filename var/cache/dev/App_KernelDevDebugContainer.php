@@ -16,6 +16,11 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerAxN20RQ\App_KernelDevDebugContainer([
     'container.build_hash' => 'AxN20RQ',
+<<<<<<< HEAD
     'container.build_id' => '81f002c1',
     'container.build_time' => 1645002777,
+=======
+    'container.build_id' => 'c6b8405e',
+    'container.build_time' => 1644863094,
+>>>>>>> rpFinalisation
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerAxN20RQ');

@@ -1,3 +1,7 @@
 <?php //%5BC%5DApp%255CController%255CPromotionController%2523listEtudiantsParPromo
 
+<<<<<<< HEAD
 return [PHP_INT_MAX, 1645002779];
+=======
+return [PHP_INT_MAX, 1644862945];
+>>>>>>> rpFinalisation

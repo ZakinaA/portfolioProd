@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* enseignant/baseEnseignant.html.twig */
+/* baseEnseignant.html.twig */
 class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9e2179 extends Template
 {
     private $source;
@@ -41,12 +41,12 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "enseignant/baseEnseignant.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "baseEnseignant.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "enseignant/baseEnseignant.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "baseEnseignant.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "enseignant/baseEnseignant.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "baseEnseignant.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -155,13 +155,24 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
         // line 40
-        echo "\">Réalisations en cours????</a></li>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
+        echo "\">SISR 2</a></li>
                 <li><a href=\"";
         // line 41
-        echo "\">Réalisations archivées???</a></li>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
+        echo "\">SLAM 2</a></li>
                 <li><a href=\"";
         // line 42
-        echo "\">xxxxx</a></li>
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
+        echo "\">SISR 1</a></li>
+                <li><a href=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
+        echo "\">SLAM 1</a></li>
+                <li><a href=\"";
+        // line 44
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsArchivees");
+        echo "\">rp archivées</a></li>
               </ul>
             </li>
             
@@ -184,7 +195,7 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
 
     }
 
-    // line 58
+    // line 60
     public function block_contenu($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -207,7 +218,7 @@ test contenu enseignant
 
     public function getTemplateName()
     {
-        return "enseignant/baseEnseignant.html.twig";
+        return "baseEnseignant.html.twig";
     }
 
     public function isTraitable()
@@ -217,7 +228,7 @@ test contenu enseignant
 
     public function getDebugInfo()
     {
-        return array (  188 => 58,  164 => 42,  161 => 41,  158 => 40,  141 => 28,  137 => 27,  128 => 24,  126 => 23,  122 => 22,  111 => 13,  100 => 12,  86 => 7,  80 => 6,  74 => 5,  70 => 3,  60 => 2,  37 => 1,);
+        return array (  199 => 60,  174 => 44,  170 => 43,  166 => 42,  162 => 41,  158 => 40,  141 => 28,  137 => 27,  128 => 24,  126 => 23,  122 => 22,  111 => 13,  100 => 12,  86 => 7,  80 => 6,  74 => 5,  70 => 3,  60 => 2,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -261,9 +272,11 @@ test contenu enseignant
           <ul class=\"list-unstyled\">
             <li><a href=\"#realisation\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
-                <li><a href=\"{#{ path('etudiantRps')}#}\">Réalisations en cours????</a></li>
-                <li><a href=\"{#{ path('etudiantRpsArchivees')}#}\">Réalisations archivées???</a></li>
-                <li><a href=\"{#{ path('rpShowEditAdd')}#}\">xxxxx</a></li>
+                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 2,'source': 'menu' }) }}\">SISR 2</a></li>
+                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'menu' }) }}\">SLAM 2</a></li>
+                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'menu' }) }}\">SISR 1</a></li>
+                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'menu' }) }}\">SLAM 1</a></li>
+                <li><a href=\"{{ path('listRpsArchivees')}}\">rp archivées</a></li>
               </ul>
             </li>
             
@@ -282,6 +295,6 @@ test contenu enseignant
 {% block contenu %}  
 test contenu enseignant
 {% endblock %}
-", "enseignant/baseEnseignant.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\enseignant\\baseEnseignant.html.twig");
+", "baseEnseignant.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\enseignant\\baseEnseignant.html.twig");
     }
 }

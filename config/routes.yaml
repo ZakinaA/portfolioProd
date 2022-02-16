@@ -183,8 +183,11 @@ listPromos:
   controller: App\Controller\PromotionController::list
 
 # liste les rp d'une promo en cours (slam1, sisr2)
+# La variable $source permet de savoir sur quel lien on a cliqué déclencher cette fonction
+# si $source=menu, on vient du menu de gauche et on affiche la liste de toutes les rp des etudiants de la spé et du niveau
+# $source=tb, on affiche le tableau de bord (home enseignant) et on affiche les étudiant avec la liste des etudiants, le nb de rp, le nb de stage
 listEtudiantsParPromo:
-  path: /enseignant/promo/etudiants/list/{idSpecialite}/{idNiveau}
+  path: /enseignant/promo/etudiants/list/{idSpecialite}/{idNiveau}/{source}
   controller: App\Controller\PromotionController::listEtudiantsParPromo
  
 # Permet à l'enseignant d'ajouter un commentaire
@@ -214,7 +217,9 @@ showEditEnseignant:
   path: /enseignant/showEdit
   controller: App\Controller\EnseignantController::showEdit
 
-
+listRpsArchivees:
+  path: /enseignant/listRpsArchivees
+  controller: App\Controller\EnseignantController::listRpsArchivees
 
 
 #Liste des stages des étudiants dont l'enseignant assure le suivi
