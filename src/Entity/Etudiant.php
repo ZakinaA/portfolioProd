@@ -342,5 +342,30 @@ class Etudiant
 
         return $this;
     }
+
+
+    public static function getNbActivitesDifferentes()
+    {
+        $tabAct = array();
+        $i=0;
+
+        foreach ($this->rPs as $rp)
+        {
+            foreach ($rp->getActivites() as $act)
+            {
+                if (array_key_exists($act->getId(), $tabAct))
+                {
+
+                }
+                else
+                {
+                    array_push($act->getId());
+                   $i++;
+                }
+
+            }
+        }
+        return $i;
+    }
     
 }

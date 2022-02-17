@@ -97,8 +97,8 @@
                             <th scope="row">{{tache.jour.nom}}</th>
                             <td>{{tache.domaineTache.libelle}}</td>
                             <td>{{tache.description}}</td>
-                            <td><a href="{{path('editTache', {'idTache': tache.id})}}"><span title="Cliquer pour modifier">📝</span></td>
-                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}" onclick="return confirm('La suppression est définitive. Es-tu certain.e de vouloir supprimer ?')"><span title="Cliquer pour supprimer">❌</span></a></td>
+                            <td><a href="{{path('editTache', {'idTache': tache.id})}}"><span title="Cliquer pour modifier"><img src="{{ asset('images/edit.png' | trans)}}" alt="modifier" class="mr-2"></span></td>
+                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}" onclick="return confirm('La suppression est définitive. Es-tu certain.e de vouloir supprimer ?')"><span title="Cliquer pour supprimer"> <img src="{{ asset('images/bin.png' | trans)}}" alt="archiver" class="mr-2"></span></a></td>
                             </tr>
 
 

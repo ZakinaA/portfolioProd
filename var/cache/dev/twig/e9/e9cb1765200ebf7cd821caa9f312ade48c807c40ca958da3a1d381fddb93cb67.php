@@ -92,10 +92,10 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
 
                              <li><a rel=\"nofollow\" href=\"#\" class=\"dropdown-item\"> 
                         <div class=\"notification\">
-                          <div class=\"notification-content\"><i class=\"fa fa-upload bg-orange\"></i>Elles couvrent ";
+                          <div class=\"notification-content\"><i class=\"fa fa-upload bg-orange\"></i>Vous déclarez ";
         // line 15
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 15, $this->source); })()), "user", [], "any", false, false, false, 15), "etudiant", [], "any", false, false, false, 15), "getNbActivites", [], "any", false, false, false, 15), "html", null, true);
-        echo " activités sur 18 </div>
+        echo " activités</div>
                           <!--div class=\"notification-time\"><small>4 minutes ago</small></div-->
                         </div></a></li>
             
@@ -315,7 +315,7 @@ test contenu etudiant
 
                              <li><a rel=\"nofollow\" href=\"#\" class=\"dropdown-item\"> 
                         <div class=\"notification\">
-                          <div class=\"notification-content\"><i class=\"fa fa-upload bg-orange\"></i>Elles couvrent {{app.user.etudiant.getNbActivites}} activités sur 18 </div>
+                          <div class=\"notification-content\"><i class=\"fa fa-upload bg-orange\"></i>Vous déclarez {{app.user.etudiant.getNbActivites}} activités</div>
                           <!--div class=\"notification-time\"><small>4 minutes ago</small></div-->
                         </div></a></li>
             

@@ -157,7 +157,9 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                 } else {
                     echo "<a class=\"text\" href=\"";
                     echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpDesarchiver", ["idRp" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
-                    echo "\">désarchiver";
+                    echo "\"><img src=\"";
+                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("images/restore.png")), "html", null, true);
+                    echo "\" alt=\"Désarchiver\" class=\"mr-2\">";
                 }
                 echo "</a></td>                          </tr>
                         ";
@@ -273,7 +275,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
 
     public function getDebugInfo()
     {
-        return array (  247 => 78,  232 => 75,  228 => 74,  224 => 73,  220 => 72,  214 => 71,  210 => 70,  207 => 69,  203 => 68,  172 => 39,  166 => 38,  153 => 36,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  249 => 78,  234 => 75,  230 => 74,  226 => 73,  222 => 72,  216 => 71,  212 => 70,  209 => 69,  205 => 68,  174 => 39,  168 => 38,  153 => 36,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -313,7 +315,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                             <td>{{app.user.etudiant.rps[i].activites.count}}</td>
                             <td>{{app.user.etudiant.rps[i].dateDebut | date(\"d/m/Y\")}}</td>
                             <td>{{app.user.etudiant.rps[i].statut.libelle}} {% if app.user.etudiant.rps[i].statut.id == 2%} de {{app.user.etudiant.rps[i].enseignant.prenom}} {{app.user.etudiant.rps[i].enseignant.nom}} {% endif %}</td>
-                            <td>{% if app.user.etudiant.rps[i].archivage == 0 %}<a class=\"text\" href=\"{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\">archiver {% else %}<a class=\"text\" href=\"{{ path('rpDesarchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\">désarchiver{% endif %}</a></td>                          </tr>
+                            <td>{% if app.user.etudiant.rps[i].archivage == 0 %}<a class=\"text\" href=\"{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\">archiver {% else %}<a class=\"text\" href=\"{{ path('rpDesarchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\"><img src=\"{{ asset('images/restore.png' | trans)}}\" alt=\"Désarchiver\" class=\"mr-2\">{% endif %}</a></td>                          </tr>
                         {% endif %}
                       {% endfor %}
                     </tbody>
