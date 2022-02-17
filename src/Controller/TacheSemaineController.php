@@ -14,7 +14,7 @@ use App\Form\TacheSemaineType;
 class TacheSemaineController extends AbstractController
 {
 
-    public function remove($idTache)
+    public function removeTache($idTache)
     {
         $tache = $this->getDoctrine()
         ->getRepository(TacheSemaine::class)
@@ -29,6 +29,33 @@ class TacheSemaineController extends AbstractController
         return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
     }
 
+    public function editTache(Request $request, $idTache)
+    {
+        $tache = $this->getDoctrine()
+        ->getRepository(TacheSemaine::class)
+        ->find($idTache);
+
+        $idStage = $tache->getSemaineStage()->getStage()->getId();
+        $numSemaine= $tache->getSemaineStage()->getNumSemaine();
+
+        $form = $this->createForm(TacheSemaineType::class, $tache);
+        $form->handleRequest($request);
+
+        if($form->isSubmitted()){
+            $tache = $form->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($tache);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
+        }
+        else{  
+            return $this->render('tache_semaine/editTache.html.twig', array('form' => $form->createView()));
+        }
+    }
+
+
+    /*
     public function add(Request $request, $idStage, $numSemaine) : Response
     {
         
@@ -63,5 +90,5 @@ class TacheSemaineController extends AbstractController
                 return $this->render('tache_semaine/add.html.twig', array('form' => $form->createView(),  'templateTwigParent' => 'baseEtudiant.html.twig'));
    
             }    
-    }
+    }*/
 }

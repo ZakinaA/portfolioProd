@@ -20,11 +20,11 @@ class TacheSemaineType extends AbstractType
             array('label' => 'description',  
             'help' => 'décrivez une des tâches du jour' 
         ))
-            ->add('domaineTache', EntityType::class, array('class' => 'App\Entity\DomaineTache','choice_label' => 'libelle'))
+            ->add('domaineTache', EntityType::class, array('label'=> 'domaine','class' => 'App\Entity\DomaineTache','choice_label' => 'libelle'))
             //->add('domaineTache')
             ->add('jour', EntityType::class, array('class' => 'App\Entity\Jour','choice_label' => 'nom'))
             //->add('semaineStage')
-            ->add('ajouter', SubmitType::class, array('label' => 'Ajouter Tache'))
+            ->add('ajouter', SubmitType::class, array('label' => 'Valider Tâche'))
         ;
     }
 

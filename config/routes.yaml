@@ -157,8 +157,14 @@ showEditSemaineStage:
 
 #suppression d'une tache
 removeTache:
-  path: /etudiant/stage/tache/remove/{idTache}
+  path: /etudiant/stage/tache/removeTache/{idTache}
   controller: App\Controller\TacheSemaineController::remove
+
+#suppression d'une tache
+editTache:
+  path: /etudiant/stage/tache/editTache/{idTache}
+  controller: App\Controller\TacheSemaineController::editTache
+
 
 
 ##################################################################################

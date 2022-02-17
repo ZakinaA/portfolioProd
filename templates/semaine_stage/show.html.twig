@@ -1,5 +1,5 @@
 {% extends "baseEnseignant.html.twig" %}
-{% block titreContenu %}Stage de {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}{% endblock %}
+{% block titreContenu %}  <a href="{{ path('listeStagesSuivis') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}{% endblock %}
 
 
 {% block contenu%}
@@ -43,8 +43,7 @@
                                 <th scope="col-md-2">Jour</th>
                                 <th scope="col-md-2">Domaine</th>
                                 <th scope="col-md-7">Description</th>
-                                <th scope="col-md-7">Modification</th>
-                                <th scope="col-md-7">Supression</th>
+                               
                 </tr>
             </thead>
             <tbody>
@@ -55,8 +54,7 @@
                             <th scope="row">{{tache.jour.nom}}</th>
                             <td>{{tache.domaineTache.libelle}}</td>
                             <td>{{tache.description}}</td>
-                            <td>Modifier</td>
-                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}"> Supprimer</a></td>
+                            
                           </tr>
                         {% endfor %}
                     {% endif %}

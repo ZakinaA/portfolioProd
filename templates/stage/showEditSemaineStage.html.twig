@@ -23,7 +23,7 @@
                         <!-- Breadcrumb-->
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
-                                 <li class="breadcrumb-item active">{% if is_granted('ROLE_ETUDIANT') %} <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">{%endif%}{% if is_granted('ROLE_ENSEIGNANT') %}<a href="{{ path('showStage', {'idStage': stage.id }) }}"> {%endif%}Info</a></li>
+                                 <li class="breadcrumb-item active">{% if is_granted('ROLE_ETUDIANT') %} <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">{% endif %}{% if is_granted('ROLE_ENSEIGNANT') %}<a href="{{ path('showStage', {'idStage': stage.id }) }}"> {% endif %}Info</a></li>
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
@@ -40,17 +40,14 @@
 
 
                     <!-- formulaire ajout d'une tache  -->
-<div class="col-lg-10">
-      <div class="card">
-        <div class="card-header d-flex align-items-center">
-            <h3 class="h4"><h3 class="h4"> Ajouter une tâche</h3>
-        </div>
-
-
-
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header d-flex align-items-center">
+                        <h3 class="h4"><h3 class="h4"> Ajouter une tâche</h3>
+                    </div>
+                    
                     <div class="card-body">  
-                        {{ form_start(formTache) }}				
-             
+                        {{ form_start(formTache) }}	          
                             <div class="form-group row">    
                                 <div class="col-sm-12">
                                     <div class="row">
@@ -87,8 +84,8 @@
                                 <th scope="col-md-2">Jour</th>
                                 <th scope="col-md-2">Domaine</th>
                                 <th scope="col-md-7">Description</th>
-                                <th scope="col-md-7">Modification</th>
-                                <th scope="col-md-7">Supression</th>
+                                <th scope="col-md-7">Modif</th>
+                                <th scope="col-md-7">Supp</th>
                                 </tr>
                           </thead>
                           <tbody>
@@ -100,8 +97,8 @@
                             <th scope="row">{{tache.jour.nom}}</th>
                             <td>{{tache.domaineTache.libelle}}</td>
                             <td>{{tache.description}}</td>
-                            <td>Modifier</td>
-                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}" onclick="return confirm('La suppression est définitive. Es-tu certain.e de vouloir supprimer ?')"> Supprimer</a></td>
+                            <td><a href="{{path('editTache', {'idTache': tache.id})}}"><span title="Cliquer pour modifier">📝</span></td>
+                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}" onclick="return confirm('La suppression est définitive. Es-tu certain.e de vouloir supprimer ?')"><span title="Cliquer pour supprimer">❌</span></a></td>
                             </tr>
 
 
@@ -120,7 +117,7 @@
 
 
           <!-- formulaire ajout apprentissage et bilan  -->
-          <div class="col-lg-10">
+          <div class="col-lg-12">
       <div class="card">
         <div class="card-header d-flex align-items-center">
             <h3 class="h4"><h3 class="h4"> Bilan de la semaine </h3>
