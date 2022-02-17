@@ -124,6 +124,7 @@ class StageController extends AbstractController
            
             if ($formStage->isSubmitted() && $formStage->isValid()) 
             {    
+                echo ('stage validé');
                 $stage = $formStage->getData();
                 $stage->setEtudiant($etudiant);
 
@@ -136,7 +137,7 @@ class StageController extends AbstractController
                 //return $this->redirectToRoute('etudiantRps');    
             }
             else
-            {
+            { echo ('stage non validé');
                 return $this->render('stage/showAddEdit.html.twig', array('form' => $formStage->createView(),'stage'=>$stage, 'templateTwigParent' => 'baseEtudiant.html.twig'));   
    
             }
@@ -151,8 +152,24 @@ class StageController extends AbstractController
     public function getLesStagesSuivis(): Response
     {
         $enseignant = $this->getUser()->getEnseignant();
-        return $this->render('enseignant/stage/listeStagesSuivis.html.twig', ['enseignant' => $enseignant]);
+        $stages = $enseignant->getStages();
+        return $this->render('enseignant/stage/listeStagesSuivis.html.twig', ['stages' => $stages]);
     }
+
+    /**
+    * Liste les stages d'un étudiant
+    */
+    public function listStagesByEtudiant($idEtudiant): Response
+    {    
+        $stages = $this->getDoctrine()
+        ->getRepository(Stage::class)
+        ->findByEtudiant($idEtudiant);
+        return $this->render('enseignant/stage/listeStagesSuivis.html.twig', ['stages' => $stages]);
+    }
+
+
+
+
 
     /**
     * consultation d'un stage par un enseignant

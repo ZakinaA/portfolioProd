@@ -163,53 +163,63 @@ class __TwigTemplate_48b18b99260e497355917997d54ae58b5e88ae4fac4311e26aefc1224bc
                             <tr>
                               <th>Description</th>
                               <th>Code</th>
-                              <th>Libellé</th>                             
+                              <th>Libellé</th> 
+                              ";
+        // line 46
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
+        } else {
+            echo "                            
                               <th>Action</th>
-                            </tr>
+                              ";
+        }
+        // line 49
+        echo "                            </tr>
                           </thead>
                           <tbody>
                           ";
-        // line 50
+        // line 52
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 50, $this->source); })()), "activites", [], "any", false, false, false, 50));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 52, $this->source); })()), "activites", [], "any", false, false, false, 52));
         foreach ($context['_seq'] as $context["_key"] => $context["rpAct"]) {
-            // line 51
+            // line 53
             echo "                            <tr>
                               <td>";
-            // line 52
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rpAct"], "commentaire", [], "any", false, false, false, 52), "html", null, true);
+            // line 54
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rpAct"], "commentaire", [], "any", false, false, false, 54), "html", null, true);
             echo "</td>
                               <th scope=\"row\">";
-            // line 53
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rpAct"], "activite", [], "any", false, false, false, 53), "code", [], "any", false, false, false, 53), "html", null, true);
+            // line 55
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rpAct"], "activite", [], "any", false, false, false, 55), "code", [], "any", false, false, false, 55), "html", null, true);
             echo " </th>
                               <td><a ";
-            // line 54
+            // line 56
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
             } else {
                 echo " href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpActiviteEdit", ["idRpActivite" => twig_get_attribute($this->env, $this->source, $context["rpAct"], "id", [], "any", false, false, false, 54)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpActiviteEdit", ["idRpActivite" => twig_get_attribute($this->env, $this->source, $context["rpAct"], "id", [], "any", false, false, false, 56)]), "html", null, true);
                 echo "\"";
             }
             echo ">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rpAct"], "activite", [], "any", false, false, false, 54), "libelle", [], "any", false, false, false, 54), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["rpAct"], "activite", [], "any", false, false, false, 56), "libelle", [], "any", false, false, false, 56), "html", null, true);
             echo "</a></td>
-                              <td><a ";
-            // line 55
+                              ";
+            // line 57
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
             } else {
-                echo " class=\"text\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpActiviteRemove", ["idRpActivite" => twig_get_attribute($this->env, $this->source, $context["rpAct"], "id", [], "any", false, false, false, 55)]), "html", null, true);
-                echo "\"  onclick=\"return confirm('Confirmer la suppression ?')\" ";
+                // line 58
+                echo "                                <td><a class=\"text\" href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpActiviteRemove", ["idRpActivite" => twig_get_attribute($this->env, $this->source, $context["rpAct"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+                echo "\"  onclick=\"return confirm('Confirmer la suppression ?')\" >supprimer</a></td>
+                              ";
             }
-            echo ">supprimer</a></td>
-                            </tr>
+            // line 60
+            echo "                            </tr>
                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['rpAct'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 58
+        // line 62
         echo "                         </tbody>
                         </table>
 
@@ -243,7 +253,7 @@ class __TwigTemplate_48b18b99260e497355917997d54ae58b5e88ae4fac4311e26aefc1224bc
 
     public function getDebugInfo()
     {
-        return array (  213 => 58,  199 => 55,  188 => 54,  184 => 53,  180 => 52,  177 => 51,  173 => 50,  156 => 35,  151 => 33,  145 => 32,  131 => 29,  127 => 28,  114 => 26,  101 => 16,  91 => 8,  81 => 7,  68 => 4,  58 => 3,  36 => 1,);
+        return array (  223 => 62,  216 => 60,  210 => 58,  207 => 57,  196 => 56,  192 => 55,  188 => 54,  185 => 53,  181 => 52,  176 => 49,  169 => 46,  156 => 35,  151 => 33,  145 => 32,  131 => 29,  127 => 28,  114 => 26,  101 => 16,  91 => 8,  81 => 7,  68 => 4,  58 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -292,8 +302,10 @@ class __TwigTemplate_48b18b99260e497355917997d54ae58b5e88ae4fac4311e26aefc1224bc
                             <tr>
                               <th>Description</th>
                               <th>Code</th>
-                              <th>Libellé</th>                             
+                              <th>Libellé</th> 
+                              {% if is_granted('ROLE_ENSEIGNANT') %}{% else %}                            
                               <th>Action</th>
+                              {% endif%}
                             </tr>
                           </thead>
                           <tbody>
@@ -302,7 +314,9 @@ class __TwigTemplate_48b18b99260e497355917997d54ae58b5e88ae4fac4311e26aefc1224bc
                               <td>{{rpAct.commentaire}}</td>
                               <th scope=\"row\">{{rpAct.activite.code}} </th>
                               <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} href=\"{{ path('rpActiviteEdit', {'idRpActivite': rpAct.id }) }}\"{% endif %}>{{rpAct.activite.libelle}}</a></td>
-                              <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} class=\"text\" href=\"{{ path('rpActiviteRemove', { 'idRpActivite': rpAct.id }) }}\"  onclick=\"return confirm('Confirmer la suppression ?')\" {% endif %}>supprimer</a></td>
+                              {% if is_granted('ROLE_ENSEIGNANT') %}{% else %}
+                                <td><a class=\"text\" href=\"{{ path('rpActiviteRemove', { 'idRpActivite': rpAct.id }) }}\"  onclick=\"return confirm('Confirmer la suppression ?')\" >supprimer</a></td>
+                              {% endif %}
                             </tr>
                            {% endfor %}
                          </tbody>

@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* etudiant/baseEtudiant.html.twig */
+/* baseEtudiant.html.twig */
 class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb199dc extends Template
 {
     private $source;
@@ -42,12 +42,12 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "etudiant/baseEtudiant.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "baseEtudiant.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "etudiant/baseEtudiant.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "baseEtudiant.html.twig"));
 
-        $this->parent = $this->loadTemplate("base.html.twig", "etudiant/baseEtudiant.html.twig", 1);
+        $this->parent = $this->loadTemplate("base.html.twig", "baseEtudiant.html.twig", 1);
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -236,9 +236,6 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
         // line 71
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stageAddEdit");
         echo "\">Nouveau stage</a></li>
-                <li><a href=\"";
-        // line 72
-        echo "\">Carnet de bord</a></li>
               </ul>
             </li>    
           </ul>
@@ -253,13 +250,6 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
           </ul>
         -->
 
-
-
-
-
-
-
-   
         </nav>
         
 ";
@@ -271,7 +261,7 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
 
     }
 
-    // line 98
+    // line 90
     public function block_contenu($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -296,7 +286,7 @@ test contenu etudiant
 
     public function getTemplateName()
     {
-        return "etudiant/baseEtudiant.html.twig";
+        return "baseEtudiant.html.twig";
     }
 
     public function isTraitable()
@@ -306,7 +296,7 @@ test contenu etudiant
 
     public function getDebugInfo()
     {
-        return array (  275 => 98,  241 => 72,  237 => 71,  233 => 70,  224 => 64,  220 => 63,  216 => 62,  199 => 50,  195 => 49,  186 => 46,  184 => 45,  180 => 44,  169 => 35,  158 => 34,  144 => 29,  138 => 28,  132 => 27,  128 => 25,  118 => 24,  104 => 19,  97 => 15,  85 => 10,  81 => 9,  74 => 5,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  265 => 90,  237 => 71,  233 => 70,  224 => 64,  220 => 63,  216 => 62,  199 => 50,  195 => 49,  186 => 46,  184 => 45,  180 => 44,  169 => 35,  158 => 34,  144 => 29,  138 => 28,  132 => 27,  128 => 25,  118 => 24,  104 => 19,  97 => 15,  85 => 10,  81 => 9,  74 => 5,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -382,7 +372,6 @@ test contenu etudiant
               <ul id=\"stage\" class=\"collapse list-unstyled \">
                 <li><a href=\"{{ path('etudiantStages')}}\">Mes stages</a></li>
                 <li><a href=\"{{ path('stageAddEdit')}}\">Nouveau stage</a></li>
-                <li><a href=\"{#{ path('tacheSemaineAddEdit')}#}\">Carnet de bord</a></li>
               </ul>
             </li>    
           </ul>
@@ -397,13 +386,6 @@ test contenu etudiant
           </ul>
         -->
 
-
-
-
-
-
-
-   
         </nav>
         
 {% endblock %} {# fin bloc NavBar étudiant#}
@@ -413,6 +395,6 @@ test contenu etudiant
 
 test contenu etudiant
 {% endblock %}
-", "etudiant/baseEtudiant.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\etudiant\\baseEtudiant.html.twig");
+", "baseEtudiant.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\etudiant\\baseEtudiant.html.twig");
     }
 }

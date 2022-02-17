@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 
@@ -24,7 +25,7 @@ class StageType extends AbstractType
             ->add('copos', TextType::class, array('required' => false, 'label' => 'code postal *','disabled' => $options['champDesactive']))
             ->add('ville', TextType::class, array('required' => true, 'label' => 'ville *','disabled' => $options['champDesactive']))
             ->add('nomTuteur', TextType::class, array('required' => true, 'label' => 'nom tuteur *','disabled' => $options['champDesactive']))
-            ->add('mailTuteur', TextType::class, array('required' => true, 'label' => 'mail tuteur *','disabled' => $options['champDesactive']))
+            ->add('mailTuteur', EmailType::class, array('required' => true, 'label' => 'mail tuteur *','disabled' => $options['champDesactive']))
             ->add('telTuteur', TextType::class, array('required' => true, 'label' => 'tel tuteur *','disabled' => $options['champDesactive']))
             ->add('lieu', TextType::class, array('required' => false, 'label' => 'lieu de stage *','disabled' => $options['champDesactive']))
             ->add('sujet', TextType::class, array('required' => true, 'label' => 'sujet *','disabled' => $options['champDesactive']))

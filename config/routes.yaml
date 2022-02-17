@@ -238,7 +238,10 @@ showSemaineStage:
   path: /enseignant/stage/semaine/show/{idStage}/{numSemaine}
   controller: App\Controller\SemaineStageController::showSemaine
 
-
+# Liste les stages d'un étudiant (depuis le tableau de bord)
+listStagesByEtudiant:
+  path: /enseignant/stage/listStagesByEtudiant/{idEtudiant}
+  controller: App\Controller\StageController::listStagesByEtudiant
 
 
 ###### Routes admin ############

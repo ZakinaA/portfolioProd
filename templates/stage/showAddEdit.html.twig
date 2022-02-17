@@ -2,7 +2,13 @@
 {#% extends "etudiant/baseEtudiant.html.twig" %#}
 {% extends templateTwigParent %}
 
-{% block titreContenu %}  <a href="{{ path('listeStagesSuivis') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}{% endblock %}
+{% block titreContenu %}  
+    {% if is_granted('ROLE_ENSEIGNANT') %}
+        <a href="{{ path('listeStagesSuivis') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}
+    {% else %}
+        Mon stage
+    {% endif %}
+{% endblock %}
 
 {% block contenu%}
 

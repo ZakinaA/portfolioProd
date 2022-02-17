@@ -163,49 +163,60 @@ class __TwigTemplate_f3f9062800ec7e04980d465fc25681029aab7b6e93b4f5a36c72301c588
                           <thead>
                             <tr>
                               <th>Description</th>
-                              <th>Url</th>                           
-                              <th>Action</th>
-                            </tr>
+                              <th>Url</th> 
+                               ";
+        // line 47
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
+        } else {
+            echo "                          
+                                <th>Action</th>
+                                ";
+        }
+        // line 50
+        echo "                            </tr>
                           </thead>
                           <tbody>
                           ";
-        // line 51
+        // line 53
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 51, $this->source); })()), "productions", [], "any", false, false, false, 51));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 53, $this->source); })()), "productions", [], "any", false, false, false, 53));
         foreach ($context['_seq'] as $context["_key"] => $context["prod"]) {
-            // line 52
-            echo "                            <tr>
-                              <td><a ";
-            // line 53
-            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
-            } else {
-                echo " href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpProductionEdit", ["idProduction" => twig_get_attribute($this->env, $this->source, $context["prod"], "id", [], "any", false, false, false, 53)]), "html", null, true);
-                echo "\" ";
-            }
-            echo ">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prod"], "designation", [], "any", false, false, false, 53), "html", null, true);
-            echo "</a></td>
-                              <td>";
             // line 54
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prod"], "url", [], "any", false, false, false, 54), "html", null, true);
-            echo "</td>
+            echo "                            <tr>
                               <td><a ";
             // line 55
             if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
             } else {
-                echo " class=\"text\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpProductionRemove", ["idProduction" => twig_get_attribute($this->env, $this->source, $context["prod"], "id", [], "any", false, false, false, 55)]), "html", null, true);
-                echo "\"  onclick=\"return confirm('Confirmer la suppression ?')\" ";
+                echo " href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpProductionEdit", ["idProduction" => twig_get_attribute($this->env, $this->source, $context["prod"], "id", [], "any", false, false, false, 55)]), "html", null, true);
+                echo "\" ";
             }
-            echo ">supprimer</a></td>
-                            </tr>
+            echo ">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prod"], "designation", [], "any", false, false, false, 55), "html", null, true);
+            echo "</a></td>
+                              <td>";
+            // line 56
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["prod"], "url", [], "any", false, false, false, 56), "html", null, true);
+            echo "</td>
+                              ";
+            // line 57
+            if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
+            } else {
+                echo " 
+                                <td> class=\"text\" href=\"";
+                // line 58
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpProductionRemove", ["idProduction" => twig_get_attribute($this->env, $this->source, $context["prod"], "id", [], "any", false, false, false, 58)]), "html", null, true);
+                echo "\"  onclick=\"return confirm('Confirmer la suppression ?')\" >supprimer</a></td>
+                              ";
+            }
+            // line 60
+            echo "                            </tr>
                            ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['prod'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 58
+        // line 62
         echo "                         </tbody>
                         </table>
 
@@ -239,7 +250,7 @@ class __TwigTemplate_f3f9062800ec7e04980d465fc25681029aab7b6e93b4f5a36c72301c588
 
     public function getDebugInfo()
     {
-        return array (  209 => 58,  195 => 55,  191 => 54,  180 => 53,  177 => 52,  173 => 51,  157 => 37,  152 => 35,  146 => 34,  132 => 31,  127 => 29,  115 => 28,  102 => 18,  91 => 9,  81 => 8,  68 => 4,  58 => 3,  36 => 1,);
+        return array (  220 => 62,  213 => 60,  208 => 58,  203 => 57,  199 => 56,  188 => 55,  185 => 54,  181 => 53,  176 => 50,  169 => 47,  157 => 37,  152 => 35,  146 => 34,  132 => 31,  127 => 29,  115 => 28,  102 => 18,  91 => 9,  81 => 8,  68 => 4,  58 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -289,8 +300,10 @@ class __TwigTemplate_f3f9062800ec7e04980d465fc25681029aab7b6e93b4f5a36c72301c588
                           <thead>
                             <tr>
                               <th>Description</th>
-                              <th>Url</th>                           
-                              <th>Action</th>
+                              <th>Url</th> 
+                               {% if is_granted('ROLE_ENSEIGNANT') %}{% else %}                          
+                                <th>Action</th>
+                                {% endif %}
                             </tr>
                           </thead>
                           <tbody>
@@ -298,7 +311,9 @@ class __TwigTemplate_f3f9062800ec7e04980d465fc25681029aab7b6e93b4f5a36c72301c588
                             <tr>
                               <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} href=\"{{ path('rpProductionEdit', {'idProduction': prod.id }) }}\" {% endif %}>{{prod.designation}}</a></td>
                               <td>{{prod.url}}</td>
-                              <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} class=\"text\" href=\"{{ path('rpProductionRemove', { 'idProduction': prod.id }) }}\"  onclick=\"return confirm('Confirmer la suppression ?')\" {% endif %}>supprimer</a></td>
+                              {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} 
+                                <td> class=\"text\" href=\"{{ path('rpProductionRemove', { 'idProduction': prod.id }) }}\"  onclick=\"return confirm('Confirmer la suppression ?')\" >supprimer</a></td>
+                              {% endif %}
                             </tr>
                            {% endfor %}
                          </tbody>

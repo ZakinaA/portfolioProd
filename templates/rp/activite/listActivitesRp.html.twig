@@ -42,8 +42,10 @@
                             <tr>
                               <th>Description</th>
                               <th>Code</th>
-                              <th>Libellé</th>                             
+                              <th>Libellé</th> 
+                              {% if is_granted('ROLE_ENSEIGNANT') %}{% else %}                            
                               <th>Action</th>
+                              {% endif%}
                             </tr>
                           </thead>
                           <tbody>
@@ -52,7 +54,9 @@
                               <td>{{rpAct.commentaire}}</td>
                               <th scope="row">{{rpAct.activite.code}} </th>
                               <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} href="{{ path('rpActiviteEdit', {'idRpActivite': rpAct.id }) }}"{% endif %}>{{rpAct.activite.libelle}}</a></td>
-                              <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} class="text" href="{{ path('rpActiviteRemove', { 'idRpActivite': rpAct.id }) }}"  onclick="return confirm('Confirmer la suppression ?')" {% endif %}>supprimer</a></td>
+                              {% if is_granted('ROLE_ENSEIGNANT') %}{% else %}
+                                <td><a class="text" href="{{ path('rpActiviteRemove', { 'idRpActivite': rpAct.id }) }}"  onclick="return confirm('Confirmer la suppression ?')" >supprimer</a></td>
+                              {% endif %}
                             </tr>
                            {% endfor %}
                          </tbody>

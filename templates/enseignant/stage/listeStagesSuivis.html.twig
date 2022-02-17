@@ -23,7 +23,8 @@
                             </tr>
                           </thead>
                           <tbody>
-                          {% for stage in enseignant.stages  %}
+                          
+                          {% for stage in stages  %}    
                             <tr>
                               <th scope="row"><a href="{{ path('showStage', { 'idStage': stage.id }) }}">{{stage.etudiant.prenom}} {{stage.etudiant.nom}} </a></th>
                               <td>{{stage.etudiant.niveau.nom}}</td>

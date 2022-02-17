@@ -103,21 +103,24 @@ return [
                         .')'
                         .'|promo/etudiants/list/([^/]++)/([^/]++)/([^/]++)(*:958)'
                         .'|etudiant/rp/list/([^/]++)(*:991)'
-                        .'|stage/s(?'
-                            .'|how/([^/]++)(*:1021)'
-                            .'|emaine/show/([^/]++)/([^/]++)(*:1059)'
+                        .'|stage/(?'
+                            .'|s(?'
+                                .'|how/([^/]++)(*:1024)'
+                                .'|emaine/show/([^/]++)/([^/]++)(*:1062)'
+                            .')'
+                            .'|listStagesByEtudiant/([^/]++)(*:1101)'
                         .')'
                     .')'
                 .')'
                 .'|/admin/(?'
                     .'|s(?'
                         .'|howEditE(?'
-                            .'|nseignant/([^/]++)(*:1114)'
-                            .'|tudiant/([^/]++)(*:1139)'
+                            .'|nseignant/([^/]++)(*:1156)'
+                            .'|tudiant/([^/]++)(*:1181)'
                         .')'
-                        .'|upprimerCompte/([^/]++)(*:1172)'
+                        .'|upprimerCompte/([^/]++)(*:1214)'
                     .')'
-                    .'|validerCompte/([^/]++)(*:1204)'
+                    .'|validerCompte/([^/]++)(*:1246)'
                 .')'
             .')/?$}sDu',
     ],
@@ -154,12 +157,13 @@ return [
         902 => [[['_route' => 'validerRp', 'idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp'], null, null, false, true, null]],
         958 => [[['_route' => 'listEtudiantsParPromo', '_controller' => 'App\\Controller\\PromotionController::listEtudiantsParPromo'], ['idSpecialite', 'idNiveau', 'source'], null, null, false, true, null]],
         991 => [[['_route' => 'listRpParEtudiant', '_controller' => 'App\\Controller\\RpController::listParEtudiant'], ['idEtudiant'], null, null, false, true, null]],
-        1021 => [[['_route' => 'showStage', '_controller' => 'App\\Controller\\StageController::showStage'], ['idStage'], null, null, false, true, null]],
-        1059 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
-        1114 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
-        1139 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
-        1172 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
-        1204 => [
+        1024 => [[['_route' => 'showStage', '_controller' => 'App\\Controller\\StageController::showStage'], ['idStage'], null, null, false, true, null]],
+        1062 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
+        1101 => [[['_route' => 'listStagesByEtudiant', '_controller' => 'App\\Controller\\StageController::listStagesByEtudiant'], ['idEtudiant'], null, null, false, true, null]],
+        1156 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
+        1181 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
+        1214 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
+        1246 => [
             [['_route' => 'validerCompte', '_controller' => 'App\\Controller\\AdminController::validerCompte'], ['email'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

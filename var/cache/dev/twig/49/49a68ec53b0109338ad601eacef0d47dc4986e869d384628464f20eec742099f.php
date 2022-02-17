@@ -155,9 +155,12 @@ class __TwigTemplate_30f084c36be1d6f58a4271f81e1f98f274c8e854d924afaf9b94baa36cd
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["e"], "rps", [], "any", false, false, false, 40), "count", [], "any", false, false, false, 40), "html", null, true);
                 echo "</a></td>
                             
-                             <td>";
+                             <td><a href=\"";
                 // line 42
-                echo "</td>
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listStagesByEtudiant", ["idEtudiant" => twig_get_attribute($this->env, $this->source, $context["e"], "id", [], "any", false, false, false, 42)]), "html", null, true);
+                echo "\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["e"], "stages", [], "any", false, false, false, 42), "count", [], "any", false, false, false, 42), "html", null, true);
+                echo "</a></td>
                             </tr>
                             ";
             }
@@ -195,7 +198,7 @@ class __TwigTemplate_30f084c36be1d6f58a4271f81e1f98f274c8e854d924afaf9b94baa36cd
 
     public function getDebugInfo()
     {
-        return array (  168 => 45,  160 => 42,  153 => 40,  149 => 39,  145 => 38,  142 => 37,  138 => 36,  112 => 21,  97 => 8,  95 => 7,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
+        return array (  171 => 45,  160 => 42,  153 => 40,  149 => 39,  145 => 38,  142 => 37,  138 => 36,  112 => 21,  97 => 8,  95 => 7,  90 => 5,  80 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -241,7 +244,7 @@ class __TwigTemplate_30f084c36be1d6f58a4271f81e1f98f274c8e854d924afaf9b94baa36cd
                               <td>{{e.prenom}}</td>
                               <td> <a href=\"{{ path('listRpParEtudiant', {'idEtudiant': e.id  }) }}\">{{e.rps.count}}</a></td>
                             
-                             <td>{#{e.stages.count}#}</td>
+                             <td><a href=\"{{ path('listStagesByEtudiant', {'idEtudiant': e.id  }) }}\">{{e.stages.count}}</a></td>
                             </tr>
                             {% endfor %}
                          </tbody>

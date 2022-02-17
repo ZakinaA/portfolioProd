@@ -43,8 +43,10 @@
                           <thead>
                             <tr>
                               <th>Description</th>
-                              <th>Url</th>                           
-                              <th>Action</th>
+                              <th>Url</th> 
+                               {% if is_granted('ROLE_ENSEIGNANT') %}{% else %}                          
+                                <th>Action</th>
+                                {% endif %}
                             </tr>
                           </thead>
                           <tbody>
@@ -52,7 +54,9 @@
                             <tr>
                               <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} href="{{ path('rpProductionEdit', {'idProduction': prod.id }) }}" {% endif %}>{{prod.designation}}</a></td>
                               <td>{{prod.url}}</td>
-                              <td><a {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} class="text" href="{{ path('rpProductionRemove', { 'idProduction': prod.id }) }}"  onclick="return confirm('Confirmer la suppression ?')" {% endif %}>supprimer</a></td>
+                              {% if is_granted('ROLE_ENSEIGNANT') %}{% else %} 
+                                <td> class="text" href="{{ path('rpProductionRemove', { 'idProduction': prod.id }) }}"  onclick="return confirm('Confirmer la suppression ?')" >supprimer</a></td>
+                              {% endif %}
                             </tr>
                            {% endfor %}
                          </tbody>

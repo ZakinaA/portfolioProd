@@ -39,7 +39,7 @@
                               <td>{{e.prenom}}</td>
                               <td> <a href="{{ path('listRpParEtudiant', {'idEtudiant': e.id  }) }}">{{e.rps.count}}</a></td>
                             
-                             <td>{#{e.stages.count}#}</td>
+                             <td><a href="{{ path('listStagesByEtudiant', {'idEtudiant': e.id  }) }}">{{e.stages.count}}</a></td>
                             </tr>
                             {% endfor %}
                          </tbody>
