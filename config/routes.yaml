@@ -155,7 +155,10 @@ showEditSemaineStage:
     path: etudiant/stage/showEditSemaineStage/{idStage<\d+>?0}/{numSemaine<\d+>?0}
     controller: App\Controller\StageController::showEditSemaineStage
 
-
+#suppression d'une tache
+removeTache:
+  path: /etudiant/stage/tache/remove/{idTache}
+  controller: App\Controller\TacheSemaineController::remove
 
 
 ##################################################################################

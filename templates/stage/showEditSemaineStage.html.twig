@@ -101,7 +101,7 @@
                             <td>{{tache.domaineTache.libelle}}</td>
                             <td>{{tache.description}}</td>
                             <td>Modifier</td>
-                            <td>Supprimer</td>
+                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}" onclick="return confirm('La suppression est définitive. Es-tu certain.e de vouloir supprimer ?')"> Supprimer</a></td>
                             </tr>
 
 

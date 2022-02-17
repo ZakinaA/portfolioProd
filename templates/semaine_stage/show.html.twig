@@ -56,7 +56,7 @@
                             <td>{{tache.domaineTache.libelle}}</td>
                             <td>{{tache.description}}</td>
                             <td>Modifier</td>
-                            <td>Supprimer</td>
+                            <td><a href="{{path('removeTache', {'idTache': tache.id})}}"> Supprimer</a></td>
                           </tr>
                         {% endfor %}
                     {% endif %}

@@ -89,31 +89,32 @@ return [
                     .'|tudiant/stage/(?'
                         .'|add(?:/(\\d+))?(*:668)'
                         .'|showEditSemaineStage(?:/(\\d+)(?:/(\\d+))?)?(*:718)'
+                        .'|tache/remove/([^/]++)(*:747)'
                     .')'
                     .'|nseignant/(?'
                         .'|rp/(?'
-                            .'|show/([^/]++)(*:759)'
-                            .'|commentaire/add/([^/]++)(*:791)'
-                            .'|list/([^/]++)(*:812)'
-                            .'|valider(?:/(\\d+))?(*:838)'
+                            .'|show/([^/]++)(*:788)'
+                            .'|commentaire/add/([^/]++)(*:820)'
+                            .'|list/([^/]++)(*:841)'
+                            .'|valider(?:/(\\d+))?(*:867)'
                         .')'
-                        .'|promo/etudiants/list/([^/]++)/([^/]++)/([^/]++)(*:894)'
-                        .'|etudiant/rp/list/([^/]++)(*:927)'
+                        .'|promo/etudiants/list/([^/]++)/([^/]++)/([^/]++)(*:923)'
+                        .'|etudiant/rp/list/([^/]++)(*:956)'
                         .'|stage/s(?'
-                            .'|how/([^/]++)(*:957)'
-                            .'|emaine/show/([^/]++)/([^/]++)(*:994)'
+                            .'|how/([^/]++)(*:986)'
+                            .'|emaine/show/([^/]++)/([^/]++)(*:1023)'
                         .')'
                     .')'
                 .')'
                 .'|/admin/(?'
                     .'|s(?'
                         .'|howEditE(?'
-                            .'|nseignant/([^/]++)(*:1048)'
-                            .'|tudiant/([^/]++)(*:1073)'
+                            .'|nseignant/([^/]++)(*:1078)'
+                            .'|tudiant/([^/]++)(*:1103)'
                         .')'
-                        .'|upprimerCompte/([^/]++)(*:1106)'
+                        .'|upprimerCompte/([^/]++)(*:1136)'
                     .')'
-                    .'|validerCompte/([^/]++)(*:1138)'
+                    .'|validerCompte/([^/]++)(*:1168)'
                 .')'
             .')/?$}sDu',
     ],
@@ -142,18 +143,19 @@ return [
         624 => [[['_route' => 'confirmMail', '_controller' => 'App\\Controller\\RegisterController::confirmMail'], ['token'], null, null, false, true, null]],
         668 => [[['_route' => 'stageAddEdit', 'idStage' => '0', '_controller' => 'App\\Controller\\StageController::addEdit'], ['idStage'], null, null, false, true, null]],
         718 => [[['_route' => 'showEditSemaineStage', 'idStage' => '0', 'numSemaine' => '0', '_controller' => 'App\\Controller\\StageController::showEditSemaineStage'], ['idStage', 'numSemaine'], null, null, false, true, null]],
-        759 => [[['_route' => 'showRp', '_controller' => 'App\\Controller\\RpController::show'], ['idRp'], null, null, false, true, null]],
-        791 => [[['_route' => 'addCommentaireRp', '_controller' => 'App\\Controller\\RpCommentaireController::addCommentaire'], ['idRp'], null, null, false, true, null]],
-        812 => [[['_route' => 'listToutesLesRpPromosEnCours', '_controller' => 'App\\Controller\\EnseignantController::listRp'], ['idSpecialite'], null, null, false, true, null]],
-        838 => [[['_route' => 'validerRp', 'idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp'], null, null, false, true, null]],
-        894 => [[['_route' => 'listEtudiantsParPromo', '_controller' => 'App\\Controller\\PromotionController::listEtudiantsParPromo'], ['idSpecialite', 'idNiveau', 'source'], null, null, false, true, null]],
-        927 => [[['_route' => 'listRpParEtudiant', '_controller' => 'App\\Controller\\RpController::listParEtudiant'], ['idEtudiant'], null, null, false, true, null]],
-        957 => [[['_route' => 'showStage', '_controller' => 'App\\Controller\\StageController::showStage'], ['idStage'], null, null, false, true, null]],
-        994 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
-        1048 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
-        1073 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
-        1106 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
-        1138 => [
+        747 => [[['_route' => 'removeTache', '_controller' => 'App\\Controller\\TacheSemaineController::remove'], ['idTache'], null, null, false, true, null]],
+        788 => [[['_route' => 'showRp', '_controller' => 'App\\Controller\\RpController::show'], ['idRp'], null, null, false, true, null]],
+        820 => [[['_route' => 'addCommentaireRp', '_controller' => 'App\\Controller\\RpCommentaireController::addCommentaire'], ['idRp'], null, null, false, true, null]],
+        841 => [[['_route' => 'listToutesLesRpPromosEnCours', '_controller' => 'App\\Controller\\EnseignantController::listRp'], ['idSpecialite'], null, null, false, true, null]],
+        867 => [[['_route' => 'validerRp', 'idRp' => '0', '_controller' => 'App\\Controller\\RpController::valider'], ['idRp'], null, null, false, true, null]],
+        923 => [[['_route' => 'listEtudiantsParPromo', '_controller' => 'App\\Controller\\PromotionController::listEtudiantsParPromo'], ['idSpecialite', 'idNiveau', 'source'], null, null, false, true, null]],
+        956 => [[['_route' => 'listRpParEtudiant', '_controller' => 'App\\Controller\\RpController::listParEtudiant'], ['idEtudiant'], null, null, false, true, null]],
+        986 => [[['_route' => 'showStage', '_controller' => 'App\\Controller\\StageController::showStage'], ['idStage'], null, null, false, true, null]],
+        1023 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
+        1078 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
+        1103 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
+        1136 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
+        1168 => [
             [['_route' => 'validerCompte', '_controller' => 'App\\Controller\\AdminController::validerCompte'], ['email'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
