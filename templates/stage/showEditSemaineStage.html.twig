@@ -23,7 +23,7 @@
                         <!-- Breadcrumb-->
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="{{ path('showSemaineStage', {'idStage': stage.id, 'numSemaine': i}) }}">Info</a></li>                           
+                                 <li class="breadcrumb-item active">{% if is_granted('ROLE_ETUDIANT') %} <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">{%endif%}{% if is_granted('ROLE_ENSEIGNANT') %}<a href="{{ path('showStage', {'idStage': stage.id }) }}"> {%endif%}Info</a></li>
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
@@ -33,9 +33,21 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- bloc de navigation sontenant les numéros de semaine du stage -->
+                    <!-- bloc de navigation contenant les numéros de semaine du stage -->
+            </div>
+                </div>
+
+
 
                     <!-- formulaire ajout d'une tache  -->
+<div class="col-lg-10">
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4"><h3 class="h4"> Ajouter une tâche</h3>
+        </div>
+
+
+
                     <div class="card-body">  
                         {{ form_start(formTache) }}				
              
@@ -61,11 +73,59 @@
                             
                         {{ form_end(formTache) }}
                     </div>
-                    <!-- FIN formulaire ajout d'une tache  -->
+                    <!-- FIN formulaire ajout d'une tache  -->    
+ 
+
+<!--Tableau affichage activités -->
+
+
+ <div class="card-body">
+                      <div class="table-responsive">   
+                        <table class="table table-striped table-sm">
+                          <thead>
+                            <tr>
+                                <th scope="col-md-2">Jour</th>
+                                <th scope="col-md-2">Domaine</th>
+                                <th scope="col-md-7">Description</th>
+                                <th scope="col-md-7">Modification</th>
+                                <th scope="col-md-7">Supression</th>
+                                </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              {% if semaine.tachesemaines is defined %}
+                        {% for tache in semaine.tachesemaines|sort((a, b) => a.jour.nom <=> b.jour.nom) %}
+
+                            <tr>
+                            <th scope="row">{{tache.jour.nom}}</th>
+                            <td>{{tache.domaineTache.libelle}}</td>
+                            <td>{{tache.description}}</td>
+                            <td>Modifier</td>
+                            <td>Supprimer</td>
+                            </tr>
 
 
 
-                     <!-- formulaire ajout apprentissage et bilan  -->
+                        {% endfor %}
+                        {% endif %}
+                            </tr>
+                           
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+  </div>
+                    </div>
+ <!-- Fin tableau affichage activités -->
+
+
+          <!-- formulaire ajout apprentissage et bilan  -->
+          <div class="col-lg-10">
+      <div class="card">
+        <div class="card-header d-flex align-items-center">
+            <h3 class="h4"><h3 class="h4"> Bilan de la semaine </h3>
+        </div>
+
                     <div class="card-body">  
                         {{ form_start(formSemaine) }}
                             <!-- 1ère ligne de formulaire -->
@@ -91,55 +151,16 @@
                         {{ form_end(formSemaine) }}
 
                     </div>
+                      </div>
+                    </div>
                      <!-- FIN formulaire ajout d'une tache  -->
-                     
-<!--Tableau affichage activités -->
-
-                        <div id="activities_field_list" class="mb-5">                    
-                        </div>
-                        <table class="table ">
-                        <thead>
-                            <tr>
-                            <th scope="col-md-2">Jour</th>
-                            <th scope="col-md-2">Domaine</th>
-                            <th scope="col-md-7">Description</th>
-                            <th scope="col-md-7">Modification</th>
-                            <th scope="col-md-7">Supression</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-                        {% if semaine.tachesemaines is defined %}
-                        {% for tache in semaine.tachesemaines|sort((a, b) => a.jour.nom <=> b.jour.nom) %}
-
-                            <tr>
-                            <th scope="row">{{tache.jour.nom}}</th>
-                            <td>{{tache.domaineTache.libelle}}</td>
-                            <td>{{tache.description}}</td>
-                            <td>Modifier</td>
-                            <td>Supprimer</td>
-                            </tr>
-
-
-
-                        {% endfor %}
-                        {% endif %}
-
-
-                        </tbody>
-                        </table>
- <!-- Fin tableau affichage activités -->
 
 
 
 
 
 
-
-
-
-                 </div>
-                </div>
+                
             </div>
         </div>
 <!--/section-->

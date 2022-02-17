@@ -24,17 +24,15 @@
                         <!-- Breadcrumb-->
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
-                                <li class="breadcrumb-item active"><a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">Info</a></li>
+                                <li class="breadcrumb-item active">{% if is_granted('ROLE_ETUDIANT') %} <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">{%endif%}{% if is_granted('ROLE_ENSEIGNANT') %}<a href="{{ path('showStage', {'idStage': stage.id }) }}"> {%endif%}Info</a></li>
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
-                                        <li class="breadcrumb-item"><a href="{{path('showSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> Semaine {{ i }} </a></li>                         
+                                        <li class="breadcrumb-item"><a href="{{path('showEditSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> Semaine {{ i }} </a></li>                         
                                     {% endfor %}
                                 {% endif %}
                             </ul>
                         </div>
-
-
 
 
                     </div>

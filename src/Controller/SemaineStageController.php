@@ -70,13 +70,16 @@ class SemaineStageController extends AbstractController
 
 
     /*
-     * consultation de l'activité d'une semaine de stage d'un étudiant
+     * consultation par l'enseignant de l'activité d'une semaine de stage d'un étudiant
     */
     public function showSemaine($idStage, $numSemaine)
     {
         $repository = $this->getDoctrine()->getRepository(Stage::class);
         $stage = $repository->find($idStage);
-        $semaineStage = $stage->getSemaineStage($numSemaine);
+
+        $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
+        $semaineStage = $repository->findOneBy(
+            ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
 
         return $this->render('semaine_stage/show.html.twig', array('semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEnseignant.html.twig'));   
     }

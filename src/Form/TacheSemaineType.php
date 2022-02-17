@@ -8,13 +8,18 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextAreaType;
 
 class TacheSemaineType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('description')
+            //->add('description')
+            ->add('description', TextAreaType::class, 
+            array('label' => 'description',  
+            'help' => 'décrivez une des tâches du jour' 
+        ))
             ->add('domaineTache', EntityType::class, array('class' => 'App\Entity\DomaineTache','choice_label' => 'libelle'))
             //->add('domaineTache')
             ->add('jour', EntityType::class, array('class' => 'App\Entity\Jour','choice_label' => 'nom'))

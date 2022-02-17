@@ -40,12 +40,14 @@ class StageType extends AbstractType
             'label' =>'date de fin *',
             'placeholder' => 'jj/mm/aaaa'))
             ->add('duree', IntegerType::class, array('required' => true, 'label' => 'durée *','help' => 'nombre de semaines', 'disabled' => $options['champDesactive']))
-            ->add('horLun')
-            ->add('horMar')
-            ->add('horMer')
-            ->add('horJeu')
-            ->add('horVen')
-            ->add('horSam')
+            ->add('horLun', TextType::class, array('required' => false, 'label' => 'Horaire Lundi','disabled' => $options['champDesactive']))
+            ->add('horMar', TextType::class, array('required' => false, 'label' => 'Horaire Mardi','disabled' => $options['champDesactive']))
+            ->add('horMer', TextType::class, array('required' => false, 'label' => 'Horaire Mercredi','disabled' => $options['champDesactive']))
+            ->add('horJeu', TextType::class, array('required' => false, 'label' => 'Horaire Jeudi','disabled' => $options['champDesactive']))
+            ->add('horVen', TextType::class, array('required' => false, 'label' => 'Horaire Vendredi','disabled' => $options['champDesactive']))
+            ->add('horSam', TextType::class, array('required' => false, 'label' => 'Horaire Samedi','disabled' => $options['champDesactive']))
+
+    
             //->add('etudiant')
             //->add('enseignant')
         ;

@@ -103,7 +103,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Action<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -184,22 +184,68 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
             <h3 class=\"h4\"><h3 class=\"h4\"> Mes stages </h3>
         </div>
         <div class=\"card-body\">
-            <div class=\"table-responsive\">   
-                <table class=\"table table-striped table-sm\">
-                    <thead>
-                      <tr>
-                        <th>Entreprise</th>
-                        <th>Réferent</th>
-                        <th>Mission</th>
-                        <th>Date</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-          
-                      ";
-        // line 76
-        echo "                    </tbody>
-                </table>
+            <div class=\"table-responsive\">
+
+<table class=\"table table-striped table-sm\">
+                          <thead>
+                            <tr>
+                              <th>nom entreprise</th>
+                              <th>Sujet </th>
+                              <th>nom tuteur </th>
+                              <th>date début</th>
+                              <th>date fin</th>
+                                <th>Suivi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          ";
+        // line 68
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 68, $this->source); })()), "user", [], "any", false, false, false, 68), "etudiant", [], "any", false, false, false, 68), "stages", [], "any", false, false, false, 68));
+        foreach ($context['_seq'] as $context["_key"] => $context["stage"]) {
+            // line 69
+            echo "                            <tr>
+                              <th scope=\"row\">";
+            // line 70
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomEntreprise", [], "any", false, false, false, 70), "html", null, true);
+            echo " </th>
+                              <td><a class=\"text\" href=\"";
+            // line 71
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stageAddEdit", ["idStage" => twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 71)]), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "sujet", [], "any", false, false, false, 71), "html", null, true);
+            echo "</a></td>
+                              <td>";
+            // line 72
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomTuteur", [], "any", false, false, false, 72), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 73
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "dateDebut", [], "any", false, false, false, 73), "d/m/Y"), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 74
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "dateFin", [], "any", false, false, false, 74), "d/m/Y"), "html", null, true);
+            echo "</td>
+                              <td>";
+            // line 75
+            if ((null === twig_get_attribute($this->env, $this->source, $context["stage"], "enseignant", [], "any", false, false, false, 75))) {
+                echo " A définir ";
+            } else {
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["stage"], "enseignant", [], "any", false, false, false, 75), "prenom", [], "any", false, false, false, 75), "html", null, true);
+                echo " ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["stage"], "enseignant", [], "any", false, false, false, 75), "nom", [], "any", false, false, false, 75), "html", null, true);
+            }
+            echo "</td>
+                            </tr>
+                            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['stage'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 78
+        echo "                         </tbody>
+                        </table>
             </div>
           </div>
     </div>
@@ -227,7 +273,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
 
     public function getDebugInfo()
     {
-        return array (  201 => 76,  172 => 39,  166 => 38,  153 => 36,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  247 => 78,  232 => 75,  228 => 74,  224 => 73,  220 => 72,  214 => 71,  210 => 70,  207 => 69,  203 => 68,  172 => 39,  166 => 38,  153 => 36,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -254,7 +300,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                              <th>Action<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -285,30 +331,32 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
             <h3 class=\"h4\"><h3 class=\"h4\"> Mes stages </h3>
         </div>
         <div class=\"card-body\">
-            <div class=\"table-responsive\">   
-                <table class=\"table table-striped table-sm\">
-                    <thead>
-                      <tr>
-                        <th>Entreprise</th>
-                        <th>Réferent</th>
-                        <th>Mission</th>
-                        <th>Date</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-          
-                      {#% for stage in app.user.etudiant.stages %\"}
-                          <tr>
-                            <th scope=\"row\"></th>
-                            <td><a class=\"text\" href=\"\"></a></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                          </tr>
-                      {#% endfor %#}
-                    </tbody>
-                </table>
+            <div class=\"table-responsive\">
+
+<table class=\"table table-striped table-sm\">
+                          <thead>
+                            <tr>
+                              <th>nom entreprise</th>
+                              <th>Sujet </th>
+                              <th>nom tuteur </th>
+                              <th>date début</th>
+                              <th>date fin</th>
+                                <th>Suivi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                          {% for stage in app.user.etudiant.stages  %}
+                            <tr>
+                              <th scope=\"row\">{{stage.nomEntreprise}} </th>
+                              <td><a class=\"text\" href=\"{{ path('stageAddEdit', { 'idStage': stage.id }) }}\">{{stage.sujet}}</a></td>
+                              <td>{{stage.nomTuteur}}</td>
+                              <td>{{stage.dateDebut | date(\"d/m/Y\")}}</td>
+                              <td>{{stage.dateFin| date(\"d/m/Y\")}}</td>
+                              <td>{% if stage.enseignant is null%} A définir {% else %}{{stage.enseignant.prenom}} {{stage.enseignant.nom}}{% endif %}</td>
+                            </tr>
+                            {% endfor %}
+                         </tbody>
+                        </table>
             </div>
           </div>
     </div>

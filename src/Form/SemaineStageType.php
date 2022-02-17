@@ -10,15 +10,22 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use App\Form\TacheSemaineType;
+use Symfony\Component\Form\Extension\Core\Type\TextAreaType;
 
 class SemaineStageType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            //->add('numSemaine')
-            ->add('apprentissage')
-            ->add('bilan')
+       
+            $builder
+            ->add('apprentissage', TextAreaType::class, 
+            array('label' => 'apprentissage',  
+            'help' => 'qu avez-vous appris cette semaine ?' 
+            ))
+            ->add('bilan', TextAreaType::class, 
+            array('label' => 'bilan',  
+            'help' => 'quels sont les points positifs et/ou négatifs  ?' 
+            ))
             //->add('stage')
             ->add('enregistrer', SubmitType::class, array('label' => 'Enregister bilan semaine'))
         ;

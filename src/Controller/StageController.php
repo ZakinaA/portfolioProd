@@ -93,7 +93,7 @@ class StageController extends AbstractController
     public function addEdit(Request $request, $idStage): Response
     {
         $user = $this->getUser();  
-        // paramètre par défaut de la route à 0. Si 0, on crée une nouvelle rp
+        // paramètre par défaut de la route à 0. Si 0, on crée un nouveau stage
         if ($idStage == 0)
         {
             $stage = new Stage();       
