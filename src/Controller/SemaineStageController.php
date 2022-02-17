@@ -80,6 +80,8 @@ class SemaineStageController extends AbstractController
         $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
         $semaineStage = $repository->findOneBy(
             ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
+            
+        
 
         return $this->render('semaine_stage/show.html.twig', array('semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEnseignant.html.twig'));   
     }

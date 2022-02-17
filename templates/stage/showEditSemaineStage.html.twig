@@ -1,7 +1,7 @@
 {% extends "etudiant/baseEtudiant.html.twig" %}
 
 
-{% block titreContenu %}Mon stage {% endblock %}
+{% block titreContenu %}Mon stage chez {{stage.nomEntreprise}}{% endblock %}
 {% block contenu%}
 </br>
 {% for message in app.flashes('success') %}{# affichera un message de succès si l'action est réussie #}

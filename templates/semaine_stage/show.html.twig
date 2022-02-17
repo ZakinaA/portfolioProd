@@ -32,11 +32,16 @@
 <div class="col-lg-10">
   <div class="card">
     <div class="card-header d-flex align-items-center">
-        <h3 class="h4"><h3 class="h4"> Liste des tâches de la semaine {{semaineStage.numSemaine}} </h3>
+        <h3 class="h4"><h3 class="h4"> {% if semaineStage.numSemaine is defined %}Liste des tâches de la semaine {{semaineStage.numSemaine}} {% endif %} </h3>
     </div>
 
     <div class="card-body">
-      <div class="table-responsive">   
+      <div class="table-responsive">  
+
+       {% if semaineStage is null %}
+          Aucune tâche n'a encore été renseignée sur cette semaine
+      
+        {% else %}
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -47,8 +52,8 @@
                 </tr>
             </thead>
             <tbody>
-                
-                    {% if semaineStage.tachesemaines is defined %}
+                    {% if semaineStage is defined %}
+                      {% if semaineStage.tachesemaines is defined %}
                         {% for tache in semaineStage.tachesemaines|sort((a, b) => a.jour.nom <=> b.jour.nom) %}
                           <tr>
                             <th scope="row">{{tache.jour.nom}}</th>
@@ -57,10 +62,15 @@
                             
                           </tr>
                         {% endfor %}
+                      {% endif %}
+                    {% else %}
+                      Aucune tâche n'a encore été renseignée sur cette semaine
+
                     {% endif %}
                              
             </tbody>
-        </table>              
+        </table>
+         {% endif %}              
       </div>
     </div>
   </div>

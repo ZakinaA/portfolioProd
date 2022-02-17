@@ -35,7 +35,14 @@
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
-                                        <li class="breadcrumb-item"><a href="{{path('showSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> Semaine {{ i }} </a></li>                         
+                                        <li class="breadcrumb-item">
+                                             {% if is_granted('ROLE_ETUDIANT') %} 
+                                               <a href="{{path('showEditSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> Semaine {{ i }} 
+                                            {% endif %}
+                                             {% if is_granted('ROLE_ENSEIGNANT') %}
+                                                <a href="{{ path('showStage', {'idStage': stage.id }) }}">
+                                            {% endif %}  
+                                            </a></li>                         
                                     {% endfor %}
                                 {% endif %}
                             </ul>
