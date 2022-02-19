@@ -40,11 +40,11 @@
                           <tr>
                             <td>{{rp.etudiant.prenom}} {{rp.etudiant.nom}} </td>
                             <td>{{rp.source.libelle}} </td>
-                            <td><a class="text" href="{{ path('showRp', { 'idRp': rp.id }) }}">{{rp.libcourt}}</a></td>
+                            <td><a class="text" href="{{ path('rpShow', { 'idRp': rp.id }) }}">{{rp.libcourt}}</a></td>
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td>{% if rp.statut.id==4 %}-{% else %}<a class="text" href="{{ path('validerRp', { 'idRp': rp.id }) }}">Valider</a>{% endif %}</td>
+                            <td>{% if rp.statut.id==4 %}-{% else %}<a class="text" href="{{ path('rpValider', { 'idRp': rp.id }) }}">Valider</a>{% endif %}</td>
                           </tr>
                         {#% endif %#}
                       {% endfor %}
@@ -80,7 +80,7 @@
           
                       {% for stage in app.user.enseignant.stages %}
                           <tr>
-                            <td><a class="text" href="{{ path('showStage', { 'idStage': stage.id }) }}">{{stage.nomEntreprise}}</a></td>
+                            <td><a class="text" href="{{ path('stageShow', { 'idStage': stage.id }) }}">{{stage.nomEntreprise}}</a></td>
                             <td>{{stage.lieu}}</td>
                             <td>{{stage.nomTuteur}}</td>
                             <td>{{stage.mailTuteur}}</td>

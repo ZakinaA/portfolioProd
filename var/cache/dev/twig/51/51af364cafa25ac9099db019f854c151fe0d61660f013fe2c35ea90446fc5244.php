@@ -133,7 +133,7 @@ class __TwigTemplate_4567555caaea2a5b1e07ab94343b3ad4a4c8b7b2646c9f66b76a8f9821a
         // line 32
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
             echo " href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("addCommentaireRp", ["idRp" => twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 32, $this->source); })()), "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("commentaireRpAdd", ["idRp" => twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 32, $this->source); })()), "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\" ";
         } else {
             echo "  href=\"";
@@ -145,7 +145,7 @@ class __TwigTemplate_4567555caaea2a5b1e07ab94343b3ad4a4c8b7b2646c9f66b76a8f9821a
         // line 33
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ENSEIGNANT")) {
             echo "<li class=\"breadcrumb-item active\"><a   href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 33, $this->source); })()), "id", [], "any", false, false, false, 33)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpValider", ["idRp" => twig_get_attribute($this->env, $this->source, (isset($context["rp"]) || array_key_exists("rp", $context) ? $context["rp"] : (function () { throw new RuntimeError('Variable "rp" does not exist.', 33, $this->source); })()), "id", [], "any", false, false, false, 33)]), "html", null, true);
             echo "\"  >Valider</a></li>     ";
         }
         echo "   
@@ -344,8 +344,8 @@ class __TwigTemplate_4567555caaea2a5b1e07ab94343b3ad4a4c8b7b2646c9f66b76a8f9821a
                             <li class=\"breadcrumb-item active\">Description</li>
                             <li class=\"breadcrumb-item\"><a href=\"{{ path('rpActiviteList', { 'idRp': rp.id }) }}\">Activités</a></li>
                             <li class=\"breadcrumb-item active\"><a  href=\"{{ path('rpProductionList', { 'idRp': rp.id }) }}\">Productions</a></li>  
-                            <li class=\"breadcrumb-item active\"><a  {% if is_granted('ROLE_ENSEIGNANT') %} href=\"{{ path('addCommentaireRp', { 'idRp': rp.id  }) }}\" {% else %}  href=\"{{ path('rpCommentaireNotifierEnseignant', { 'idRp': rp.id }) }}\" {% endif %}>Commentaires</a></li>   
-                            {% if is_granted('ROLE_ENSEIGNANT') %}<li class=\"breadcrumb-item active\"><a   href=\"{{ path('validerRp', { 'idRp': rp.id  }) }}\"  >Valider</a></li>     {% endif %}   
+                            <li class=\"breadcrumb-item active\"><a  {% if is_granted('ROLE_ENSEIGNANT') %} href=\"{{ path('commentaireRpAdd', { 'idRp': rp.id  }) }}\" {% else %}  href=\"{{ path('rpCommentaireNotifierEnseignant', { 'idRp': rp.id }) }}\" {% endif %}>Commentaires</a></li>   
+                            {% if is_granted('ROLE_ENSEIGNANT') %}<li class=\"breadcrumb-item active\"><a   href=\"{{ path('rpValider', { 'idRp': rp.id  }) }}\"  >Valider</a></li>     {% endif %}   
                         </ul>
                     </div>
 

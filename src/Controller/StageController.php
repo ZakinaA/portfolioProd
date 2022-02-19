@@ -19,78 +19,6 @@ use App\Form\StageAffecterEnseignantType;
 
 class StageController extends AbstractController
 {
-
-
-    public function showEditSemaineStage(Request $request, $idStage, $numSemaine)
-    {
-          
-        $stage = $this->getDoctrine()
-        ->getRepository(Stage::class)
-        ->find($idStage);
-
-        //$semaine = $stage->getSemaineParNumero($numSemaine);
-        $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
-        $semaine = $repository->findOneBy(
-            ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
-
-        if ($semaine==null){
-            $semaine = new SemaineStage();
-            
-        }
-       
-        $semaines = $this->getDoctrine()
-        ->getRepository(SemaineStage::class)
-        ->findByStage($idStage);
-
-        $formSemaine = $this->createForm(SemaineStageType::class, $semaine);
-        $formSemaine->handleRequest($request);
-        $semaine = $formSemaine->getData();
-        $semaine->setNumSemaine($numSemaine);
-        $semaine->setStage($stage);
-
-        $tache = new TacheSemaine();
-        //$tache->setSemaineStage($semaine);
-        $formTache = $this->createForm(TacheSemaineType::class, $tache);
-        $formTache->handleRequest($request);
-
-        /*$semaine = $this->getDoctrine()
-        ->getRepository(SemaineStage::class)
-        ->find($semaine->getId());*/
-
-        $tache->setSemaineStage($semaine);
-
-        if ($formTache->isSubmitted()) {
-            $tache = $formTache->getData();
-            $tache->setSemaineStage($semaine);
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($tache);
-            $entityManager->flush();
-            return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
-        }
-        elseif ($formSemaine->isSubmitted()){
-            $semaine = $formSemaine->getData();
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($semaine);
-            $entityManager->flush();
-            return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
-        }
-        else
-        {
-            //return $this->render('stage/semaine.html.twig', array('formSemaine' => $formSemaine->createView(),'pEtudiant' => $etudiant, 'formTache' => $formTache->createView(), 'pStage' => $stage, 'pSemaine' => $semaine, 'pSemaines' => $semaines, 'pTaches' => $allTaches)); 
-            return $this->render('stage/showEditSemaineStage.html.twig', array('formSemaine' => $formSemaine->createView(), 'formTache' => $formTache->createView(), 'stage' => $stage, 'semaine' => $semaine ));     
-        }
-
-    }
-    /**
-    * Liste les stages  d'un étudiant connecté
-    */
-    public function getLesStagesByEtudiant(): Response
-    {
-        $etudiant = $this->getUser()->getEtudiant();
-        return $this->render('etudiant/listeStagesByEtudiant.html.twig', ['etudiant' => $etudiant]);
-    }
-
-
     /*
      * Permet à un étudiant d'ajouter ou de modifier un stage
      */
@@ -149,7 +77,66 @@ class StageController extends AbstractController
         }       
     }
 
-   
+    /**
+    * Liste les stages  d'un étudiant connecté
+    */
+    public function getLesStagesByEtudiant(): Response
+    {
+        $etudiant = $this->getUser()->getEtudiant();
+        return $this->render('etudiant/listStagesByEtudiant.html.twig', ['etudiant' => $etudiant]);
+    }
+
+
+    public function showAddSemaineStage(Request $request, $idStage, $numSemaine)
+    {
+          
+        $stage = $this->getDoctrine()
+        ->getRepository(Stage::class)
+        ->find($idStage);
+
+        $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
+        $semaine = $repository->findOneBy(
+            ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
+
+        if ($semaine==null){
+            $semaine = new SemaineStage();
+            
+        }
+
+        $formSemaine = $this->createForm(SemaineStageType::class, $semaine);
+        $formSemaine->handleRequest($request);
+        $semaine = $formSemaine->getData();
+        $semaine->setNumSemaine($numSemaine);
+        $semaine->setStage($stage);
+
+        $tache = new TacheSemaine();
+        $formTache = $this->createForm(TacheSemaineType::class, $tache);
+        $formTache->handleRequest($request);
+
+        $tache->setSemaineStage($semaine);
+
+        if ($formTache->isSubmitted()) {
+            $tache = $formTache->getData();
+            $tache->setSemaineStage($semaine);
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($tache);
+            $entityManager->flush();
+            return $this->redirectToRoute('semaineStageShowAdd', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
+        }
+        elseif ($formSemaine->isSubmitted()){
+            $semaine = $formSemaine->getData();
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($semaine);
+            $entityManager->flush();
+            return $this->redirectToRoute('semaineStageShowAdd', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
+        }
+        else
+        {
+            return $this->render('stage/showAddSemaineStage.html.twig', array('formSemaine' => $formSemaine->createView(), 'formTache' => $formTache->createView(), 'stage' => $stage, 'semaine' => $semaine ));     
+        }
+
+    }
+    
     /**
     * Liste les stages suivis par un enseignant
     */
@@ -157,11 +144,11 @@ class StageController extends AbstractController
     {
         $enseignant = $this->getUser()->getEnseignant();
         $stages = $enseignant->getStages();
-        return $this->render('enseignant/list/StagesSuivis.html.twig', ['stages' => $stages]);
+        return $this->render('enseignant/listStagesSuivis.html.twig', ['stages' => $stages]);
     }
 
     /**
-    * Liste les stages d'un étudiant
+    * Liste les stages d'un étudiant selectionnée par un enseignant
     */
     public function listStagesByEtudiant($idEtudiant): Response
     {    
@@ -177,7 +164,6 @@ class StageController extends AbstractController
     */
     public function showStage($idStage): Response
     {
-        $enseignant = $this->getUser()->getEnseignant();
        $repository = $this->getDoctrine()->getRepository(Stage::class);
        $stage = $repository->find($idStage);
 

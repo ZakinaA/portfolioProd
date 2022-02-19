@@ -31,7 +31,7 @@
                         <!-- Breadcrumb-->
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
-                              <li class="breadcrumb-item active"><a  {% if is_granted('ROLE_ENSEIGNANT') %} href="{{ path('showRp', { 'idRp': rp.id  }) }}" {% else %}  href="{{ path('rpShowEditAdd', { 'idRp': rp.id }) }}" {% endif %}>Description</a></li>
+                              <li class="breadcrumb-item active"><a  {% if is_granted('ROLE_ENSEIGNANT') %} href="{{ path('rpShow', { 'idRp': rp.id  }) }}" {% else %}  href="{{ path('rpShowEditAdd', { 'idRp': rp.id }) }}" {% endif %}>Description</a></li>
                               <li class="breadcrumb-item active"><a href="{{ path('rpActiviteList', { 'idRp': rp.id }) }}">Activités</a></li>
                               <li class="breadcrumb-item active"><a href="{{ path('rpProductionList', { 'idRp': rp.id }) }}">Productions</a></li>                                
                               <li class="breadcrumb-item ">Commentaires</li>

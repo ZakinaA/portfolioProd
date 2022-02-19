@@ -95,27 +95,12 @@ class EnseignantController extends AbstractController
         
     }
 
-
-
-    /**
-     * Liste toutes les RP non archivées
-     * classées par promo et par étudiant
-     */
-    public function listRp($idSpecialite): Response
-    {   
-        $repository = $this->getDoctrine()->getRepository(Specialite::class);
-        $specialite =  $repository->find($idSpecialite);
-
-        $repository = $this->getDoctrine()->getRepository(Promotion::class);
-        $promotionsEnCours =  $repository->listPromotionsParSpecialite($specialite);
-        return $this->render('enseignant/listRp.html.twig', [ 'promotions' => $promotionsEnCours]); 
-    }
-
-    /**
+    
+    /*
      * Liste toutes les RP  archivées
-     * classées 
+     * classées par date desc
      */
-    public function listRpsArchivees(): Response
+    public function listAllRpsArchivees(): Response
     {   
         $repository = $this->getDoctrine()->getRepository(RP::class);
         $lesRps = $repository->findBy(

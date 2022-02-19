@@ -129,7 +129,7 @@ class __TwigTemplate_6774c8b828c592e45b6cfabd612dfb9ef6e99e73c86b59fd0664f297bbf
             echo " </th>
                               <td><a class=\"text\" href=\"";
             // line 32
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpShow", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 32)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rp"], "libcourt", [], "any", false, false, false, 32), "html", null, true);
             echo "</a></td>
@@ -228,7 +228,7 @@ class __TwigTemplate_6774c8b828c592e45b6cfabd612dfb9ef6e99e73c86b59fd0664f297bbf
                           {% for rp in etudiant.rps  %}
                             <tr>
                               <th scope=\"row\">{{rp.source.libelle}} </th>
-                              <td><a class=\"text\" href=\"{{ path('showRp', { 'idRp': rp.id }) }}\">{{rp.libcourt}}</a></td>
+                              <td><a class=\"text\" href=\"{{ path('rpShow', { 'idRp': rp.id }) }}\">{{rp.libcourt}}</a></td>
                               <td>{{rp.activites.count}}</td>
                               <td>{{rp.dateDebut | date(\"d/m/Y\")}}</td>
                               <td>{{rp.statut.libelle}} {% if rp.statut.id == 2 %} de {{rp.enseignant.prenom}}{% endif%}</td>

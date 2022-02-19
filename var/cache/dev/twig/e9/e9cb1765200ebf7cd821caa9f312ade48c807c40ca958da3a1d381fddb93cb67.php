@@ -129,7 +129,7 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
       <ul aria-labelledby=\"profil\" class=\"dropdown-menu\">
         <li><a rel=\"nofollow\" href=\"";
         // line 27
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showEditEtudiant");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etudiantShowEdit");
         echo "\" class=\"dropdown-item\"> <img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/monCompte.png"), "html", null, true);
         echo "\" alt=\"Mon compte\" class=\"mr-2\">Mes informations</a></li>
@@ -327,7 +327,7 @@ test contenu etudiant
  {% block profil %}
     <li class=\"nav-item dropdown\"><a id=\"profile\" rel=\"nofollow\" data-target=\"#\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link language dropdown-toggle\"><span class=\"d-none d-sm-inline-block\">Mon compte</span></a>
       <ul aria-labelledby=\"profil\" class=\"dropdown-menu\">
-        <li><a rel=\"nofollow\" href=\"{{ path('showEditEtudiant')}}\" class=\"dropdown-item\"> <img src=\"{{ asset('images/monCompte.png') }}\" alt=\"Mon compte\" class=\"mr-2\">Mes informations</a></li>
+        <li><a rel=\"nofollow\" href=\"{{ path('etudiantShowEdit')}}\" class=\"dropdown-item\"> <img src=\"{{ asset('images/monCompte.png') }}\" alt=\"Mon compte\" class=\"mr-2\">Mes informations</a></li>
         <li><a rel=\"nofollow\" href=\"{{ path('app_forgot_password_request') }}\"  class=\"dropdown-item\"> <img src=\"{{ asset('images/changePasswd.png') }}\" alt=\"changePasswd\" class=\"mr-2\">Changer mot de passe</a></li>
         <li><a rel=\"nofollow\" href=\"#\" class=\"dropdown-item\"> <img src=\"{{ asset('images/contact.png' | trans)}}\" alt=\"Contact\" class=\"mr-2\">Contact Admin</a></li>
       </ul>

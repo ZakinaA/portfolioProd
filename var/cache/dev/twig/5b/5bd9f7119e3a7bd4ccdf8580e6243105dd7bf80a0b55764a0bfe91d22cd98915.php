@@ -71,7 +71,7 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
       <ul aria-labelledby=\"profil\" class=\"dropdown-menu\">
         <li><a rel=\"nofollow\" href=\"";
         // line 5
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showEditEnseignant");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("enseignantShowEdit");
         echo "\" class=\"dropdown-item\"> <img src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("images/monCompte.png"), "html", null, true);
         echo "\" alt=\"Mon compte\" class=\"mr-2\">Mes informations</a></li>
@@ -155,23 +155,23 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
         // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
         echo "\">SISR 2</a></li>
                 <li><a href=\"";
         // line 41
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
         echo "\">SLAM 2</a></li>
                 <li><a href=\"";
         // line 42
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
         echo "\">SISR 1</a></li>
                 <li><a href=\"";
         // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
         echo "\">SLAM 1</a></li>
                 <li><a href=\"";
         // line 44
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsArchivees");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("allRpsArchivees");
         echo "\">rp archivées</a></li>
               </ul>
             </li>
@@ -180,7 +180,7 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
               <ul id=\"stage\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
         // line 50
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listeStagesSuivis");
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stagesSuivisList");
         echo "\">Stages suivis</a></li>
               </ul>
             </li>    
@@ -238,7 +238,7 @@ test contenu enseignant
  {% block profil %}
     <li class=\"nav-item dropdown\"><a id=\"profile\" rel=\"nofollow\" data-target=\"#\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link language dropdown-toggle\"><span class=\"d-none d-sm-inline-block\">Mon compte</span></a>
       <ul aria-labelledby=\"profil\" class=\"dropdown-menu\">
-        <li><a rel=\"nofollow\" href=\"{{ path('showEditEnseignant')}}\" class=\"dropdown-item\"> <img src=\"{{ asset('images/monCompte.png') }}\" alt=\"Mon compte\" class=\"mr-2\">Mes informations</a></li>
+        <li><a rel=\"nofollow\" href=\"{{ path('enseignantShowEdit')}}\" class=\"dropdown-item\"> <img src=\"{{ asset('images/monCompte.png') }}\" alt=\"Mon compte\" class=\"mr-2\">Mes informations</a></li>
         <li><a rel=\"nofollow\" href=\"{{ path('app_forgot_password_request') }}\"  class=\"dropdown-item\"> <img src=\"{{ asset('images/changePasswd.png') }}\" alt=\"changePasswd\" class=\"mr-2\">Changer mot de passe</a></li>
         <li><a rel=\"nofollow\" href=\"#\" class=\"dropdown-item\"> <img src=\"{{ asset('images/contact.png' | trans)}}\" alt=\"Contact\" class=\"mr-2\">Contact Admin</a></li>
       </ul>
@@ -273,17 +273,17 @@ test contenu enseignant
           <ul class=\"list-unstyled\">
             <li><a href=\"#realisation\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
-                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 2,'source': 'menu' }) }}\">SISR 2</a></li>
-                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'menu' }) }}\">SLAM 2</a></li>
-                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'menu' }) }}\">SISR 1</a></li>
-                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'menu' }) }}\">SLAM 1</a></li>
-                <li><a href=\"{{ path('listRpsArchivees')}}\">rp archivées</a></li>
+                <li><a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 2,'source': 'menu' }) }}\">SISR 2</a></li>
+                <li><a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'menu' }) }}\">SLAM 2</a></li>
+                <li><a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'menu' }) }}\">SISR 1</a></li>
+                <li><a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'menu' }) }}\">SLAM 1</a></li>
+                <li><a href=\"{{ path('allRpsArchivees')}}\">rp archivées</a></li>
               </ul>
             </li>
             
             <li><a href=\"#stage\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"icon-grid\"></i>Stages </a>
               <ul id=\"stage\" class=\"collapse list-unstyled \">
-                <li><a href=\"{{ path('listeStagesSuivis') }}\">Stages suivis</a></li>
+                <li><a href=\"{{ path('stagesSuivisList') }}\">Stages suivis</a></li>
               </ul>
             </li>    
           </ul>

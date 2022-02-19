@@ -144,7 +144,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             echo " </td>
                             <td><a class=\"text\" href=\"";
             // line 43
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 43)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpShow", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 43)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["rp"], "libcourt", [], "any", false, false, false, 43), "html", null, true);
             echo "</a></td>
@@ -166,7 +166,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                 echo "-";
             } else {
                 echo "<a class=\"text\" href=\"";
-                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("validerRp", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 47)]), "html", null, true);
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpValider", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 47)]), "html", null, true);
                 echo "\">Valider</a>";
             }
             echo "</td>
@@ -218,7 +218,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             echo "                          <tr>
                             <td><a class=\"text\" href=\"";
             // line 83
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("showStage", ["idStage" => twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 83)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stageShow", ["idStage" => twig_get_attribute($this->env, $this->source, $context["stage"], "id", [], "any", false, false, false, 83)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomEntreprise", [], "any", false, false, false, 83), "html", null, true);
             echo "</a></td>
@@ -324,11 +324,11 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                           <tr>
                             <td>{{rp.etudiant.prenom}} {{rp.etudiant.nom}} </td>
                             <td>{{rp.source.libelle}} </td>
-                            <td><a class=\"text\" href=\"{{ path('showRp', { 'idRp': rp.id }) }}\">{{rp.libcourt}}</a></td>
+                            <td><a class=\"text\" href=\"{{ path('rpShow', { 'idRp': rp.id }) }}\">{{rp.libcourt}}</a></td>
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date(\"d/m/Y\")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td>{% if rp.statut.id==4 %}-{% else %}<a class=\"text\" href=\"{{ path('validerRp', { 'idRp': rp.id }) }}\">Valider</a>{% endif %}</td>
+                            <td>{% if rp.statut.id==4 %}-{% else %}<a class=\"text\" href=\"{{ path('rpValider', { 'idRp': rp.id }) }}\">Valider</a>{% endif %}</td>
                           </tr>
                         {#% endif %#}
                       {% endfor %}
@@ -364,7 +364,7 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
           
                       {% for stage in app.user.enseignant.stages %}
                           <tr>
-                            <td><a class=\"text\" href=\"{{ path('showStage', { 'idStage': stage.id }) }}\">{{stage.nomEntreprise}}</a></td>
+                            <td><a class=\"text\" href=\"{{ path('stageShow', { 'idStage': stage.id }) }}\">{{stage.nomEntreprise}}</a></td>
                             <td>{{stage.lieu}}</td>
                             <td>{{stage.nomTuteur}}</td>
                             <td>{{stage.mailTuteur}}</td>

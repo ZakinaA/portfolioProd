@@ -56,7 +56,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-violet\"><i class=\"icon-user\"></i></div>
                     <div class=\"title\"> <a href=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
         echo "\"><span>SISR 2</span></a>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
@@ -72,7 +72,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-red\"><i class=\"icon-padnote\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
         // line 28
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
         echo "\">SLAM 2</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-red\"></div>
@@ -87,7 +87,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-green\"><i class=\"icon-bill\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
         // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
         echo "\">SISR 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
@@ -102,7 +102,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-orange\"><i class=\"icon-check\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
         // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
         echo "\">SLAM 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
@@ -157,7 +157,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-violet\"><i class=\"icon-user\"></i></div>
-                    <div class=\"title\"> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 2 ,'source': 'tb'}) }}\"><span>SISR 2</span></a>
+                    <div class=\"title\"> <a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 2 ,'source': 'tb'}) }}\"><span>SISR 2</span></a>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
                       </div>
@@ -170,7 +170,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                 <div class=\"col-xl-3 col-sm-6\">
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-red\"><i class=\"icon-padnote\"></i></div>
-                    <div class=\"title\"><span> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'tb' }) }}\">SLAM 2</a></span>
+                    <div class=\"title\"><span> <a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'tb' }) }}\">SLAM 2</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-red\"></div>
                       </div>
@@ -182,7 +182,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                 <div class=\"col-xl-3 col-sm-6\">
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-green\"><i class=\"icon-bill\"></i></div>
-                    <div class=\"title\"><span> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'tb' }) }}\">SISR 1</a></span>
+                    <div class=\"title\"><span> <a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'tb' }) }}\">SISR 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
                       </div>
@@ -194,7 +194,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                 <div class=\"col-xl-3 col-sm-6\">
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-orange\"><i class=\"icon-check\"></i></div>
-                    <div class=\"title\"><span> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'tb' }) }}\">SLAM 1</a></span>
+                    <div class=\"title\"><span> <a href=\"{{ path('rpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'tb' }) }}\">SLAM 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
                       </div>

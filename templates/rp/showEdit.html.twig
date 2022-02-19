@@ -29,8 +29,8 @@
                             <li class="breadcrumb-item active">Description</li>
                             <li class="breadcrumb-item"><a href="{{ path('rpActiviteList', { 'idRp': rp.id }) }}">Activités</a></li>
                             <li class="breadcrumb-item active"><a  href="{{ path('rpProductionList', { 'idRp': rp.id }) }}">Productions</a></li>  
-                            <li class="breadcrumb-item active"><a  {% if is_granted('ROLE_ENSEIGNANT') %} href="{{ path('addCommentaireRp', { 'idRp': rp.id  }) }}" {% else %}  href="{{ path('rpCommentaireNotifierEnseignant', { 'idRp': rp.id }) }}" {% endif %}>Commentaires</a></li>   
-                            {% if is_granted('ROLE_ENSEIGNANT') %}<li class="breadcrumb-item active"><a   href="{{ path('validerRp', { 'idRp': rp.id  }) }}"  >Valider</a></li>     {% endif %}   
+                            <li class="breadcrumb-item active"><a  {% if is_granted('ROLE_ENSEIGNANT') %} href="{{ path('commentaireRpAdd', { 'idRp': rp.id  }) }}" {% else %}  href="{{ path('rpCommentaireNotifierEnseignant', { 'idRp': rp.id }) }}" {% endif %}>Commentaires</a></li>   
+                            {% if is_granted('ROLE_ENSEIGNANT') %}<li class="breadcrumb-item active"><a   href="{{ path('rpValider', { 'idRp': rp.id  }) }}"  >Valider</a></li>     {% endif %}   
                         </ul>
                     </div>
 

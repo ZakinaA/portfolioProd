@@ -29,7 +29,7 @@
                           {% for rp in etudiant.rps  %}
                             <tr>
                               <th scope="row">{{rp.source.libelle}} </th>
-                              <td><a class="text" href="{{ path('showRp', { 'idRp': rp.id }) }}">{{rp.libcourt}}</a></td>
+                              <td><a class="text" href="{{ path('rpShow', { 'idRp': rp.id }) }}">{{rp.libcourt}}</a></td>
                               <td>{{rp.activites.count}}</td>
                               <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                               <td>{{rp.statut.libelle}} {% if rp.statut.id == 2 %} de {{rp.enseignant.prenom}}{% endif%}</td>

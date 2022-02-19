@@ -4,7 +4,7 @@
 
 {% block titreContenu %}  
     {% if is_granted('ROLE_ENSEIGNANT') %}
-        <a href="{{ path('listeStagesSuivis') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}
+        <a href="{{ path('stagesSuivisList') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}
     {% else %}
         Mon stage
     {% endif %}
@@ -33,7 +33,7 @@
                                 <li class="breadcrumb-item active">
                                    
                                     {% if is_granted('ROLE_ENSEIGNANT') %}
-                                        <a href="{{ path('showStage', {'idStage': stage.id }) }}">
+                                        <a href="{{ path('stageShow', {'idStage': stage.id }) }}">
                                     {% else %}
                                         {% if is_granted('ROLE_ETUDIANT') %} 
                                             <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">
@@ -50,7 +50,7 @@
                                                 <a href="{{ path('showSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> 
                                             {% else %}
                                                 {% if is_granted('ROLE_ETUDIANT') %} 
-                                                    <a href="{{path('showEditSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> 
+                                                    <a href="{{path('semaineStageShowAdd', {'idStage': stage.id, 'numSemaine': i})}}"> 
                                                 {% endif %}
                                             {% endif %}
                                             Semaine {{ i }}</a>

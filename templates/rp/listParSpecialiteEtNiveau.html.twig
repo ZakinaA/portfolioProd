@@ -32,11 +32,11 @@
                           <tr>
                             <td>{{rp.etudiant.prenom}} {{rp.etudiant.nom}} </td>
                             <td>{{rp.source.libelle}} </td>
-                            <td><a class="text" href="{{ path('showRp', { 'idRp': rp.id }) }}">{{rp.libcourt}}</a></td>
+                            <td><a class="text" href="{{ path('rpShow', { 'idRp': rp.id }) }}">{{rp.libcourt}}</a></td>
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                            <td>{% if rp.statut.id==4 %}-{% else %}<a class="text" href="{{ path('validerRp', { 'idRp': rp.id }) }}">Valider</a>{% endif %}</td>
+                            <td>{% if rp.statut.id==4 %}-{% else %}<a class="text" href="{{ path('rpValider', { 'idRp': rp.id }) }}">Valider</a>{% endif %}</td>
                           </tr>
                         {% endfor %}
                       {% endfor %}

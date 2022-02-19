@@ -1,5 +1,5 @@
 {% extends "baseEnseignant.html.twig" %}
-{% block titreContenu %}  <a href="{{ path('listeStagesSuivis') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}{% endblock %}
+{% block titreContenu %}  <a href="{{ path('stagesSuivisList') }}">Stages / </a> Stage de  {{stage.etudiant.prenom}} {{stage.etudiant.nom}} chez {{stage.nomEntreprise}}{% endblock %}
 
 
 {% block contenu%}
@@ -12,7 +12,7 @@
         <!-- Breadcrumb-->
         <div class="breadcrumb-holder container-fluid">
             <ul class="breadcrumb">
-                <li class="breadcrumb-item active"><a href="{{ path('showStage', {'idStage': stage.id }) }}">Info</a></li>
+                <li class="breadcrumb-item active"><a href="{{ path('stageShow', {'idStage': stage.id }) }}">Info</a></li>
                 {% if stage.duree > 0 %}          
                     {% set nbSem = stage.duree %}
                     {% for i in 1..nbSem %}

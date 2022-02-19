@@ -37,9 +37,9 @@
                             <tr>
                               <th scope="row">{{e.nom}} </th>
                               <td>{{e.prenom}}</td>
-                              <td> <a href="{{ path('listRpParEtudiant', {'idEtudiant': e.id  }) }}">{{e.rps.count}}</a></td>
+                              <td> <a href="{{ path('rpsParEtudiant', {'idEtudiant': e.id  }) }}">{{e.rps.count}}</a></td>
                             
-                             <td><a href="{{ path('listStagesByEtudiant', {'idEtudiant': e.id  }) }}">{{e.stages.count}}</a></td>
+                             <td><a href="{{ path('stagesParEtudiant', {'idEtudiant': e.id  }) }}">{{e.stages.count}}</a></td>
                             </tr>
                             {% endfor %}
                          </tbody>
