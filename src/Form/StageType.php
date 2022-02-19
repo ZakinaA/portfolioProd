@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 
 class StageType extends AbstractType
@@ -48,10 +49,19 @@ class StageType extends AbstractType
             ->add('horVen', TextType::class, array('required' => false, 'label' => 'Horaire Vendredi','disabled' => $options['champDesactive']))
             ->add('horSam', TextType::class, array('required' => false, 'label' => 'Horaire Samedi','disabled' => $options['champDesactive']))
 
+            ->add('cancel', SubmitType::class,[
+                'disabled' => $options['champDesactive'],
+                'label' => 'Annuler'
+              ])
+            ->add('submit', SubmitType::class,[
+                'disabled' => $options['champDesactive'],
+                'label' => 'Enregistrer'
+              ]);
+        
     
             //->add('etudiant')
             //->add('enseignant')
-        ;
+        
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -192,16 +192,23 @@
                                     </div>
                                 </div>
                             </div>
-
+                            
+                            <!--  ligne de  boutons-->
+                            <div class="form-group row">
+                                <div class="col-sm-4 offset-sm-4">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                           {{ form_row(form.cancel, {'attr' : {'class' : 'btn btn-secondary'}}) }}
+                                        </div>
+                                        <div class="col-md-3">
+                                             {{ form_row(form.submit, {'attr' : {'class' : 'btn btn-primary'}}) }}
+                                        </div>
+                                    </div>
+                                </div>                             
+                            </div>
 
 						
-                        <!-- ligne de formulaire boutons-->
-                        <div class="form-group row">
-                            <div class="col-sm-4 offset-sm-3">
-                                <button type="submit" class="btn btn-secondary">Annuler</button>
-                                <button type="submit" class="btn btn-primary">Enregistrer</button>
-                        </div>
-                    </div>
+           
 
                     {{ form_end(form) }}
                      
