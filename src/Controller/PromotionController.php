@@ -26,7 +26,7 @@ class PromotionController extends AbstractController
       * si $source=menu, on vient du menu de gauche et on affiche la liste de toutes les rp des etudiants de la spé et du niveau
       * si $source=tb, on affiche le tableau de bord (home enseignant) et on affiche les étudiant avec la liste des etudiants, le nb de rp, le nb de stage
      */
-    public function listEtudiantsParPromo($idSpecialite, $idNiveau, $source): Response
+    public function listRpsEtudiantsParSpecialiteEtNiveau($idSpecialite, $idNiveau, $source): Response
     {
         $repository = $this->getDoctrine()->getRepository(Specialite::class);
         $specialite =  $repository->find($idSpecialite);
@@ -38,7 +38,7 @@ class PromotionController extends AbstractController
         $etudiants = $repository->listParSpecialiteParNiveau($specialite,$niveau);
 
         if ($source == 'tb'){
-            return $this->render('promotion/listEtudiants.html.twig', [ 'etudiants' => $etudiants]);  
+            return $this->render('enseignant/tableauBordParSpecialiteEtNiveau.html.twig', [ 'etudiants' => $etudiants]);  
         }
         if ($source == 'menu'){
             return $this->render('rp/listParSpecialiteEtNiveau.html.twig', [ 'etudiants' => $etudiants]);  

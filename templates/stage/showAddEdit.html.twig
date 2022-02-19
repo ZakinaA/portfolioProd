@@ -31,24 +31,31 @@
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item active">
-                                    {% if is_granted('ROLE_ETUDIANT') %} 
-                                        <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">
-                                    {% endif %}
+                                   
                                     {% if is_granted('ROLE_ENSEIGNANT') %}
                                         <a href="{{ path('showStage', {'idStage': stage.id }) }}">
+                                    {% else %}
+                                        {% if is_granted('ROLE_ETUDIANT') %} 
+                                            <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">
+                                        {% endif %}
                                     {% endif %}
+
                                     Infos</a></li>
+
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
                                         <li class="breadcrumb-item">
-                                             {% if is_granted('ROLE_ETUDIANT') %} 
-                                               <a href="{{path('showEditSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> Semaine {{ i }} 
+                                            {% if is_granted('ROLE_ENSEIGNANT') %}
+                                                <a href="{{ path('showSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> 
+                                            {% else %}
+                                                {% if is_granted('ROLE_ETUDIANT') %} 
+                                                    <a href="{{path('showEditSemaineStage', {'idStage': stage.id, 'numSemaine': i})}}"> 
+                                                {% endif %}
                                             {% endif %}
-                                             {% if is_granted('ROLE_ENSEIGNANT') %}
-                                                <a href="{{ path('showStage', {'idStage': stage.id }) }}">
-                                            {% endif %}  
-                                            </a></li>                         
+                                            Semaine {{ i }}</a>
+                                             
+                                        </li>                         
                                     {% endfor %}
                                 {% endif %}
                             </ul>

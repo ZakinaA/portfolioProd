@@ -50,7 +50,7 @@ class TacheSemaineController extends AbstractController
             return $this->redirectToRoute('showEditSemaineStage', array( 'idStage' => $idStage, 'numSemaine' =>$numSemaine ));
         }
         else{  
-            return $this->render('tache_semaine/editTache.html.twig', array('form' => $form->createView()));
+            return $this->render('stage/editTache.html.twig', array('form' => $form->createView()));
         }
     }
 

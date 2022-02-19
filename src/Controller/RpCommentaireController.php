@@ -26,7 +26,7 @@ class RpCommentaireController extends AbstractController
         if ($rp->getEtudiant()->getid() != $this->getUser()->getEtudiant()->getId()  ){
             throw $this->createAccessDeniedException();
         }
-        return $this->render('rp/commentaire/listCommentairesRp.html.twig', array('rp'=> $rp));
+        return $this->render('rp/listCommentairesRp.html.twig', array('rp'=> $rp));
         
     }
     
@@ -57,12 +57,12 @@ class RpCommentaireController extends AbstractController
             $entityManager->persist($rp);
             $entityManager->flush();
             $this->addFlash('success', 'Réalisation soumise avec succès à '.$rp->getEnseignant()->getPrenom(). ' ' .$rp->getEnseignant()->getNom() );
-            return $this->render('rp/commentaire/listCommentairesRp.html.twig', ['rp' => $rp,'form' => $form->createView()]);
+            return $this->render('rp/listCommentaires.html.twig', ['rp' => $rp,'form' => $form->createView()]);
           
         }
         else
         {
-            return $this->render('rp/commentaire/listCommentairesRp.html.twig', array('rp' => $rp, 'form' => $form->createView()));
+            return $this->render('rp/listCommentaires.html.twig', array('rp' => $rp, 'form' => $form->createView()));
         }
         
     }
@@ -99,12 +99,12 @@ class RpCommentaireController extends AbstractController
             $entityManager->flush();
            
             $this->addFlash('success', 'Commentaire soumis avec succès à '.$rp->getEtudiant()->getPrenom(). ' ' .$rp->getEtudiant()->getNom() );
-            return $this->render('rp/commentaire/addCommentaire.html.twig', ['rp' => $rp,'form' => $form->createView()]);
+            return $this->render('rp/addCommentaire.html.twig', ['rp' => $rp,'form' => $form->createView()]);
           
         }
         else
         {
-            return $this->render('rp/commentaire/addCommentaire.html.twig', ['rp' => $rp,'form' => $form->createView()]);
+            return $this->render('rp/addCommentaire.html.twig', ['rp' => $rp,'form' => $form->createView()]);
           
         }
     }

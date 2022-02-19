@@ -157,7 +157,7 @@ class StageController extends AbstractController
     {
         $enseignant = $this->getUser()->getEnseignant();
         $stages = $enseignant->getStages();
-        return $this->render('enseignant/stage/listeStagesSuivis.html.twig', ['stages' => $stages]);
+        return $this->render('enseignant/list/StagesSuivis.html.twig', ['stages' => $stages]);
     }
 
     /**
@@ -168,7 +168,7 @@ class StageController extends AbstractController
         $stages = $this->getDoctrine()
         ->getRepository(Stage::class)
         ->findByEtudiant($idEtudiant);
-        return $this->render('enseignant/stage/listeStagesSuivis.html.twig', ['stages' => $stages]);
+        return $this->render('enseignant/listStagesSuivis.html.twig', ['stages' => $stages]);
     }
 
 
@@ -184,9 +184,6 @@ class StageController extends AbstractController
        $formStage = $this->createForm(StageType::class, $stage,['champDesactive' => true,]);
        return $this->render('stage/showAddEdit.html.twig', array('form' => $formStage->createView(), 'stage'=>$stage, 'templateTwigParent' => 'baseEnseignant.html.twig'));   
       
-       //$formStage->handleRequest($request); 
-          
-        //return $this->render('enseignant/stage/show.html.twig', ['stage' => $stage]);
     }
 
     /*

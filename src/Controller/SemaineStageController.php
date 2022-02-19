@@ -83,6 +83,6 @@ class SemaineStageController extends AbstractController
             
         
 
-        return $this->render('semaine_stage/show.html.twig', array('semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEnseignant.html.twig'));   
+        return $this->render('stage/showSemaineStage.html.twig', array('semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEnseignant.html.twig'));   
     }
 }

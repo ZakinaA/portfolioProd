@@ -155,19 +155,19 @@ class __TwigTemplate_5ab89d0e6deeb74e3f576c24934ac15490270822e714555210ea64f14f9
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
         // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
         echo "\">SISR 2</a></li>
                 <li><a href=\"";
         // line 41
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "menu"]), "html", null, true);
         echo "\">SLAM 2</a></li>
                 <li><a href=\"";
         // line 42
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
         echo "\">SISR 1</a></li>
                 <li><a href=\"";
         // line 43
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "menu"]), "html", null, true);
         echo "\">SLAM 1</a></li>
                 <li><a href=\"";
         // line 44
@@ -273,10 +273,10 @@ test contenu enseignant
           <ul class=\"list-unstyled\">
             <li><a href=\"#realisation\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
-                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 2,'source': 'menu' }) }}\">SISR 2</a></li>
-                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'menu' }) }}\">SLAM 2</a></li>
-                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'menu' }) }}\">SISR 1</a></li>
-                <li><a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'menu' }) }}\">SLAM 1</a></li>
+                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 2,'source': 'menu' }) }}\">SISR 2</a></li>
+                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'menu' }) }}\">SLAM 2</a></li>
+                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'menu' }) }}\">SISR 1</a></li>
+                <li><a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'menu' }) }}\">SLAM 1</a></li>
                 <li><a href=\"{{ path('listRpsArchivees')}}\">rp archivées</a></li>
               </ul>
             </li>

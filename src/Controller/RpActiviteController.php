@@ -34,14 +34,14 @@ class RpActiviteController extends AbstractController
 
             if ($this->getUser()->getEnseignant() !=null )
             {
-                return $this->render('rp/activite/listActivitesRp.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEnseignant.html.twig'));
+                return $this->render('rp/listActivites.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEnseignant.html.twig'));
             }
             else
             {
                 if ($rp->getEtudiant()->getid() != $this->getUser()->getEtudiant()->getId()  ){
                 throw $this->createAccessDeniedException();
                 }
-                return $this->render('rp/activite/listActivitesRp.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEtudiant.html.twig'));
+                return $this->render('rp/listActivites.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEtudiant.html.twig'));
             }
            
         }
@@ -84,11 +84,10 @@ class RpActiviteController extends AbstractController
                 $entityManager->flush(); 
             
                 // retourner la liste des activites de la rp 
-                //return $this->render('rp/listActivitesRp.html.twig', array('rp'=> $rpActivite.rp.id));
                 return $this->redirectToRoute('rpActiviteList', ['idRp' => $rpActivite->getRP()->getId()]);
             
             }
-            return $this->render('rp/activite/addEdit.html.twig', array('form' => $formAct->createView(), 'idRp' => $rpActivite->getRP()->getId()));
+            return $this->render('rp/addEditActivite.html.twig', array('form' => $formAct->createView(), 'idRp' => $rpActivite->getRP()->getId()));
         }
     }
 
@@ -117,7 +116,7 @@ class RpActiviteController extends AbstractController
 	    }
 	    else
         {
-            return $this->render('rp/activite/addEdit.html.twig', array('form' => $form->createView(), 'idRp' =>$idRp));
+            return $this->render('rp/addEditActivite.html.twig', array('form' => $form->createView(), 'idRp' =>$idRp));
 	    }
     }
 

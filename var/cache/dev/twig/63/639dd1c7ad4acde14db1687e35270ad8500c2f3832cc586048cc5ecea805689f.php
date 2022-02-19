@@ -12,7 +12,7 @@ use Twig\Sandbox\SecurityNotAllowedFunctionError;
 use Twig\Source;
 use Twig\Template;
 
-/* promotion/listPromos.html.twig */
+/* ./promotion/listPromos.html.twig */
 class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff29fc40 extends Template
 {
     private $source;
@@ -34,10 +34,10 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
     {
         $macros = $this->macros;
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "promotion/listPromos.html.twig"));
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./promotion/listPromos.html.twig"));
 
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "promotion/listPromos.html.twig"));
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "./promotion/listPromos.html.twig"));
 
         // line 1
         echo "
@@ -56,7 +56,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-violet\"><i class=\"icon-user\"></i></div>
                     <div class=\"title\"> <a href=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
         echo "\"><span>SISR 2</span></a>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
@@ -72,7 +72,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-red\"><i class=\"icon-padnote\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
         // line 28
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 2, "source" => "tb"]), "html", null, true);
         echo "\">SLAM 2</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-red\"></div>
@@ -87,7 +87,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-green\"><i class=\"icon-bill\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
         // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 1, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
         echo "\">SISR 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
@@ -102,7 +102,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                     <div class=\"icon bg-orange\"><i class=\"icon-check\"></i></div>
                     <div class=\"title\"><span> <a href=\"";
         // line 52
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listEtudiantsParPromo", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("listRpsEtudiantsParSpecialiteEtNiveau", ["idSpecialite" => 2, "idNiveau" => 1, "source" => "tb"]), "html", null, true);
         echo "\">SLAM 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
@@ -128,7 +128,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
 
     public function getTemplateName()
     {
-        return "promotion/listPromos.html.twig";
+        return "./promotion/listPromos.html.twig";
     }
 
     public function isTraitable()
@@ -157,7 +157,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-violet\"><i class=\"icon-user\"></i></div>
-                    <div class=\"title\"> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 2 ,'source': 'tb'}) }}\"><span>SISR 2</span></a>
+                    <div class=\"title\"> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 2 ,'source': 'tb'}) }}\"><span>SISR 2</span></a>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-violet\"></div>
                       </div>
@@ -170,7 +170,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                 <div class=\"col-xl-3 col-sm-6\">
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-red\"><i class=\"icon-padnote\"></i></div>
-                    <div class=\"title\"><span> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'tb' }) }}\">SLAM 2</a></span>
+                    <div class=\"title\"><span> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 2,'source': 'tb' }) }}\">SLAM 2</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"70\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-red\"></div>
                       </div>
@@ -182,7 +182,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                 <div class=\"col-xl-3 col-sm-6\">
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-green\"><i class=\"icon-bill\"></i></div>
-                    <div class=\"title\"><span> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'tb' }) }}\">SISR 1</a></span>
+                    <div class=\"title\"><span> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 1 ,'idNiveau': 1,'source': 'tb' }) }}\">SISR 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"40\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-green\"></div>
                       </div>
@@ -194,7 +194,7 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
                 <div class=\"col-xl-3 col-sm-6\">
                   <div class=\"item d-flex align-items-center\">
                     <div class=\"icon bg-orange\"><i class=\"icon-check\"></i></div>
-                    <div class=\"title\"><span> <a href=\"{{ path('listEtudiantsParPromo', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'tb' }) }}\">SLAM 1</a></span>
+                    <div class=\"title\"><span> <a href=\"{{ path('listRpsEtudiantsParSpecialiteEtNiveau', {'idSpecialite': 2 ,'idNiveau': 1,'source': 'tb' }) }}\">SLAM 1</a></span>
                       <div class=\"progress\">
                         <div role=\"progressbar\" style=\"width: 100%; height: 4px;\" aria-valuenow=\"50\" aria-valuemin=\"0\" aria-valuemax=\"100\" class=\"progress-bar bg-orange\"></div>
                       </div>
@@ -208,6 +208,6 @@ class __TwigTemplate_f6e240a27d603739f51b0672e2c5b7dd1677025e012c1a17853e8f97ff2
           <!-- Dashboard Header Section    -->
 
 
-", "promotion/listPromos.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\promotion\\listPromos.html.twig");
+", "./promotion/listPromos.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\promotion\\listPromos.html.twig");
     }
 }

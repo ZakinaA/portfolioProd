@@ -29,7 +29,7 @@ class RpProductionController extends AbstractController
             $rp = $repository->find($idRp);
             if ($this->getUser()->getEnseignant() !=null )
             {
-                return $this->render('rp/production/listProductionsRp.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEnseignant.html.twig'));
+                return $this->render('rp/listProductions.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEnseignant.html.twig'));
             }
             else
             {
@@ -37,7 +37,7 @@ class RpProductionController extends AbstractController
                 if ($rp->getEtudiant()->getid() != $this->getUser()->getEtudiant()->getId()  ){
                 throw $this->createAccessDeniedException();
                 }
-                    return $this->render('rp/production/listProductionsRp.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEtudiant.html.twig'));
+                    return $this->render('rp/listProductions.html.twig', array('rp'=> $rp, 'templateTwigParent' => 'baseEtudiant.html.twig'));
             }
         }
     }
@@ -80,7 +80,7 @@ class RpProductionController extends AbstractController
             
             }
 
-            return $this->render('rp/production/addEdit.html.twig', array('form' => $form->createView(), 'idRp' => $prod->getRP()->getId()));
+            return $this->render('rp/addEditProduction.html.twig', array('form' => $form->createView(), 'idRp' => $prod->getRP()->getId()));
         }
     }
 
@@ -109,7 +109,7 @@ class RpProductionController extends AbstractController
 	    }
 	    else
         {
-            return $this->render('rp/production/addEdit.html.twig', array('form' => $form->createView(), 'idRp' =>$idRp));
+            return $this->render('rp/addEditProduction.html.twig', array('form' => $form->createView(), 'idRp' =>$idRp));
 	    }
     }
 

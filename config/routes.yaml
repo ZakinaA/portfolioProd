@@ -187,9 +187,10 @@ listPromos:
 # La variable $source permet de savoir sur quel lien on a cliqué déclencher cette fonction
 # si $source=menu, on vient du menu de gauche et on affiche la liste de toutes les rp des etudiants de la spé et du niveau
 # $source=tb, on affiche le tableau de bord (home enseignant) et on affiche les étudiant avec la liste des etudiants, le nb de rp, le nb de stage
-listEtudiantsParPromo:
+listRpsEtudiantsParSpecialiteEtNiveau:
+
   path: /enseignant/promo/etudiants/list/{idSpecialite}/{idNiveau}/{source}
-  controller: App\Controller\PromotionController::listEtudiantsParPromo
+  controller: App\Controller\EnseignantController::listRpsEtudiantsParSpecialiteEtNiveau
  
 # Permet à l'enseignant d'ajouter un commentaire
 # On met le champ enseignant de la rp à null
@@ -233,7 +234,7 @@ showStage:
   path: /enseignant/stage/show/{idStage}
   controller: App\Controller\StageController::showStage
 
-#consultation de l'activité d'une semaine de stage d'un étudiant
+#consultation de l'activité d'une semaine de stage d'un enseignant
 showSemaineStage:
   path: /enseignant/stage/semaine/show/{idStage}/{numSemaine}
   controller: App\Controller\SemaineStageController::showSemaine
