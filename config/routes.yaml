@@ -223,7 +223,7 @@ stageShow:
 #consultation de l'activité d'une semaine de stage d'un enseignant
 showSemaineStage:
   path: /enseignant/stage/semaine/show/{idStage}/{numSemaine}
-  controller: App\Controller\SemaineStageController::showSemaine
+  controller: App\Controller\StageController::showSemaine
 
 # Liste les stages d'un étudiant (depuis le tableau de bord)
 #listStagesByEtudiant:

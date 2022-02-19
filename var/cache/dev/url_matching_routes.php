@@ -155,7 +155,7 @@ return [
         930 => [[['_route' => 'rpsEtudiantsParSpecialiteEtNiveau', '_controller' => 'App\\Controller\\EnseignantController::listRpsEtudiantsParSpecialiteEtNiveau'], ['idSpecialite', 'idNiveau', 'source'], null, null, false, true, null]],
         963 => [[['_route' => 'rpsParEtudiant', '_controller' => 'App\\Controller\\RpController::listParEtudiant'], ['idEtudiant'], null, null, false, true, null]],
         996 => [[['_route' => 'stageShow', '_controller' => 'App\\Controller\\StageController::showStage'], ['idStage'], null, null, false, true, null]],
-        1033 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\SemaineStageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
+        1033 => [[['_route' => 'showSemaineStage', '_controller' => 'App\\Controller\\StageController::showSemaine'], ['idStage', 'numSemaine'], null, null, false, true, null]],
         1072 => [[['_route' => 'stagesParEtudiant', '_controller' => 'App\\Controller\\StageController::listStagesByEtudiant'], ['idEtudiant'], null, null, false, true, null]],
         1127 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
         1152 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],

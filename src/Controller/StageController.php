@@ -36,7 +36,7 @@ class StageController extends AbstractController
             $repository = $this->getDoctrine()->getRepository(Stage::class);
             $stage = $repository->find($idStage);
            
-            
+        
             if ($stage->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
                 throw $this->createAccessDeniedException();
             }
@@ -94,6 +94,11 @@ class StageController extends AbstractController
         ->getRepository(Stage::class)
         ->find($idStage);
 
+        $user = $this->getUser(); 
+        if ($stage->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
+            throw $this->createAccessDeniedException();
+        }
+
         $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
         $semaine = $repository->findOneBy(
             ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
@@ -135,6 +140,23 @@ class StageController extends AbstractController
             return $this->render('stage/showAddSemaineStage.html.twig', array('formSemaine' => $formSemaine->createView(), 'formTache' => $formTache->createView(), 'stage' => $stage, 'semaine' => $semaine ));     
         }
 
+    }
+
+     /*
+     * consultation par l'enseignant de l'activité d'une semaine de stage d'un étudiant
+    */
+    public function showSemaine($idStage, $numSemaine)
+    {
+        $repository = $this->getDoctrine()->getRepository(Stage::class);
+        $stage = $repository->find($idStage);
+
+        $repository = $this->getDoctrine()->getRepository(SemaineStage::class);
+        $semaineStage = $repository->findOneBy(
+            ['stage' => $stage->getid(), 'numSemaine' => $numSemaine]);
+            
+        
+
+        return $this->render('stage/showSemaineStage.html.twig', array('semaineStage'=>$semaineStage,'stage'=>$stage, 'templateTwigParent' => 'baseEnseignant.html.twig'));   
     }
     
     /**
