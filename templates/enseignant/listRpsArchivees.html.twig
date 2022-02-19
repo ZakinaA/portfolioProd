@@ -38,7 +38,7 @@
                             <td>{{rp.activites.count}}</td>
                             <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                             <td>{{rp.statut.libelle}}</td>
-                             <td>{% if rp.archivage == 0 %}<a class="text" href="{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}">archiver {% else %}<a class="text" href="{{ path('rpDesarchiver', { 'idRp': rp.id }) }}"><img src="{{ asset('images/restore.png' | trans)}}" alt="désarchiver" class="mr-2">{% endif %}</a></td>                          </tr>
+                             <td>{% if rp.archivage == 0 %}<a class="text" href="{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}">archiver {% else %}<a class="text" href="{{ path('rpDesarchiver', { 'idRp': rp.id }) }}"<span title="Cliquer pour désarchiver">><img src="{{ asset('images/restore.png' | trans)}}" alt="désarchiver" class="mr-2"></span>{% endif %}</a></td>                          </tr>
                           </tr>
                         {% endfor %}
         

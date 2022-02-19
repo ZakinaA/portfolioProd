@@ -43,7 +43,7 @@
                               <td>{{rp.activites.count}}</td>
                               <td>{{rp.dateDebut | date("d/m/Y")}}</td>
                               <td>{{rp.statut.libelle}} {% if rp.statut.id == 2%} de {{rp.enseignant.prenom}} {{rp.enseignant.nom}} {% endif %}</td>
-                              <td>{% if rp.archivage == 0 %}<a class="text" href="{{ path('rpArchiver', { 'idRp': rp.id }) }}"><span title="Cliquer pour archiver"><img src="{{ asset('images/bin.png' | trans)}}" alt="Contact" class="mr-2"></span> {% else %}<a class="text" href="{{ path('rpDesarchiver', { 'idRp': rp.id }) }}"><img src="{{ asset('images/restore.png' | trans)}}" alt="désarchiver" class="mr-2">{% endif %}</a></td>
+                              <td>{% if rp.archivage == 0 %}<a class="text" href="{{ path('rpArchiver', { 'idRp': rp.id }) }}"><span title="Cliquer pour archiver"><img src="{{ asset('images/bin.png' | trans)}}" class="mr-2"></span> {% else %}<a class="text" href="{{ path('rpDesarchiver', { 'idRp': rp.id }) }}"><span title="Cliquer pour désarchiver"><img src="{{ asset('images/restore.png' | trans)}}" alt="désarchiver" class="mr-2">{% endif %}</span></a></td>
                             </tr>
                             {% endfor %}
                          </tbody>

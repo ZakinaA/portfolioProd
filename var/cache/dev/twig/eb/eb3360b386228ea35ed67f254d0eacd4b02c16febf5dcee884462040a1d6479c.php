@@ -175,15 +175,15 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpArchiver", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 46)]), "html", null, true);
                 echo "\"><span title=\"Cliquer pour archiver\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("images/bin.png")), "html", null, true);
-                echo "\" alt=\"Contact\" class=\"mr-2\"></span> ";
+                echo "\" class=\"mr-2\"></span> ";
             } else {
                 echo "<a class=\"text\" href=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpDesarchiver", ["idRp" => twig_get_attribute($this->env, $this->source, $context["rp"], "id", [], "any", false, false, false, 46)]), "html", null, true);
-                echo "\"><img src=\"";
+                echo "\"><span title=\"Cliquer pour désarchiver\"><img src=\"";
                 echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("images/restore.png")), "html", null, true);
                 echo "\" alt=\"désarchiver\" class=\"mr-2\">";
             }
-            echo "</a></td>
+            echo "</span></a></td>
                             </tr>
                             ";
         }
@@ -268,7 +268,7 @@ class __TwigTemplate_5583ccaa5aea7d89256e1bf99401f579dec7923e883ab185d6ba4c109ba
                               <td>{{rp.activites.count}}</td>
                               <td>{{rp.dateDebut | date(\"d/m/Y\")}}</td>
                               <td>{{rp.statut.libelle}} {% if rp.statut.id == 2%} de {{rp.enseignant.prenom}} {{rp.enseignant.nom}} {% endif %}</td>
-                              <td>{% if rp.archivage == 0 %}<a class=\"text\" href=\"{{ path('rpArchiver', { 'idRp': rp.id }) }}\"><span title=\"Cliquer pour archiver\"><img src=\"{{ asset('images/bin.png' | trans)}}\" alt=\"Contact\" class=\"mr-2\"></span> {% else %}<a class=\"text\" href=\"{{ path('rpDesarchiver', { 'idRp': rp.id }) }}\"><img src=\"{{ asset('images/restore.png' | trans)}}\" alt=\"désarchiver\" class=\"mr-2\">{% endif %}</a></td>
+                              <td>{% if rp.archivage == 0 %}<a class=\"text\" href=\"{{ path('rpArchiver', { 'idRp': rp.id }) }}\"><span title=\"Cliquer pour archiver\"><img src=\"{{ asset('images/bin.png' | trans)}}\" class=\"mr-2\"></span> {% else %}<a class=\"text\" href=\"{{ path('rpDesarchiver', { 'idRp': rp.id }) }}\"><span title=\"Cliquer pour désarchiver\"><img src=\"{{ asset('images/restore.png' | trans)}}\" alt=\"désarchiver\" class=\"mr-2\">{% endif %}</span></a></td>
                             </tr>
                             {% endfor %}
                          </tbody>
