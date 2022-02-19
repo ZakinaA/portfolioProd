@@ -72,4 +72,5 @@ return [
     'listerComptesNonActifs' => [[], ['_controller' => 'App\\Controller\\AdminController::listerComptesNonActifs'], [], [['text', '/admin/listerComptesNonActifs']], [], []],
     'validerCompte' => [['email'], ['_controller' => 'App\\Controller\\AdminController::validerCompte'], [], [['variable', '/', '[^/]++', 'email', true], ['text', '/admin/validerCompte']], [], []],
     'supprimerCompte' => [['email'], ['_controller' => 'App\\Controller\\AdminController::supprimerCompte'], [], [['variable', '/', '[^/]++', 'email', true], ['text', '/admin/supprimerCompte']], [], []],
+    'listerStagesAAffecter' => [['idNiveau'], ['_controller' => 'App\\Controller\\StageController::listerStagesAAffecter'], [], [['variable', '/', '[^/]++', 'idNiveau', true], ['text', '/admin/listerStagesAAffecter']], [], []],
 ];

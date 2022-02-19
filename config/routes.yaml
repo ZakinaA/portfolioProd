@@ -280,3 +280,8 @@ validerCompte:
 supprimerCompte:
   path: /admin/supprimerCompte/{email}
   controller: App\Controller\AdminController::supprimerCompte
+
+#liste les stages de 1ère et 2ème année pour les affecter à un enseignant
+listerStagesAAffecter:
+  path: /admin/listerStagesAAffecter/{idNiveau}
+  controller: App\Controller\StageController::listerStagesAAffecter

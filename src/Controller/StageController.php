@@ -7,11 +7,15 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Request;
 use App\Entity\Stage ;
+use App\Entity\Etudiant ;
+use App\Entity\Enseignant ;
+use App\Entity\Promotion ;
 use App\Entity\TacheSemaine ;
 use App\Form\StageType;
 use App\Form\SemaineStageType;
 use App\Form\TacheSemaineType;
 use App\Entity\SemaineStage ;
+use App\Form\StageAffecterEnseignantType;
 
 class StageController extends AbstractController
 {
@@ -168,9 +172,6 @@ class StageController extends AbstractController
     }
 
 
-
-
-
     /**
     * consultation d'un stage par un enseignant
     */
@@ -188,6 +189,30 @@ class StageController extends AbstractController
         //return $this->render('enseignant/stage/show.html.twig', ['stage' => $stage]);
     }
 
+    /*
+    * liste les stages de 1ère et 2ème année pour les affecter à un enseignant
+    */
+    public function listerStagesAAffecter($idNiveau): Response
+    {    
+        // on récupère les promos en cours
+        $repository = $this->getDoctrine()->getRepository(Promotion::class);
+        $promos = $repository->findBy(
+            ['statut' => 'AC']);
+
+        // on récupère les étudiant selon le niveau et dont la promo est encore en cours
+        $repository = $this->getDoctrine()->getRepository(Etudiant::class);
+        $etudiants = $repository->findBy(
+            ['niveau' => $idNiveau, 'promotion' => $promos]);
+
+          foreach ($etudiants as $e){
+              echo ( $e->getNom() . '  '  . $e->getPrenom() . '</br>');
+          }  
 
 
+        $form = $this->createForm(StageAffecterEnseignantType::class);
+   
+       //return $this->render('admin/listStagesAAffecter.html.twig', ['etudiants' => $etudiants]);
+       return $this->render('admin/listStagesAAffecter.html.twig', array('form' => $form->createView(), 'etudiants'=>$etudiants));   
+
+    }
 }

@@ -493,6 +493,9 @@
     <service id="App\Form\SemaineStageType" class="App\Form\SemaineStageType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\StageAffecterEnseignantType" class="App\Form\StageAffecterEnseignantType" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\StageType" class="App\Form\StageType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -1116,6 +1119,7 @@
         <argument>App\Form\ResetPasswordRequestFormType</argument>
         <argument>App\Form\RpActiviteType</argument>
         <argument>App\Form\SemaineStageType</argument>
+        <argument>App\Form\StageAffecterEnseignantType</argument>
         <argument>App\Form\StageType</argument>
         <argument>App\Form\TacheSemaineType</argument>
         <argument>App\Form\UserEnseignantType</argument>
@@ -1477,7 +1481,7 @@
       <argument type="service" id="form.registry"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension">
-      <argument type="service" id=".service_locator.iydv31F"/>
+      <argument type="service" id=".service_locator.yJneKdz"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.transformation_failure_handling"/>
@@ -5787,6 +5791,8 @@
     <service id=".abstract.instanceof.App\Form\RpActiviteType" class="App\Form\RpActiviteType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SemaineStageType" class="App\Form\SemaineStageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SemaineStageType" class="App\Form\SemaineStageType" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StageAffecterEnseignantType" class="App\Form\StageAffecterEnseignantType" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\StageAffecterEnseignantType" class="App\Form\StageAffecterEnseignantType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\StageType" class="App\Form\StageType" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\StageType" class="App\Form\StageType" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\TacheSemaineType" class="App\Form\TacheSemaineType" autowire="true" abstract="true"/>
@@ -6262,7 +6268,7 @@
       <argument type="service" id="debug.argument_resolver.not_tagged_controller.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.iydv31F" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.yJneKdz" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\ActiviteType" type="service_closure" id="App\Form\ActiviteType"/>
@@ -6279,6 +6285,7 @@
         <argument key="App\Form\ResetPasswordRequestFormType" type="service_closure" id="App\Form\ResetPasswordRequestFormType"/>
         <argument key="App\Form\RpActiviteType" type="service_closure" id="App\Form\RpActiviteType"/>
         <argument key="App\Form\SemaineStageType" type="service_closure" id="App\Form\SemaineStageType"/>
+        <argument key="App\Form\StageAffecterEnseignantType" type="service_closure" id="App\Form\StageAffecterEnseignantType"/>
         <argument key="App\Form\StageType" type="service_closure" id="App\Form\StageType"/>
         <argument key="App\Form\TacheSemaineType" type="service_closure" id="App\Form\TacheSemaineType"/>
         <argument key="App\Form\UserEnseignantType" type="service_closure" id="App\Form\UserEnseignantType"/>

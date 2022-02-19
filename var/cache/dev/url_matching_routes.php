@@ -121,6 +121,7 @@ return [
                         .'|upprimerCompte/([^/]++)(*:1214)'
                     .')'
                     .'|validerCompte/([^/]++)(*:1246)'
+                    .'|listerStagesAAffecter/([^/]++)(*:1285)'
                 .')'
             .')/?$}sDu',
     ],
@@ -163,8 +164,9 @@ return [
         1156 => [[['_route' => 'showEditEnseignantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEnseignant'], ['idUser'], null, null, false, true, null]],
         1181 => [[['_route' => 'showEditEtudiantAdmin', '_controller' => 'App\\Controller\\AdminController::showEditEtudiant'], ['idEtudiant'], null, null, false, true, null]],
         1214 => [[['_route' => 'supprimerCompte', '_controller' => 'App\\Controller\\AdminController::supprimerCompte'], ['email'], null, null, false, true, null]],
-        1246 => [
-            [['_route' => 'validerCompte', '_controller' => 'App\\Controller\\AdminController::validerCompte'], ['email'], null, null, false, true, null],
+        1246 => [[['_route' => 'validerCompte', '_controller' => 'App\\Controller\\AdminController::validerCompte'], ['email'], null, null, false, true, null]],
+        1285 => [
+            [['_route' => 'listerStagesAAffecter', '_controller' => 'App\\Controller\\StageController::listerStagesAAffecter'], ['idNiveau'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],
