@@ -8,7 +8,7 @@
 
 
         <div class="card-header d-flex align-items-center">
-            <h3 class="h4"><h3 class="h4"> Mes dernières réalisations professionnelles </h3>
+            <h3 class="h4"><h3 class="h4"> Mes 5 dernières réalisations professionnelles </h3>
         </div>
         <div class="card-body">
             <div class="table-responsive">   
@@ -20,12 +20,12 @@
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Action<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                             
                       </tr>
                     </thead>
                     <tbody>
                       <!-- on n'affiche que 7 rp -->
-                      {% for i in 0..7 %}
+                      {% for i in 0..4 %}
                         {% if (app.user.etudiant.rps[i] is defined) and (app.user.etudiant.rps[i].archivage == 0) %}
                           <tr>
                             <th scope="row">{{app.user.etudiant.rps[i].source.libelle}} </th>
@@ -33,7 +33,7 @@
                             <td>{{app.user.etudiant.rps[i].activites.count}}</td>
                             <td>{{app.user.etudiant.rps[i].dateDebut | date("d/m/Y")}}</td>
                             <td>{{app.user.etudiant.rps[i].statut.libelle}} {% if app.user.etudiant.rps[i].statut.id == 2%} de {{app.user.etudiant.rps[i].enseignant.prenom}} {{app.user.etudiant.rps[i].enseignant.nom}} {% endif %}</td>
-                            <td>{% if app.user.etudiant.rps[i].archivage == 0 %}<a class="text" href="{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}">archiver {% else %}<a class="text" href="{{ path('rpDesarchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}"><img src="{{ asset('images/restore.png' | trans)}}" alt="Désarchiver" class="mr-2">{% endif %}</a></td>                          </tr>
+                
                         {% endif %}
                       {% endfor %}
                     </tbody>

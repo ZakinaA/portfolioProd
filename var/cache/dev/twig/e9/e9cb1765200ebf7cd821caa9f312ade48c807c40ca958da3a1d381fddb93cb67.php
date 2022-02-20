@@ -213,27 +213,28 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
         // line 62
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpShowEditAdd");
+        echo "\">Nouvelle réalisation</a></li>
+                <li><a href=\"";
+        // line 63
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etudiantRps");
         echo "\">Réalisations en cours</a></li>
                 <li><a href=\"";
-        // line 63
+        // line 64
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etudiantRpsArchivees");
         echo "\">Réalisations archivées</a></li>
-                <li><a href=\"";
-        // line 64
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpShowEditAdd");
-        echo "\">Nouvelle réalisation</a></li>
+                
               </ul>
             </li>
             
             <li><a href=\"#stage\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"icon-grid\"></i>Stages </a>
               <ul id=\"stage\" class=\"collapse list-unstyled \">
                 <li><a href=\"";
-        // line 70
+        // line 71
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("etudiantStages");
         echo "\">Mes stages</a></li>
                 <li><a href=\"";
-        // line 71
+        // line 72
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("stageAddEdit");
         echo "\">Nouveau stage</a></li>
               </ul>
@@ -261,7 +262,7 @@ class __TwigTemplate_7a06c6515cfdb92c361cca276a51588ea06d294878ae675f1414f6200bb
 
     }
 
-    // line 90
+    // line 91
     public function block_contenu($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -296,7 +297,7 @@ test contenu etudiant
 
     public function getDebugInfo()
     {
-        return array (  265 => 90,  237 => 71,  233 => 70,  224 => 64,  220 => 63,  216 => 62,  199 => 50,  195 => 49,  186 => 46,  184 => 45,  180 => 44,  169 => 35,  158 => 34,  144 => 29,  138 => 28,  132 => 27,  128 => 25,  118 => 24,  104 => 19,  97 => 15,  85 => 10,  81 => 9,  74 => 5,  71 => 4,  61 => 3,  38 => 1,);
+        return array (  266 => 91,  238 => 72,  234 => 71,  224 => 64,  220 => 63,  216 => 62,  199 => 50,  195 => 49,  186 => 46,  184 => 45,  180 => 44,  169 => 35,  158 => 34,  144 => 29,  138 => 28,  132 => 27,  128 => 25,  118 => 24,  104 => 19,  97 => 15,  85 => 10,  81 => 9,  74 => 5,  71 => 4,  61 => 3,  38 => 1,);
     }
 
     public function getSourceContext()
@@ -362,9 +363,10 @@ test contenu etudiant
           <ul class=\"list-unstyled\">
             <li><a href=\"#realisation\" aria-expanded=\"false\" data-toggle=\"collapse\"> <i class=\"fa fa-bar-chart\"></i>Réalisations Pro. </a>
               <ul   id=\"realisation\" class=\"collapse list-unstyled \">
+                <li><a href=\"{{ path('rpShowEditAdd')}}\">Nouvelle réalisation</a></li>
                 <li><a href=\"{{ path('etudiantRps')}}\">Réalisations en cours</a></li>
                 <li><a href=\"{{ path('etudiantRpsArchivees')}}\">Réalisations archivées</a></li>
-                <li><a href=\"{{ path('rpShowEditAdd')}}\">Nouvelle réalisation</a></li>
+                
               </ul>
             </li>
             

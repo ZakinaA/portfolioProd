@@ -35,6 +35,7 @@ return [
     'rpShowEditAdd' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpController::showEditAdd'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/rp/showEditAdd']], [], []],
     'rpArchiver' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpController::archiver'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/rp/archiver']], [], []],
     'rpDesarchiver' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpController::desarchiver'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/rp/desarchiver']], [], []],
+    'rpRemove' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpController::remove'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/rp/remove']], [], []],
     'rpActiviteList' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpActiviteController::rpActiviteList'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/rp/activite/list']], [], []],
     'rpActiviteEdit' => [['idRpActivite'], ['idRpActivite' => '0', '_controller' => 'App\\Controller\\RpActiviteController::rpActiviteEdit'], ['idRpActivite' => '\\d+'], [['variable', '/', '\\d+', 'idRpActivite', true], ['text', '/rp/activite/edit']], [], []],
     'rpActiviteAdd' => [['idRp'], ['idRp' => '0', '_controller' => 'App\\Controller\\RpActiviteController::rpActiviteAdd'], ['idRp' => '\\d+'], [['variable', '/', '\\d+', 'idRp', true], ['text', '/rp/activite/add']], [], []],

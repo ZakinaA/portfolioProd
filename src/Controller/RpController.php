@@ -139,7 +139,7 @@ class RpController extends AbstractController
         $entityManager->flush();
         $this->addFlash('success', 'La rp '. $rp->getLibCourt(). ' a été archivée');
         //return $this->redirectToRoute('some_other_route', array('entity' => $entity));
-        return $this->redirectToRoute('etudiantRps');    
+        return $this->redirectToRoute('etudiantRpsArchivees');    
         //return $this->render('etudiant/listRPs.html.twig', ['lesRps' => $user->getEtudiant()->getRPs()]); 
     } 
 
@@ -164,6 +164,29 @@ class RpController extends AbstractController
         return $this->redirectToRoute('etudiantRps');    
         //return $this->render('etudiant/listRPs.html.twig', ['lesRps' => $user->getEtudiant()->getRPs()]); 
     }
+
+     /* 
+     * Permet de supprimer une rp
+     */
+    public function remove($idRp)
+    {
+        $user = $this->getUser();
+        $rp = $this->getDoctrine()
+        ->getRepository(RP::class)
+        ->find($idRp);
+    
+        if ($rp->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
+            throw $this->createAccessDeniedException();
+        }
+
+    
+        $manager = $this->getDoctrine()->getManager();
+        $manager->remove($rp);
+        $manager->flush();
+        $this->addFlash('success', 'La rp '. $rp->getLibCourt(). ' a été désarchivée');
+        return $this->redirectToRoute('etudiantRpsArchivees');    
+    }
+
 
     /* 
      * # Liste les rp d'un étudiant

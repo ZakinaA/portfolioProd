@@ -91,7 +91,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
 
 
         <div class=\"card-header d-flex align-items-center\">
-            <h3 class=\"h4\"><h3 class=\"h4\"> Mes dernières réalisations professionnelles </h3>
+            <h3 class=\"h4\"><h3 class=\"h4\"> Mes 5 dernières réalisations professionnelles </h3>
         </div>
         <div class=\"card-body\">
             <div class=\"table-responsive\">   
@@ -103,7 +103,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Action<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                             
                       </tr>
                     </thead>
                     <tbody>
@@ -111,7 +111,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                       ";
         // line 28
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(range(0, 7));
+        $context['_seq'] = twig_ensure_traversable(range(0, 4));
         foreach ($context['_seq'] as $context["_key"] => $context["i"]) {
             // line 29
             echo "                        ";
@@ -148,20 +148,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                     echo " ";
                 }
                 echo "</td>
-                            <td>";
-                // line 36
-                if ((0 === twig_compare(twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "archivage", [], "any", false, false, false, 36), 0))) {
-                    echo "<a class=\"text\" href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpArchiver", ["idRp" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
-                    echo "\">archiver ";
-                } else {
-                    echo "<a class=\"text\" href=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("rpDesarchiver", ["idRp" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 36, $this->source); })()), "user", [], "any", false, false, false, 36), "etudiant", [], "any", false, false, false, 36), "rps", [], "any", false, false, false, 36), $context["i"], [], "array", false, false, false, 36), "id", [], "any", false, false, false, 36)]), "html", null, true);
-                    echo "\"><img src=\"";
-                    echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl($this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans("images/restore.png")), "html", null, true);
-                    echo "\" alt=\"Désarchiver\" class=\"mr-2\">";
-                }
-                echo "</a></td>                          </tr>
+                
                         ";
             }
             // line 38
@@ -275,7 +262,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
 
     public function getDebugInfo()
     {
-        return array (  249 => 78,  234 => 75,  230 => 74,  226 => 73,  222 => 72,  216 => 71,  212 => 70,  209 => 69,  205 => 68,  174 => 39,  168 => 38,  153 => 36,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
+        return array (  236 => 78,  221 => 75,  217 => 74,  213 => 73,  209 => 72,  203 => 71,  199 => 70,  196 => 69,  192 => 68,  161 => 39,  155 => 38,  141 => 35,  137 => 34,  133 => 33,  127 => 32,  123 => 31,  120 => 30,  117 => 29,  113 => 28,  88 => 5,  78 => 4,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -290,7 +277,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
 
 
         <div class=\"card-header d-flex align-items-center\">
-            <h3 class=\"h4\"><h3 class=\"h4\"> Mes dernières réalisations professionnelles </h3>
+            <h3 class=\"h4\"><h3 class=\"h4\"> Mes 5 dernières réalisations professionnelles </h3>
         </div>
         <div class=\"card-body\">
             <div class=\"table-responsive\">   
@@ -302,12 +289,12 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                               <th>Nombre d'activités<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Date<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
                               <th>Statut<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
-                              <th>Action<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                             
                       </tr>
                     </thead>
                     <tbody>
                       <!-- on n'affiche que 7 rp -->
-                      {% for i in 0..7 %}
+                      {% for i in 0..4 %}
                         {% if (app.user.etudiant.rps[i] is defined) and (app.user.etudiant.rps[i].archivage == 0) %}
                           <tr>
                             <th scope=\"row\">{{app.user.etudiant.rps[i].source.libelle}} </th>
@@ -315,7 +302,7 @@ class __TwigTemplate_3b9903f919981210e2a4ae2367e931053b945581dfe974963d806fbca53
                             <td>{{app.user.etudiant.rps[i].activites.count}}</td>
                             <td>{{app.user.etudiant.rps[i].dateDebut | date(\"d/m/Y\")}}</td>
                             <td>{{app.user.etudiant.rps[i].statut.libelle}} {% if app.user.etudiant.rps[i].statut.id == 2%} de {{app.user.etudiant.rps[i].enseignant.prenom}} {{app.user.etudiant.rps[i].enseignant.nom}} {% endif %}</td>
-                            <td>{% if app.user.etudiant.rps[i].archivage == 0 %}<a class=\"text\" href=\"{{ path('rpArchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\">archiver {% else %}<a class=\"text\" href=\"{{ path('rpDesarchiver', { 'idRp': app.user.etudiant.rps[i].id }) }}\"><img src=\"{{ asset('images/restore.png' | trans)}}\" alt=\"Désarchiver\" class=\"mr-2\">{% endif %}</a></td>                          </tr>
+                
                         {% endif %}
                       {% endfor %}
                     </tbody>

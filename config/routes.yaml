@@ -72,6 +72,11 @@ rpDesarchiver:
   path: /rp/desarchiver/{idRp<\d+>?0}
   controller: App\Controller\RpController::desarchiver
 
+#Permet de supprimer une rp
+rpRemove:
+  path: /rp/remove/{idRp<\d+>?0}
+  controller: App\Controller\RpController::remove
+
 #Liste les activités d'une rp passée en paramètre
 rpActiviteList:
   path: /rp/activite/list/{idRp<\d+>?0}
