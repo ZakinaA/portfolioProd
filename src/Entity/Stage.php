@@ -49,7 +49,7 @@ class Stage
     private $codeNaf;
 
     /**
-     * @ORM\Column(type="string", length=5)
+     * @ORM\Column(type="string", length=5, nullable=true)
      */
     private $numRue;
 
@@ -144,7 +144,7 @@ class Stage
     private $dateFin;
 
      /**
-     * @ORM\Column(type="string", length=15)
+     * @ORM\Column(type="integer")
      *    
      * @Assert\NotBlank()
      * 
@@ -158,32 +158,32 @@ class Stage
     private $duree;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $horLun;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $horMar;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $horMer;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $horJeu;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $horVen;
 
     /**
-     * @ORM\Column(type="string", length=20, nullable=true)
+     * @ORM\Column(type="string", length=25, nullable=true)
      */
     private $horSam;
 
@@ -202,6 +202,21 @@ class Stage
      * @ORM\OneToMany(targetEntity=SemaineStage::class, mappedBy="stage")
      */
     private $semaineStages;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $nomDirecteur;
+
+    /**
+     * @ORM\Column(type="string", length=15, nullable=true)
+     */
+    private $telDirecteur;
+
+    /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     */
+    private $mailDirecteur;
 
     public function __construct()
     {
@@ -526,6 +541,42 @@ class Stage
                 $semaineStage->setStage(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getNomDirecteur(): ?string
+    {
+        return $this->nomDirecteur;
+    }
+
+    public function setNomDirecteur(string $nomDirecteur): self
+    {
+        $this->nomDirecteur = $nomDirecteur;
+
+        return $this;
+    }
+
+    public function getTelDirecteur(): ?string
+    {
+        return $this->telDirecteur;
+    }
+
+    public function setTelDirecteur(?string $telDirecteur): self
+    {
+        $this->telDirecteur = $telDirecteur;
+
+        return $this;
+    }
+
+    public function getMailDirecteur(): ?string
+    {
+        return $this->mailDirecteur;
+    }
+
+    public function setMailDirecteur(string $mailDirecteur): self
+    {
+        $this->mailDirecteur = $mailDirecteur;
 
         return $this;
     }   

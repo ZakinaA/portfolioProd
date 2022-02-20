@@ -105,7 +105,7 @@
                                 </div>
                             </div>
 
-                            <div class="line"> </div>
+                           
 
                             <!-- 3ème ligne de formulaire adresse -->
                             <div class="form-group row">  
@@ -119,15 +119,18 @@
                             </div>
                             <div class="line"></div>
 
-                             <!-- ligne de formulaire service et lieu -->
+                            <!--  ligne directeur.rice -->
                             <div class="form-group row">  
                                 <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-md-6">
-                                            {{ form_row(form.lieu, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
+                                            {{ form_row(form.nomDirecteur, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
                                         </div>
-                                        <div class="col-md-6">
-                                            {{ form_row(form.service, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
+                                        <div class="col-md-3">
+                                            {{ form_row(form.mailDirecteur, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
+                                        </div>
+                                        <div class="col-md-3">
+                                            {{ form_row(form.telDirecteur, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
                                         </div>
                                     </div>
                                 </div>
@@ -167,6 +170,20 @@
                                 </div>
                             </div>
 
+                             <!-- ligne de formulaire service et lieu -->
+                            <div class="form-group row">  
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            {{ form_row(form.lieu, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
+                                        </div>
+                                        <div class="col-md-6">
+                                            {{ form_row(form.service, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <!--  ligne horaires -->
                             <div class="form-group row">  
                                 <div class="col-sm-12">

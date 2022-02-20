@@ -28,7 +28,12 @@ class StageController extends AbstractController
         // paramètre par défaut de la route à 0. Si 0, on crée un nouveau stage
         if ($idStage == 0)
         {
-            $stage = new Stage();       
+            $stage = new Stage(); 
+            $stage->setHorLun(' 8H00-12h00 / 14h00-17h00');
+            $stage->setHorMar(' 8H00-12h00 / 14h00-17h00'); 
+            $stage->setHorMer(' 8H00-12h00 / 14h00-17h00'); 
+            $stage->setHorJeu(' 8H00-12h00 / 14h00-17h00'); 
+            $stage->setHorVen(' 8H00-12h00 / 14h00-17h00');    
         }
         else
         {

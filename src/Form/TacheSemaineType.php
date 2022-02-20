@@ -24,7 +24,7 @@ class TacheSemaineType extends AbstractType
             //->add('domaineTache')
             ->add('jour', EntityType::class, array('class' => 'App\Entity\Jour','choice_label' => 'nom'))
             //->add('semaineStage')
-            ->add('ajouter', SubmitType::class, array('label' => 'Valider Tâche'))
+            ->add('ajouter', SubmitType::class, array('label' => 'Valider tache'))
         ;
     }
 
