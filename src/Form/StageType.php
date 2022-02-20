@@ -28,7 +28,7 @@ class StageType extends AbstractType
             ->add('nomTuteur', TextType::class, array('required' => true, 'label' => 'nom tuteur *','disabled' => $options['champDesactive']))
             ->add('mailTuteur', EmailType::class, array('required' => true, 'label' => 'mail tuteur *','disabled' => $options['champDesactive']))
             ->add('telTuteur', TextType::class, array('required' => true, 'label' => 'tel tuteur *','disabled' => $options['champDesactive']))
-            ->add('lieu', TextType::class, array('required' => false, 'label' => 'lieu de stage *','disabled' => $options['champDesactive']))
+            ->add('lieu', TextType::class, array('required' => false, 'label' => 'lieu de stage','disabled' => $options['champDesactive']))
             ->add('sujet', TextType::class, array('required' => true, 'label' => 'sujet *','disabled' => $options['champDesactive']))
             ->add('service', TextType::class, array('required' => false, 'label' => 'service','disabled' => $options['champDesactive']))
             ->add('dateDebut', DateType::class, array('input' => 'datetime',
