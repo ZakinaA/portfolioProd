@@ -23,8 +23,8 @@ class RpActiviteType extends AbstractType
             },
         ))
         ->add('commentaire', TextareaType::class, array(
-            'help' =>'Décrivez ce que vous avez réalisé en rapport avec l\'activité selectionnée',
-            'label'=> 'Description')
+            'help' =>'Décrivez ce que vous avez réalisé en rapport avec l\'activité sélectionnée',
+            'label'=> 'Description du travail réalisé')
         );
     }
 
