@@ -20,7 +20,8 @@ class RpProductionController extends AbstractController
         if ($idRp == 0)
         {
             $production = new Production();
-            return new Response ('gérer ce cas ou pas de rp et on clique sur activites- renvoyer vers formulaire');
+            return $this->redirectToRoute('rpShowEditAdd',array('idRp'=> 0));
+            //return new Response ('gérer ce cas ou pas de rp et on clique sur activites- renvoyer vers formulaire');
         }
         else
         //idRpActivite est différent de 0, on veut donc modifier une rpActiicite existante

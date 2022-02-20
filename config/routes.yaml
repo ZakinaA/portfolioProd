@@ -45,7 +45,7 @@ etudiantHome:
   path: /etudiant/home
   controller: App\Controller\EtudiantController::home
 
-######## Routes des fonctionalités stage pour un étudiant connecté ########################
+######## Routes des fonctionalités rp pour un étudiant connecté ########################
 
 #Liste les rps non archivées d'un étudiant connecté
 etudiantRps:

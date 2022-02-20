@@ -20,6 +20,7 @@ class RpCommentaireController extends AbstractController
      */
     public function rpCommentaireList($idRp): Response
     {
+        
         $repository = $this->getDoctrine()->getRepository(RP::class);
         $rp = $repository->find($idRp);
 
@@ -35,6 +36,15 @@ class RpCommentaireController extends AbstractController
      */
     public function rpNotifier(Request $request, $idRp): Response
     {
+
+        if ($idRp == 0)
+        {return $this->redirectToRoute('rpShowEditAdd',array('idRp'=> 0));
+            //return new Response ('gérer ce cas ou pas de rp et on clique sur activites- renvoyer vers formulaire');
+        }
+        else
+        {
+
+
         $repository = $this->getDoctrine()->getRepository(RP::class);
         $rp = $repository->find($idRp);
 
@@ -64,6 +74,7 @@ class RpCommentaireController extends AbstractController
         {
             return $this->render('rp/listCommentaires.html.twig', array('rp' => $rp, 'form' => $form->createView()));
         }
+    }
         
     }
     
