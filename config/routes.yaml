@@ -29,6 +29,10 @@ login_success:
     path: /login_success
     controller: App\Controller\SecurityController::home
 
+competencesShow:
+    path: /competences/show
+    controller: App\Controller\RpActiviteController::showCompetences
+
 
 #############################################################################
 ################ Routes etudiant ############################################

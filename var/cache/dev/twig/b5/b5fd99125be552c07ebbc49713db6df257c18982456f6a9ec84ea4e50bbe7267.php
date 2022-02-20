@@ -32,6 +32,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
             'navBar' => [$this, 'block_navBar'],
             'titreContenu' => [$this, 'block_titreContenu'],
             'contenu' => [$this, 'block_contenu'],
+            'javascript' => [$this, 'block_javascript'],
         ];
     }
 
@@ -225,14 +226,22 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
         // line 113
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/tri.js"), "html", null, true);
         echo "\"></script>
+    <script src=\"";
+        // line 114
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery3-5-1.js"), "html", null, true);
+        echo "\"></script>
     <!-- Main File-->
     <script src=\"";
-        // line 115
+        // line 116
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/front.js"), "html", null, true);
         echo "\"></script>
  
   </body>
-</html>";
+</html>
+
+";
+        // line 121
+        $this->displayBlock('javascript', $context, $blocks);
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -341,6 +350,24 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     }
 
+    // line 121
+    public function block_javascript($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascript"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "base.html.twig";
@@ -353,7 +380,7 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
 
     public function getDebugInfo()
     {
-        return array (  327 => 85,  308 => 80,  287 => 70,  275 => 57,  265 => 56,  255 => 53,  245 => 52,  231 => 115,  226 => 113,  222 => 112,  218 => 111,  214 => 110,  210 => 109,  206 => 108,  202 => 107,  198 => 106,  177 => 87,  175 => 86,  173 => 85,  165 => 80,  155 => 72,  153 => 70,  143 => 63,  138 => 60,  136 => 56,  132 => 54,  130 => 52,  117 => 44,  113 => 43,  92 => 25,  87 => 23,  82 => 21,  77 => 19,  70 => 15,  65 => 13,  60 => 11,  48 => 1,);
+        return array (  354 => 121,  336 => 85,  317 => 80,  296 => 70,  284 => 57,  274 => 56,  264 => 53,  254 => 52,  244 => 121,  236 => 116,  231 => 114,  227 => 113,  223 => 112,  219 => 111,  215 => 110,  211 => 109,  207 => 108,  203 => 107,  199 => 106,  178 => 87,  176 => 86,  174 => 85,  166 => 80,  156 => 72,  154 => 70,  144 => 63,  139 => 60,  137 => 56,  133 => 54,  131 => 52,  118 => 44,  114 => 43,  93 => 25,  88 => 23,  83 => 21,  78 => 19,  71 => 15,  66 => 13,  61 => 11,  49 => 1,);
     }
 
     public function getSourceContext()
@@ -471,10 +498,14 @@ class __TwigTemplate_046e62fdcd6f0caf6f1d0e50d86295148d0e5c4ead60ee53c56fba3b975
     <script src=\"{{ asset('vendor/jquery-validation/jquery.validate.min.js')}}\"></script>
     <script src=\"{{ asset('js/charts-home.js')}}\"></script>
     <script src=\"{{ asset('js/tri.js')}}\"></script>
+    <script src=\"{{ asset('js/jquery3-5-1.js')}}\"></script>
     <!-- Main File-->
     <script src=\"{{ asset('js/front.js')}}\"></script>
  
   </body>
-</html>", "base.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\base.html.twig");
+</html>
+
+{% block javascript %}
+{% endblock %}", "base.html.twig", "C:\\wamp64\\www\\portfolioV2\\templates\\base.html.twig");
     }
 }

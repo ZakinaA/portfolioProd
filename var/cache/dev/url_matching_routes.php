@@ -26,6 +26,7 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/login_success' => [[['_route' => 'login_success', '_controller' => 'App\\Controller\\SecurityController::home'], null, null, null, false, false, null]],
+        '/competences/show' => [[['_route' => 'competencesShow', '_controller' => 'App\\Controller\\RpActiviteController::showCompetences'], null, null, null, false, false, null]],
         '/etudiant/showEdit' => [[['_route' => 'etudiantShowEdit', '_controller' => 'App\\Controller\\EtudiantController::showEdit'], null, null, null, false, false, null]],
         '/etudiant/home' => [[['_route' => 'etudiantHome', '_controller' => 'App\\Controller\\EtudiantController::home'], null, null, null, false, false, null]],
         '/etudiant/rps' => [[['_route' => 'etudiantRps', '_controller' => 'App\\Controller\\EtudiantController::getLesRP'], null, null, null, false, false, null]],

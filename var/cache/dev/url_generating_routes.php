@@ -28,6 +28,7 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'login_success' => [[], ['_controller' => 'App\\Controller\\SecurityController::home'], [], [['text', '/login_success']], [], []],
+    'competencesShow' => [[], ['_controller' => 'App\\Controller\\RpActiviteController::showCompetences'], [], [['text', '/competences/show']], [], []],
     'etudiantShowEdit' => [[], ['_controller' => 'App\\Controller\\EtudiantController::showEdit'], [], [['text', '/etudiant/showEdit']], [], []],
     'etudiantHome' => [[], ['_controller' => 'App\\Controller\\EtudiantController::home'], [], [['text', '/etudiant/home']], [], []],
     'etudiantRps' => [[], ['_controller' => 'App\\Controller\\EtudiantController::getLesRP'], [], [['text', '/etudiant/rps']], [], []],

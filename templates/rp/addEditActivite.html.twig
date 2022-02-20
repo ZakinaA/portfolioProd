@@ -41,11 +41,18 @@
                                 <div class="col-sm-12">
                                     <div class="row">
                                         <div class="col-md-12">
+                                        <label id="activites" name="activites">
                                             {{ form_row(form.activite, {'attr' : {'class' : 'form-control'}}) }} 
+                                        </label> 
                                         </div>
                                     </div>
                                 </div>
                             </div>
+ 
+
+                    <div class="col-sm-12" id="competences" name="competences">
+                    </div>
+                    </br>
 
                             <div class="form-group row">
                                 <div class="col-sm-12">
@@ -73,4 +80,42 @@
     </div>
 <!--/section-->
 
+{% endblock %}
+
+
+{% block javascript %}
+    
+<script>
+    jQuery( document ).ready(function( $ ) {
+        $("#activites").change(function () {
+            $( "select option:selected" ).each(function() {
+                });
+                var idAct = $(this).find(':selected').attr('value');
+                $('#competences').text("");
+
+            $.ajax({
+                type: "post",
+                url: '{{ path('competencesShow') }}',
+                data: { idActivite : idAct },
+                dataType: "json",
+                
+                success: function (json) {
+
+                
+                $.each(json, function (index, value) {
+
+                    //console.log(value);
+                    $('#competences').append("<ul> <li>"+value);
+                });
+                },
+                error: function(jxh,textmsg,errorThrown){
+                    console.log(textmsg);
+                    console.log(errorThrown);
+                }
+            });
+        });
+    });
+ 
+ 
+</script>
 {% endblock %}

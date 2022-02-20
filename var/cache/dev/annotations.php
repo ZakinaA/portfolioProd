@@ -176,6 +176,8 @@ return [[
 '[C]App%5CController%5CRpActiviteController%23rpActiviteAdd' => 1,
 'App%5CController%5CRpActiviteController%23rpActiviteRemove' => 0,
 '[C]App%5CController%5CRpActiviteController%23rpActiviteRemove' => 1,
+'App%5CController%5CRpActiviteController%23showCompetences' => 0,
+'[C]App%5CController%5CRpActiviteController%23showCompetences' => 1,
 'App%5CController%5CSecurityController' => 0,
 '[C]App%5CController%5CSecurityController' => 1,
 'App%5CController%5CSecurityController%23index' => 0,
@@ -1494,7 +1496,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1645367461,
+1 => 1645376415,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [

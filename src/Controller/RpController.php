@@ -7,11 +7,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\RP ;
+use App\Entity\Activite ;
+use App\Entity\Competence ;
 use App\Entity\Etudiant ;
-use App\Entity\RPActivite ;
 use App\Entity\Statut ;
-use App\Form\RpActiviteType;
 use App\Form\RPType;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class RpController extends AbstractController
 {
@@ -229,5 +230,6 @@ class RpController extends AbstractController
         return $this->redirectToRoute('enseignantHome');    
         //return $this->render('etudiant/listRPs.html.twig', ['lesRps' => $user->getEtudiant()->getRPs()]); 
     } 
+
 
 }

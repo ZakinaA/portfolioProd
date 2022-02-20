@@ -5,13 +5,16 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\RP ;
-use App\Entity\Etudiant ;
 use App\Entity\RPActivite ;
-use App\Entity\Statut ;
+use App\Entity\Activite ;
+use App\Entity\Competence ;
+
 use App\Form\RpActiviteType;
-use App\Form\RPType;
+
+
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 
 class RpActiviteController extends AbstractController
 {
@@ -55,6 +58,12 @@ class RpActiviteController extends AbstractController
     {
         //$user = $this->getUser();
 
+        $activite = $this->getDoctrine()
+        ->getRepository(Activite::class)
+        ->findAll();
+        $competences = $this->getDoctrine()
+        ->getRepository(Competence::class);
+
         //si idRpActivite=0, c'est une nouvelle acticité pour cette rp
         if ($idRpActivite == 0)
         {
@@ -88,7 +97,7 @@ class RpActiviteController extends AbstractController
                 return $this->redirectToRoute('rpActiviteList', ['idRp' => $rpActivite->getRP()->getId()]);
             
             }
-            return $this->render('rp/addEditActivite.html.twig', array('form' => $formAct->createView(), 'idRp' => $rpActivite->getRP()->getId()));
+            return $this->render('rp/addEditActivite.html.twig', array('form' => $formAct->createView(), 'idRp' => $rpActivite->getRP()->getId(), 'pCompetences' => $competences, 'pActivites' => $activite));
         }
     }
 
@@ -138,5 +147,28 @@ class RpActiviteController extends AbstractController
         return $this->redirectToRoute('rpActiviteList', ['idRp' => $rpActivite->getRp()->getId()]);
             
 
+    }
+
+    public function showCompetences(Request $request)
+    {
+        $idActivite=$_POST["idActivite"];
+        $activite = $this->getDoctrine()
+        ->getRepository(Activite::class)
+        ->find($idActivite);
+
+        $competences = $this->getDoctrine()
+        ->getRepository(Competence::class)
+        ->findByActivite($activite);
+
+        $output=array();
+        if ($request->isXmlHttpRequest()) {
+        foreach ($competences as $competence){
+
+            $output[]=array($competence->getLibelle());
+        }
+        return new JsonResponse($output);
+
+    }
+    return new JsonResponse('no results found', Response::HTTP_NOT_FOUND);
     }
 }
