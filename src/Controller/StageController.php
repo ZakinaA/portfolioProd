@@ -30,6 +30,7 @@ class StageController extends AbstractController
         // paramètre par défaut de la route à 0. Si 0, on crée un nouveau stage
         if ($idStage == 0)
         {
+            echo ('nouveau stage car id stage=0');
             $stage = new Stage(); 
             $stage->setHorLun(' 8H00-12h00 / 14h00-17h00');
             $stage->setHorMar(' 8H00-12h00 / 14h00-17h00'); 
@@ -49,7 +50,8 @@ class StageController extends AbstractController
             }
         }
 
-        $etudiant = $this->getUser()->getEtudiant();    
+        $etudiant = $this->getUser()->getEtudiant();
+        $stage->setEtudiant($etudiant);    
         $formStage = $this->createForm(StageType::class, $stage, ['champDesactive' => false,]);
         $formStage->handleRequest($request);  
 

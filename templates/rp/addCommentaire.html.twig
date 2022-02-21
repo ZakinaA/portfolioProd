@@ -35,6 +35,7 @@
                               <li class="breadcrumb-item active"><a href="{{ path('rpActiviteList', { 'idRp': rp.id }) }}">Activités</a></li>
                               <li class="breadcrumb-item active"><a href="{{ path('rpProductionList', { 'idRp': rp.id }) }}">Productions</a></li>                                
                               <li class="breadcrumb-item ">Commentaires</li>
+                              {% if is_granted('ROLE_ENSEIGNANT') %}<li class="breadcrumb-item active"><a   href="{{ path('rpValider', { 'idRp': rp.id  }) }}"  >Valider</a></li>     {% endif %} 
                            </ul>                
                         </div>                                    
                        

@@ -32,6 +32,7 @@
                             <ul class="breadcrumb">
                                 <li class="breadcrumb-item active">
                                    
+                                   <!-  lien infos du stage en fonction du rôle etudiant ou enseignant -->
                                     {% if is_granted('ROLE_ENSEIGNANT') %}
                                         <a href="{{ path('stageShow', {'idStage': stage.id }) }}">
                                     {% else %}
@@ -39,10 +40,10 @@
                                             <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">
                                         {% endif %}
                                     {% endif %}
-
                                     Infos</a></li>
 
-                                {% if stage.duree > 0 %}          
+                                    {% if stage.id > 0 %}  <!-- on est sur un stage existant  - si nouveau stage, on n'affiche pas ces liens -->        
+                                        {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
                                         <li class="breadcrumb-item">
@@ -56,13 +57,15 @@
                                             Semaine {{ i }}</a>     
                                         </li>                         
                                     {% endfor %}
-                                   
+
                                     <!-- lien attestation -->
                                     {% if is_granted('ROLE_ENSEIGNANT') %} 
-                                    {% elseif is_granted('ROLE_ETUDIANT') %} 
-                                        <li class="breadcrumb-item"><a href="{{ path('stageAttestationPdf', { 'idStage': stage.id} ) }}"> Attestation </a></li>                         
+                                    {% elseif is_granted('ROLE_ETUDIANT') %}                                       
+                                        <li class="breadcrumb-item"><a href="{{ path('stageAttestationPdf', { 'idStage': stage.id} ) }}"> Attestation </a></li>                                                                                            
                                     {% endif %}
-                                {% endif %}
+
+                                {% endif %}    
+                                {% endif %}                           
                             </ul>
                         </div>
 
@@ -94,6 +97,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-12">
                                     <div class="row">
+                                        
                                          <div class="col-md-6">
                                             {{ form_row(form.rue, {'attr' : {'class' : 'form-control form-control-sm'}}) }} 
                                         </div>
@@ -225,7 +229,10 @@
                                     </div>
                                 </div>                             
                             </div>
-                            
+
+						
+           
+
                     {{ form_end(form) }}
                      
                     </div>
