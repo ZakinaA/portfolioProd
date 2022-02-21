@@ -1296,8 +1296,8 @@ return [[
 '[C]App%5CEntity%5CUser%24statut' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController' => 1,
-'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23setContainer' => 0,
-'[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23setContainer' => 1,
+'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 0,
+'[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23__construct' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23explainAction' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23explainAction' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23explainSQLitePlatform' => 0,
@@ -1308,8 +1308,12 @@ return [[
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23explainOtherPlatform' => 1,
 'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23explainOraclePlatform' => 0,
 '[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%23explainOraclePlatform' => 1,
-'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24container' => 0,
-'[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24container' => 1,
+'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24twig' => 0,
+'[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24twig' => 1,
+'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24registry' => 0,
+'[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24registry' => 1,
+'Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24profiler' => 0,
+'[C]Doctrine%5CBundle%5CDoctrineBundle%5CController%5CProfilerController%24profiler' => 1,
 'Doctrine%5CORM%5CCache%5CPersister%5CEntity%5CAbstractEntityPersister' => 0,
 '[C]Doctrine%5CORM%5CCache%5CPersister%5CEntity%5CAbstractEntityPersister' => 1,
 'Doctrine%5CORM%5CCache%5CPersister%5CEntity%5CAbstractEntityPersister%23__construct' => 0,
@@ -1518,10 +1522,10 @@ return [[
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23getInserts' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23executeInserts' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23executeInserts' => 1,
-'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23assignDefaultVersionValue' => 0,
-'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23assignDefaultVersionValue' => 1,
-'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23fetchVersionValue' => 0,
-'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23fetchVersionValue' => 1,
+'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23assignDefaultVersionAndUpsertableValues' => 0,
+'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23assignDefaultVersionAndUpsertableValues' => 1,
+'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23fetchVersionAndNotUpsertableValues' => 0,
+'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23fetchVersionAndNotUpsertableValues' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23extractIdentifierTypes' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23extractIdentifierTypes' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23update' => 0,
@@ -1554,8 +1558,8 @@ return [[
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadAll' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23getManyToManyCollection' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23getManyToManyCollection' => 1,
-'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadArrayFromStatement' => 0,
-'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadArrayFromStatement' => 1,
+'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadArrayFromResult' => 0,
+'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadArrayFromResult' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadCollectionFromStatement' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadCollectionFromStatement' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CBasicEntityPersister%23loadManyToManyCollection' => 0,
@@ -1698,10 +1702,12 @@ return [[
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getSelectColumnsSQL' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getInsertColumnList' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getInsertColumnList' => 1,
-'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23assignDefaultVersionValue' => 0,
-'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23assignDefaultVersionValue' => 1,
+'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23assignDefaultVersionAndUpsertableValues' => 0,
+'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23assignDefaultVersionAndUpsertableValues' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getJoinSql' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getJoinSql' => 1,
+'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getSQLResultCasing' => 0,
+'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%23getSQLResultCasing' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%24owningTableMap' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%24owningTableMap' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CJoinedSubclassPersister%24quotedTableMap' => 0,
@@ -1724,6 +1730,8 @@ return [[
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CSingleTablePersister%23getSelectConditionDiscriminatorValueSQL' => 1,
 'Doctrine%5CORM%5CPersisters%5CEntity%5CSingleTablePersister%23generateFilterConditionSQL' => 0,
 '[C]Doctrine%5CORM%5CPersisters%5CEntity%5CSingleTablePersister%23generateFilterConditionSQL' => 1,
+'Doctrine%5CORM%5CPersisters%5CEntity%5CSingleTablePersister%23getSQLResultCasing' => 0,
+'[C]Doctrine%5CORM%5CPersisters%5CEntity%5CSingleTablePersister%23getSQLResultCasing' => 1,
 'SymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait' => 0,
 '[C]SymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait' => 1,
 'SymfonyCasts%5CBundle%5CResetPassword%5CController%5CResetPasswordControllerTrait%23setCanCheckEmailInSession' => 0,
@@ -1852,7 +1860,7 @@ return [[
 ], [
 
 0 => [],
-1 => 1645439858,
+1 => 1645446171,
 2 => static function () {
     return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
         $o = [
@@ -2036,6 +2044,12 @@ return [[
                 'type' => [
                     2 => 'integer',
                 ],
+                'precision' => [
+                    2 => null,
+                ],
+                'scale' => [
+                    2 => null,
+                ],
             ],
         ],
         [
@@ -2054,8 +2068,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     10,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -2073,8 +2096,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     255,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2185,8 +2217,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     100,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2248,8 +2289,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     20,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -2311,6 +2361,12 @@ return [[
                 'type' => [
                     'text',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
             ],
         ],
         [
@@ -2329,6 +2385,12 @@ return [[
             'stdClass' => [
                 'type' => [
                     'date',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -2460,8 +2522,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     90,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -2523,8 +2594,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     50,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -2657,6 +2737,12 @@ return [[
                 'type' => [
                     'date',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
                 'nullable' => [
                     true,
                 ],
@@ -2676,8 +2762,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     18,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2698,8 +2793,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     1,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2720,8 +2824,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     10,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2742,8 +2855,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     150,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2764,8 +2886,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     5,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2786,8 +2917,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     75,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -2942,8 +3082,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     3,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3021,8 +3170,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     50,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -3084,8 +3242,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     4,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3147,8 +3314,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     30,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3226,8 +3402,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     9,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3267,8 +3452,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     3,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -3309,8 +3503,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     100,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'value' => [
                     1 => [
@@ -3335,8 +3538,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     255,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3534,6 +3746,12 @@ return [[
                 'type' => [
                     'boolean',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
                 'nullable' => [
                     true,
                 ],
@@ -3637,6 +3855,12 @@ return [[
             'stdClass' => [
                 'type' => [
                     'text',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -3754,8 +3978,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     100,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3775,6 +4008,12 @@ return [[
             'stdClass' => [
                 'type' => [
                     'datetime_immutable',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3813,6 +4052,12 @@ return [[
             'stdClass' => [
                 'type' => [
                     'integer',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -3946,8 +4191,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     1,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -4008,8 +4262,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     14,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'minMessage' => [
                     1 => 'Le Siret doit comporter au minimum 14 caractères',
@@ -4051,8 +4314,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     5,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'groups' => [
                     1 => [
@@ -4094,8 +4366,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     5,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'groups' => [
                     1 => [
@@ -4135,8 +4416,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     60,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
             ],
         ],
@@ -4156,8 +4446,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     15,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'groups' => [
                     1 => [
@@ -4198,8 +4497,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     50,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'message' => [
                     1 => 'L\'adresse mail renseignée n\'est pas une adresse mail valide',
@@ -4229,6 +4537,12 @@ return [[
             'stdClass' => [
                 'type' => [
                     'date',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'message' => [
                     1 => 'La date de début ne peut pas être supérieure à la date de fin',
@@ -4262,6 +4576,12 @@ return [[
                 'type' => [
                     'date',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
                 'message' => [
                     1 => 'La date de fin ne peut pas être antérieure à la date de début',
                 ],
@@ -4294,6 +4614,12 @@ return [[
             'stdClass' => [
                 'type' => [
                     'integer',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'groups' => [
                     1 => [
@@ -4339,8 +4665,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     25,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -4432,8 +4767,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     15,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,
@@ -4544,6 +4888,12 @@ return [[
                 'type' => [
                     'float',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
                 'nullable' => [
                     true,
                 ],
@@ -4638,8 +4988,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     180,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'unique' => [
                     true,
@@ -4663,6 +5022,12 @@ return [[
                 'type' => [
                     'json',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
             ],
         ],
         [
@@ -4677,7 +5042,19 @@ return [[
             clone (\Symfony\Component\VarExporter\Internal\Registry::$prototypes['Doctrine\\ORM\\Mapping\\Column'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Doctrine\\ORM\\Mapping\\Column')),
         ],
         null,
-        [],
+        [
+            'stdClass' => [
+                'type' => [
+                    'string',
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
+            ],
+        ],
         [
             $o[0],
         ],
@@ -4745,6 +5122,12 @@ return [[
                 'type' => [
                     'datetime',
                 ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
+                ],
                 'nullable' => [
                     true,
                 ],
@@ -4764,8 +5147,17 @@ return [[
         null,
         [
             'stdClass' => [
+                'type' => [
+                    'string',
+                ],
                 'length' => [
                     2,
+                ],
+                'precision' => [
+                    null,
+                ],
+                'scale' => [
+                    null,
                 ],
                 'nullable' => [
                     true,

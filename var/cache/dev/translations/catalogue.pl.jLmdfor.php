@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('pl', array (
     'This value should satisfy at least one of the following constraints:' => 'Ta wartość powinna spełniać co najmniej jedną z następujących reguł:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Każdy element w tym zbiorze powinien spełniać własny zestaw reguł.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Ta wartość nie jest prawidłowym Międzynarodowym Numerem Identyfikacyjnym Papierów Wartościowych (ISIN).',
+    'This value should be a valid expression.' => 'Ta wartość powinna być prawidłowym wyrażeniem.',
     'This form should not contain extra fields.' => 'Ten formularz nie powinien zawierać dodatkowych pól.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Wgrany plik był za duży. Proszę spróbować wgrać mniejszy plik.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'Token CSRF jest nieprawidłowy. Proszę spróbować wysłać formularz ponownie.',
@@ -266,6 +267,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This value should satisfy at least one of the following constraints:' => 'This value should satisfy at least one of the following constraints:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
+    'This value should be a valid expression.' => 'This value should be a valid expression.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
@@ -329,6 +331,12 @@ $catalogueEn = new MessageCatalogue('en', array (
     '%count% day|%count% days' => '%count% day|%count% days',
     '%count% hour|%count% hours' => '%count% hour|%count% hours',
     '%count% minute|%count% minutes' => '%count% minute|%count% minutes',
+    'There was a problem validating your password reset request' => 'There was a problem validating your password reset request',
+    'There was a problem handling your password reset request' => 'There was a problem handling your password reset request',
+    'The link in your email is expired. Please try to reset your password again.' => 'The link in your email is expired. Please try to reset your password again.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.',
+    'The reset password link is invalid. Please try to reset your password again.' => 'The reset password link is invalid. Please try to reset your password again.',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'You have already requested a reset password email. Please check your email or try again soon.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

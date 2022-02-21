@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('eu', array (
     'This value should satisfy at least one of the following constraints:' => 'Balio honek, gutxienez, murrizketa hauetako bat bete behar du:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Bilduma honetako elementu bakoitzak bere murriztapen-multzoa bete behar du.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Balio hori ez da baliozko baloreen nazioarteko identifikazio-zenbaki bat (ISIN).',
+    'This value should be a valid expression.' => 'Balio hori baliozko adierazpena izan beharko litzateke.',
     'This form should not contain extra fields.' => 'Formulario honek ez luke aparteko eremurik eduki behar.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Igotako fitxategia handiegia da. Mesedez saiatu fitxategi txikiago bat igotzen.',
     'The CSRF token is invalid.' => 'CSRF tokena ez da egokia.',
@@ -154,6 +155,8 @@ $catalogue = new MessageCatalogue('eu', array (
     'Account is locked.' => 'Kontua blokeatuta dago.',
     'Too many failed login attempts, please try again later.' => 'Saioa hasteko saio huts gehiegi, saiatu berriro geroago.',
     'Invalid or expired login link.' => 'Sartzeko esteka baliogabea edo iraungia.',
+    'Too many failed login attempts, please try again in %minutes% minute.' => 'Saioa hasteko huts gehiegi egin dira, saiatu berriro minutu %minutes% geroago.',
+    'Too many failed login attempts, please try again in %minutes% minutes.' => 'Saioa hasteko huts gehiegi egin dira, saiatu berriro %minutes% minututan.',
   ),
 ));
 
@@ -256,6 +259,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This value should satisfy at least one of the following constraints:' => 'This value should satisfy at least one of the following constraints:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
+    'This value should be a valid expression.' => 'This value should be a valid expression.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
@@ -319,6 +323,12 @@ $catalogueEn = new MessageCatalogue('en', array (
     '%count% day|%count% days' => '%count% day|%count% days',
     '%count% hour|%count% hours' => '%count% hour|%count% hours',
     '%count% minute|%count% minutes' => '%count% minute|%count% minutes',
+    'There was a problem validating your password reset request' => 'There was a problem validating your password reset request',
+    'There was a problem handling your password reset request' => 'There was a problem handling your password reset request',
+    'The link in your email is expired. Please try to reset your password again.' => 'The link in your email is expired. Please try to reset your password again.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.',
+    'The reset password link is invalid. Please try to reset your password again.' => 'The reset password link is invalid. Please try to reset your password again.',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'You have already requested a reset password email. Please check your email or try again soon.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

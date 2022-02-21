@@ -1,15 +1,15 @@
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/.env
+"/.env.local
+"/.env.local.php
+#/.env.*.local
+#/.env
 /config/secrets/prod/prod.decrypt.private.php
 /public/bundles/
 /var/
 /var/cache
 /var/cache/dev
-/vendor/
+#/vendor/
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###

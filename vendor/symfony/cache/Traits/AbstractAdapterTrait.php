@@ -28,14 +28,15 @@ trait AbstractAdapterTrait
     /**
      * @var \Closure needs to be set by class, signature is function(string <key>, mixed <value>, bool <isHit>)
      */
-    private $createCacheItem;
+    private static $createCacheItem;
 
     /**
      * @var \Closure needs to be set by class, signature is function(array <deferred>, string <namespace>, array <&expiredIds>)
      */
-    private $mergeByLifetime;
+    private static $mergeByLifetime;
 
-    private $namespace;
+    private $namespace = '';
+    private $defaultLifetime;
     private $namespaceVersion = '';
     private $versioningIsEnabled = false;
     private $deferred = [];
@@ -51,7 +52,7 @@ trait AbstractAdapterTrait
      *
      * @param array $ids The cache identifiers to fetch
      *
-     * @return array|\Traversable The corresponding values found in the cache
+     * @return array|\Traversable
      */
     abstract protected function doFetch(array $ids);
 
@@ -60,7 +61,7 @@ trait AbstractAdapterTrait
      *
      * @param string $id The identifier for which to check existence
      *
-     * @return bool True if item exists in the cache, false otherwise
+     * @return bool
      */
     abstract protected function doHave(string $id);
 
@@ -69,7 +70,7 @@ trait AbstractAdapterTrait
      *
      * @param string $namespace The prefix used for all identifiers managed by this pool
      *
-     * @return bool True if the pool was successfully cleared, false otherwise
+     * @return bool
      */
     abstract protected function doClear(string $namespace);
 
@@ -78,7 +79,7 @@ trait AbstractAdapterTrait
      *
      * @param array $ids An array of identifiers that should be removed from the pool
      *
-     * @return bool True if the items were successfully removed, false otherwise
+     * @return bool
      */
     abstract protected function doDelete(array $ids);
 
@@ -207,12 +208,12 @@ trait AbstractAdapterTrait
      */
     public function getItem($key)
     {
-        if ($this->deferred) {
-            $this->commit();
-        }
         $id = $this->getId($key);
 
-        $f = $this->createCacheItem;
+        if (isset($this->deferred[$key])) {
+            $this->commit();
+        }
+
         $isHit = false;
         $value = null;
 
@@ -221,12 +222,12 @@ trait AbstractAdapterTrait
                 $isHit = true;
             }
 
-            return $f($key, $value, $isHit);
+            return (self::$createCacheItem)($key, $value, $isHit);
         } catch (\Exception $e) {
             CacheItem::log($this->logger, 'Failed to fetch key "{key}": '.$e->getMessage(), ['key' => $key, 'exception' => $e, 'cache-adapter' => get_debug_type($this)]);
         }
 
-        return $f($key, null, false);
+        return (self::$createCacheItem)($key, null, false);
     }
 
     /**
@@ -234,14 +235,18 @@ trait AbstractAdapterTrait
      */
     public function getItems(array $keys = [])
     {
-        if ($this->deferred) {
-            $this->commit();
-        }
         $ids = [];
+        $commit = false;
 
         foreach ($keys as $key) {
             $ids[] = $this->getId($key);
+            $commit = $commit || isset($this->deferred[$key]);
         }
+
+        if ($commit) {
+            $this->commit();
+        }
+
         try {
             $items = $this->doFetch($ids);
         } catch (\Exception $e) {
@@ -291,14 +296,12 @@ trait AbstractAdapterTrait
      *
      * Calling this method also clears the memoized namespace version and thus forces a resynchonization of it.
      *
-     * @param bool $enable
-     *
      * @return bool the previous state of versioning
      */
-    public function enableVersioning($enable = true)
+    public function enableVersioning(bool $enable = true)
     {
         $wasEnabled = $this->versioningIsEnabled;
-        $this->versioningIsEnabled = (bool) $enable;
+        $this->versioningIsEnabled = $enable;
         $this->namespaceVersion = '';
         $this->ids = [];
 
@@ -317,6 +320,9 @@ trait AbstractAdapterTrait
         $this->ids = [];
     }
 
+    /**
+     * @return array
+     */
     public function __sleep()
     {
         throw new \BadMethodCallException('Cannot serialize '.__CLASS__);
@@ -334,9 +340,9 @@ trait AbstractAdapterTrait
         }
     }
 
-    private function generateItems(iterable $items, array &$keys): iterable
+    private function generateItems(iterable $items, array &$keys): \Generator
     {
-        $f = $this->createCacheItem;
+        $f = self::$createCacheItem;
 
         try {
             foreach ($items as $id => $value) {
@@ -376,8 +382,12 @@ trait AbstractAdapterTrait
         if (\is_string($key) && isset($this->ids[$key])) {
             return $this->namespace.$this->namespaceVersion.$this->ids[$key];
         }
-        CacheItem::validateKey($key);
+        \assert('' !== CacheItem::validateKey($key));
         $this->ids[$key] = $key;
+
+        if (\count($this->ids) > 1000) {
+            array_splice($this->ids, 0, 500); // stop memory leak if there are many keys
+        }
 
         if (null === $this->maxIdLength) {
             return $this->namespace.$this->namespaceVersion.$key;
@@ -394,7 +404,7 @@ trait AbstractAdapterTrait
     /**
      * @internal
      */
-    public static function handleUnserializeCallback($class)
+    public static function handleUnserializeCallback(string $class)
     {
         throw new \DomainException('Class not found: '.$class);
     }

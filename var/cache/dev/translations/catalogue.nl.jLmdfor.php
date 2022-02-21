@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('nl', array (
     'This value should satisfy at least one of the following constraints:' => 'Deze waarde moet voldoen aan tenminste een van de volgende voorwaarden:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Elk element van deze collectie moet voldoen aan zijn eigen set voorwaarden.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Deze waarde is geen geldig International Securities Identification Number (ISIN).',
+    'This value should be a valid expression.' => 'Deze waarde moet een geldige expressie zijn.',
     'This form should not contain extra fields.' => 'Dit formulier mag geen extra velden bevatten.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Het geüploade bestand is te groot. Probeer een kleiner bestand te uploaden.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'De CSRF-token is ongeldig. Probeer het formulier opnieuw te versturen.',
@@ -156,6 +157,20 @@ $catalogue = new MessageCatalogue('nl', array (
     'Invalid or expired login link.' => 'Ongeldige of verlopen inloglink.',
     'Too many failed login attempts, please try again in %minutes% minute.' => 'Te veel onjuiste inlogpogingen, probeer het opnieuw over %minutes% minuut.',
     'Too many failed login attempts, please try again in %minutes% minutes.' => 'Te veel onjuiste inlogpogingen, probeer het opnieuw over %minutes% minuten.',
+  ),
+  'ResetPasswordBundle+intl-icu' => 
+  array (
+    '%count% year|%count% years' => '{count, plural, =0 {0 jaar} one {1 jaar} other {# jaren}}',
+    '%count% month|%count% months' => '{count, plural, =0 {0 maanden} one {1 maand} other {# maanden}}',
+    '%count% day|%count% days' => '{count, plural, =0 {0 dagen} one {1 dag} other {# dagen}}',
+    '%count% hour|%count% hours' => '{count, plural, =0 {0 uur} one {1 uur} other {# uren}}',
+    '%count% minute|%count% minutes' => '{count, plural, =0 {0 minuten} one {1 minuut} other {# minuten}}',
+    'There was a problem validating your password reset request' => 'Er is een probleem opgetreden bij het valideren van het verzoek om je wachtwoord te herstellen',
+    'There was a problem handling your password reset request' => 'Er is een probleem opgetreden bij het afhandelen van het verzoek om je wachtwoord te herstellen',
+    'The link in your email is expired. Please try to reset your password again.' => 'De link in je e-mail is verlopen. Probeer opnieuw je wachtwoord te herstellen.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Update de request_password_repository waarde in config/packages/reset_password.yaml met een verwijzing naar je "request password repository" service.',
+    'The reset password link is invalid. Please try to reset your password again.' => 'De link om je wachtwoord te herstellen is niet geldig. Probeer opnieuw je wachtwoord te herstellen.',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'Je hebt al een verzoek ingediend voor een e-mail om je wachtwoord te herstellen. Controleer of je een e-mail hebt ontvangen of probeer het later nog eens.',
   ),
 ));
 
@@ -258,6 +273,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This value should satisfy at least one of the following constraints:' => 'This value should satisfy at least one of the following constraints:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
+    'This value should be a valid expression.' => 'This value should be a valid expression.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
@@ -321,6 +337,12 @@ $catalogueEn = new MessageCatalogue('en', array (
     '%count% day|%count% days' => '%count% day|%count% days',
     '%count% hour|%count% hours' => '%count% hour|%count% hours',
     '%count% minute|%count% minutes' => '%count% minute|%count% minutes',
+    'There was a problem validating your password reset request' => 'There was a problem validating your password reset request',
+    'There was a problem handling your password reset request' => 'There was a problem handling your password reset request',
+    'The link in your email is expired. Please try to reset your password again.' => 'The link in your email is expired. Please try to reset your password again.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.',
+    'The reset password link is invalid. Please try to reset your password again.' => 'The reset password link is invalid. Please try to reset your password again.',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'You have already requested a reset password email. Please check your email or try again soon.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);

@@ -101,6 +101,7 @@ $catalogue = new MessageCatalogue('uk', array (
     'This value should satisfy at least one of the following constraints:' => 'Значення повинно задовольняти хоча б одному з наступних обмежень:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Кожен елемент цієї колекції повинен задовольняти власному набору обмежень.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'Це значення не є дійсним міжнародним ідентифікаційним номером цінних паперів (ISIN).',
+    'This value should be a valid expression.' => 'Це значення має бути дійсним виразом.',
     'This form should not contain extra fields.' => 'Ця форма не повинна містити додаткових полів.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'Завантажений файл занадто великий. Будь ласка, спробуйте завантажити файл меншого розміру.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'CSRF значення недопустиме. Будь ласка, спробуйте відправити форму знову.',
@@ -164,6 +165,12 @@ $catalogue = new MessageCatalogue('uk', array (
     '%count% day|%count% days' => '%count% день|%count% дні|%count% днів',
     '%count% hour|%count% hours' => '%count% година|%count% години|%count% годин',
     '%count% minute|%count% minutes' => '%count% хвилина|%count% хвилини|%count% хвилин',
+    'There was a problem validating your password reset request' => 'Виникла проблема під час перевірки вашого запиту на скидання пароля',
+    'There was a problem handling your password reset request' => 'Виникла проблема з обробкою вашого запиту на скидання пароля',
+    'The link in your email is expired. Please try to reset your password again.' => 'Термін дії посилання у вашій електронній пошті закінчився. Спробуйте скинути пароль ще раз.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Будь ласка, оновіть конфігурацію request_password_repository у config/packages/reset_password.yaml, щоб вказати на ваш "request password repository" сервіс.',
+    'The reset password link is invalid. Please try to reset your password again.' => 'Посилання для скидання пароля недійсне. Спробуйте скинути пароль ще раз.',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'Ви вже подали запит на скидання пароля електронною поштою. Будь ласка, перевірте свою електронну пошту або повторіть спробу ще раз незабаром.',
   ),
 ));
 
@@ -266,6 +273,7 @@ $catalogueEn = new MessageCatalogue('en', array (
     'This value should satisfy at least one of the following constraints:' => 'This value should satisfy at least one of the following constraints:',
     'Each element of this collection should satisfy its own set of constraints.' => 'Each element of this collection should satisfy its own set of constraints.',
     'This value is not a valid International Securities Identification Number (ISIN).' => 'This value is not a valid International Securities Identification Number (ISIN).',
+    'This value should be a valid expression.' => 'This value should be a valid expression.',
     'This form should not contain extra fields.' => 'This form should not contain extra fields.',
     'The uploaded file was too large. Please try to upload a smaller file.' => 'The uploaded file was too large. Please try to upload a smaller file.',
     'The CSRF token is invalid. Please try to resubmit the form.' => 'The CSRF token is invalid. Please try to resubmit the form.',
@@ -329,6 +337,12 @@ $catalogueEn = new MessageCatalogue('en', array (
     '%count% day|%count% days' => '%count% day|%count% days',
     '%count% hour|%count% hours' => '%count% hour|%count% hours',
     '%count% minute|%count% minutes' => '%count% minute|%count% minutes',
+    'There was a problem validating your password reset request' => 'There was a problem validating your password reset request',
+    'There was a problem handling your password reset request' => 'There was a problem handling your password reset request',
+    'The link in your email is expired. Please try to reset your password again.' => 'The link in your email is expired. Please try to reset your password again.',
+    'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.' => 'Please update the request_password_repository configuration in config/packages/reset_password.yaml to point to your "request password repository" service.',
+    'The reset password link is invalid. Please try to reset your password again.' => 'The reset password link is invalid. Please try to reset your password again.',
+    'You have already requested a reset password email. Please check your email or try again soon.' => 'You have already requested a reset password email. Please check your email or try again soon.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueEn);
