@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '96d6905758d07ef13272e0cd5639e52c2d6f42b6',
+    'reference' => 'a23cc7ab25dd96d725071e10dda3ea45eccb9e1d',
     'name' => '__root__',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '96d6905758d07ef13272e0cd5639e52c2d6f42b6',
+      'reference' => 'a23cc7ab25dd96d725071e10dda3ea45eccb9e1d',
     ),
     'composer/package-versions-deprecated' => 
     array (
@@ -191,6 +191,15 @@
       ),
       'reference' => '56070bebac6e77230ed7d306ad13528e60732871',
     ),
+    'dompdf/dompdf' => 
+    array (
+      'pretty_version' => 'v1.2.0',
+      'version' => '1.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '60b704331479a69e9bcdb3496da2315b5c4f94fd',
+    ),
     'egulias/email-validator' => 
     array (
       'pretty_version' => '3.1.1',
@@ -267,6 +276,24 @@
       array (
         0 => '^2.1',
       ),
+    ),
+    'phenx/php-font-lib' => 
+    array (
+      'pretty_version' => '0.5.4',
+      'version' => '0.5.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dd448ad1ce34c63d09baccd05415e361300c35b4',
+    ),
+    'phenx/php-svg-lib' => 
+    array (
+      'pretty_version' => '0.4.0',
+      'version' => '0.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3ffbbb037f0871c3a819e90cff8b36dd7e656189',
     ),
     'php-http/async-client-implementation' => 
     array (
@@ -393,8 +420,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache-implementation' => 
@@ -403,6 +430,15 @@
       array (
         0 => '1.0',
       ),
+    ),
+    'sabberworm/php-css-parser' => 
+    array (
+      'pretty_version' => '8.4.0',
+      'version' => '8.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e41d2140031d533348b2192a83f02d8dd8a71d30',
     ),
     'sensio/framework-extra-bundle' => 
     array (

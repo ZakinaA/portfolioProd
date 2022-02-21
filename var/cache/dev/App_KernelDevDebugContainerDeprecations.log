@@ -1,1 +1,1 @@
-a:0:{}
+a:1:{i:0;a:6:{s:4:"type";i:16384;s:7:"message";s:153:"Since symfony/validator 4.4: "minMessage" and "maxMessage" are deprecated when the "min" and "max" options are both set. Use "notInRangeMessage" instead.";s:4:"file";s:75:"C:\wamp64\www\portfolioV2\vendor\symfony\deprecation-contracts\function.php";s:4:"line";i:25;s:5:"trace";a:1:{i:0;a:3:{s:4:"file";s:72:"C:\wamp64\www\portfolioV2\vendor\symfony\validator\Constraints\Range.php";s:4:"line";i:116;s:8:"function";s:19:"trigger_deprecation";}}s:5:"count";i:1;}}

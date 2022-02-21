@@ -36,11 +36,12 @@ class EtudiantType extends AbstractType
             ->add('sexe', TextType::class, array('required' => false))
             ->add('numRue', TextType::class, array('required' => false))*/
             ->add('rue', TextType::class, 
-                array(  'required' => false,
-                        'help' => 'Saisir le numéro de la rue et la rue'       
+                array(  'required' => true,
+                        'help' => 'Saisir le numéro de la rue et la rue',
+                        'label'=> 'rue *'      
             ))
-            ->add('copos', TextType::class, array('required' => false, 'label' => 'code postal',))
-            ->add('ville', TextType::class, array('required' => false))
+            ->add('copos', TextType::class, array('required' => true, 'label' => 'code postal *',))
+            ->add('ville', TextType::class, array('required' => true, 'label'=> 'ville *' ))
             //->add('cheminPhoto')
             //->add('statut', EntityType::class, array('class' => 'App\Entity\Promotion','choice_label' => 'nom'))     
             

@@ -162,6 +162,10 @@ tacheEdit:
   path: /etudiant/stage/editTache/{idTache}
   controller: App\Controller\TacheSemaineController::editTache
 
+# Génération attestation de stage
+stageAttestationPdf:
+  path: /etudiant/stage/createAttestation/{idStage}
+  controller: App\Controller\StageController::createAttestation
 
 
 ##################################################################################

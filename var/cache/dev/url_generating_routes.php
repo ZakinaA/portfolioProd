@@ -52,6 +52,7 @@ return [
     'semaineStageShowAdd' => [['idStage', 'numSemaine'], ['idStage' => '0', 'numSemaine' => '0', '_controller' => 'App\\Controller\\StageController::showAddSemaineStage'], ['idStage' => '\\d+', 'numSemaine' => '\\d+'], [['variable', '/', '\\d+', 'numSemaine', true], ['variable', '/', '\\d+', 'idStage', true], ['text', '/etudiant/stage/showAddSemaineStage']], [], []],
     'tacheRemove' => [['idTache'], ['_controller' => 'App\\Controller\\TacheSemaineController::removeTache'], [], [['variable', '/', '[^/]++', 'idTache', true], ['text', '/etudiant/stage/removeTache']], [], []],
     'tacheEdit' => [['idTache'], ['_controller' => 'App\\Controller\\TacheSemaineController::editTache'], [], [['variable', '/', '[^/]++', 'idTache', true], ['text', '/etudiant/stage/editTache']], [], []],
+    'stageAttestationPdf' => [['idStage'], ['_controller' => 'App\\Controller\\StageController::createAttestation'], [], [['variable', '/', '[^/]++', 'idStage', true], ['text', '/etudiant/stage/createAttestation']], [], []],
     'enseignantHome' => [[], ['_controller' => 'App\\Controller\\EnseignantController::home'], [], [['text', '/enseignant/home']], [], []],
     'rpShow' => [['idRp'], ['_controller' => 'App\\Controller\\RpController::show'], [], [['variable', '/', '[^/]++', 'idRp', true], ['text', '/enseignant/rp/show']], [], []],
     'promoList' => [[], ['_controller' => 'App\\Controller\\PromotionController::list'], [], [['text', '/enseignant/promo/list/']], [], []],

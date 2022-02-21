@@ -200,11 +200,11 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                      
                       <tr>
                         <th>Entreprise</th>
-                        <th>Lieu</th>
                         <th>Nom tuteur</th>
                         <th>Mail tuteur</th>
                         <th>Tel tuteur</th>
                         <th>sujet </th>
+                         <th>Lieu</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -224,23 +224,23 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
             echo "</a></td>
                             <td>";
             // line 84
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "lieu", [], "any", false, false, false, 84), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomTuteur", [], "any", false, false, false, 84), "html", null, true);
             echo "</td>
                             <td>";
             // line 85
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "nomTuteur", [], "any", false, false, false, 85), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "mailTuteur", [], "any", false, false, false, 85), "html", null, true);
             echo "</td>
                             <td>";
             // line 86
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "mailTuteur", [], "any", false, false, false, 86), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "telTuteur", [], "any", false, false, false, 86), "html", null, true);
             echo "</td>
                             <td>";
             // line 87
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "telTuteur", [], "any", false, false, false, 87), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "sujet", [], "any", false, false, false, 87), "html", null, true);
             echo "</td>
                             <td>";
             // line 88
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "sujet", [], "any", false, false, false, 88), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["stage"], "lieu", [], "any", false, false, false, 88), "html", null, true);
             echo "</td>
                           </tr>
                       ";
@@ -353,11 +353,11 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                      
                       <tr>
                         <th>Entreprise</th>
-                        <th>Lieu</th>
                         <th>Nom tuteur</th>
                         <th>Mail tuteur</th>
                         <th>Tel tuteur</th>
                         <th>sujet </th>
+                         <th>Lieu</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -365,11 +365,11 @@ class __TwigTemplate_c60ef51663f217dc631b3346142312f530f72c4d046036379d89dc51352
                       {% for stage in app.user.enseignant.stages %}
                           <tr>
                             <td><a class=\"text\" href=\"{{ path('stageShow', { 'idStage': stage.id }) }}\">{{stage.nomEntreprise}}</a></td>
-                            <td>{{stage.lieu}}</td>
                             <td>{{stage.nomTuteur}}</td>
                             <td>{{stage.mailTuteur}}</td>
                             <td>{{stage.telTuteur}}</td>
                             <td>{{stage.sujet}}</td>
+                            <td>{{stage.lieu}}</td>
                           </tr>
                       {% endfor %}
                     </tbody>

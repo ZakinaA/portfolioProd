@@ -53,10 +53,15 @@
                                                     <a href="{{path('semaineStageShowAdd', {'idStage': stage.id, 'numSemaine': i})}}"> 
                                                 {% endif %}
                                             {% endif %}
-                                            Semaine {{ i }}</a>
-                                             
+                                            Semaine {{ i }}</a>     
                                         </li>                         
                                     {% endfor %}
+                                   
+                                    <!-- lien attestation -->
+                                    {% if is_granted('ROLE_ENSEIGNANT') %} 
+                                    {% elseif is_granted('ROLE_ETUDIANT') %} 
+                                        <li class="breadcrumb-item"><a href="{{ path('stageAttestationPdf', { 'idStage': stage.id} ) }}"> Attestation </a></li>                         
+                                    {% endif %}
                                 {% endif %}
                             </ul>
                         </div>

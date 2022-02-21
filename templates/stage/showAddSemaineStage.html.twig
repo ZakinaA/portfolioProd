@@ -23,12 +23,25 @@
                         <!-- Breadcrumb-->
                         <div class="breadcrumb-holder container-fluid">
                             <ul class="breadcrumb">
-                                 <li class="breadcrumb-item active">{% if is_granted('ROLE_ETUDIANT') %} <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">{% endif %}{% if is_granted('ROLE_ENSEIGNANT') %}<a href="{{ path('stageShow', {'idStage': stage.id }) }}"> {% endif %}Info</a></li>
+                                 <li class="breadcrumb-item active">
+                                    {% if is_granted('ROLE_ETUDIANT') %} 
+                                        <a href="{{ path('stageAddEdit', {'idStage': stage.id }) }}">
+                                    {% endif %}
+                                    {% if is_granted('ROLE_ENSEIGNANT') %}
+                                        <a href="{{ path('stageShow', {'idStage': stage.id }) }}"> 
+                                    {% endif %}
+                                    Info</a></li>
                                 {% if stage.duree > 0 %}          
                                     {% set nbSem = stage.duree %}
                                     {% for i in 1..nbSem %}
                                         <li class="breadcrumb-item"><a href="{{ path('semaineStageShowAdd', { 'idStage': stage.id, 'numSemaine': i } ) }}"> Semaine {{ i }} </a></li>                         
                                     {% endfor %}
+                                {% endif %}
+
+                                <!-- lien attestation -->
+                                {% if is_granted('ROLE_ENSEIGNANT') %} 
+                                {% elseif is_granted('ROLE_ETUDIANT') %} 
+                                    <li class="breadcrumb-item"><a href="{{ path('stageAttestationPdf', { 'idStage': stage.id} ) }}"> Attestation </a></li>                         
                                 {% endif %}
                             </ul>
                         </div>

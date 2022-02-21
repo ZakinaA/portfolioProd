@@ -16,6 +16,8 @@ use App\Form\SemaineStageType;
 use App\Form\TacheSemaineType;
 use App\Entity\SemaineStage ;
 use App\Form\StageAffecterEnseignantType;
+use Dompdf\Dompdf;
+use Dompdf\Options;
 
 class StageController extends AbstractController
 {
@@ -224,5 +226,46 @@ class StageController extends AbstractController
        //return $this->render('admin/listStagesAAffecter.html.twig', ['etudiants' => $etudiants]);
        return $this->render('admin/listStagesAAffecter.html.twig', array('form' => $form->createView(), 'etudiants'=>$etudiants));   
 
+    }
+
+    //Creation de l'attestation de fin de stage
+    public function createAttestation($idStage)
+    {
+        $user = $this->getUser(); 
+        
+        $stage = $this->getDoctrine()
+        ->getRepository(Stage::class)
+        ->find($idStage);
+
+        $etudiant = $stage->getEtudiant(); 
+        // Configure Dompdf according to your needs
+
+        if ($stage->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
+            throw $this->createAccessDeniedException();
+        }
+
+        $pdfOptions = new Options();
+        $pdfOptions->set('defaultFont', 'Arial');
+    
+        // Instantiate Dompdf with our options
+        $dompdf = new Dompdf($pdfOptions);
+    
+        // Retrieve the HTML generated in our twig file
+        $html = $this->renderView('stage/attestation.html.twig', [
+            'pEtudiant' => $etudiant, "pStage" => $stage ]);
+    
+        // Load HTML to Dompdf
+        $dompdf->loadHtml($html);
+    
+        // (Optional) Setup the paper size and orientation 'portrait' or 'landscape'
+        $dompdf->setPaper('A4', 'portrait');
+
+        // Render the HTML as PDF
+        $dompdf->render();
+
+        // Output the generated PDF to Browser (inline view)
+        $dompdf->stream("attestationStage.pdf", [
+            "Attachment" => false
+     ]);
     }
 }
