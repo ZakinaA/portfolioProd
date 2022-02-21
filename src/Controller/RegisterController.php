@@ -61,7 +61,7 @@ class RegisterController extends AbstractController
             );
 
             $e = new etudiant();
-            $e->setNom($form->get('nom')->getData());
+            $e->setNom(strtoupper($form->get('nom')->getData()));
             $e->setPrenom($form->get('prenom')->getData());
             //$e->setDateNaiss($form->get('dateNaiss')->getData());
 

@@ -48,9 +48,8 @@ class StageController extends AbstractController
                 throw $this->createAccessDeniedException();
             }
         }
-        $etudiant = $this->getUser()->getEtudiant();
 
-     
+        $etudiant = $this->getUser()->getEtudiant();    
         $formStage = $this->createForm(StageType::class, $stage, ['champDesactive' => false,]);
         $formStage->handleRequest($request);  
 
@@ -76,7 +75,9 @@ class StageController extends AbstractController
                 //return $this->redirectToRoute('etudiantRps');    
             }
             else
-            { echo ('stage non validé');
+            { 
+                echo ('stage non validé');
+               
                 return $this->render('stage/showAddEdit.html.twig', array('form' => $formStage->createView(),'stage'=>$stage, 'templateTwigParent' => 'baseEtudiant.html.twig'));   
    
             }

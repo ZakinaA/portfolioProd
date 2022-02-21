@@ -18,11 +18,11 @@ class SemaineStageType extends AbstractType
     {
        
             $builder
-            ->add('apprentissage', TextAreaType::class, 
+            ->add('apprentissage', TextareaType::class, 
             array('label' => 'apprentissage',  
             'help' => 'Qu\'avez-vous appris cette semaine ?' 
             ))
-            ->add('bilan', TextAreaType::class, 
+            ->add('bilan', TextareaType::class, 
             array('label' => 'bilan',  
             'help' => 'Quels sont les points positifs et/ou négatifs  ?' 
             ))

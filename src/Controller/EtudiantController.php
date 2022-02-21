@@ -45,6 +45,8 @@ class EtudiantController extends AbstractController
             if ($form->isSubmitted() && $form->isValid()) 
             {
                 $user = $form->getData();
+                $nom= $user->getEtudiant()->getNom();
+                $user->getEtudiant()->setNom(strtoupper($nom));
                 $entityManager = $this->getDoctrine()->getManager();
               
                 //on renomme le fichier avec l'id etudiant et on l'upload sur le serveur dans le dossier configuré dans service.yaml     

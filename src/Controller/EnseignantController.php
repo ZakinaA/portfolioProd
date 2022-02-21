@@ -82,7 +82,9 @@ class EnseignantController extends AbstractController
         $niveau =  $repository->find($idNiveau);
 
         $repository = $this->getDoctrine()->getRepository(Etudiant::class);
-        $etudiants = $repository->listParSpecialiteParNiveau($specialite,$niveau);
+        //$etudiants = $repository->listParSpecialiteParNiveau($specialite,$niveau);
+        $etudiants = $repository->findBy(
+            ['specialite' => $specialite, 'niveau' => $niveau], array('nom'=>'asc'));
 
         if ($source == 'tb'){
             return $this->render('enseignant/tableauBordParSpecialiteEtNiveau.html.twig', [ 'etudiants' => $etudiants]);  

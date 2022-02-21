@@ -23,7 +23,7 @@ class RPType extends AbstractType
                 'disabled' => $options['champDesactive']
             ))
                 
-            ->add('besoin', TextAreaType::class,[
+            ->add('besoin', TextareaType::class,[
                 'disabled' => $options['champDesactive'],
                 'help' => 'Dire ce que l\'entreprise veut changer à son activité et comment répondre à son besoin' ,
               ])
@@ -38,12 +38,12 @@ class RPType extends AbstractType
                                                           'disabled' => $options['champDesactive'],
                                                           'label' =>'date fin',
                                                           'placeholder' => 'jj/mm/aaaa'))
-              ->add('moyen', TextAreaType::class, [
+              ->add('moyen', TextareaType::class, [
                 'disabled' => $options['champDesactive'],
                 'help' => 'Logiciels et outils utilisés pour réaliser votre travail ' ,
                 'label' =>'Moyens',
               ])
-            ->add('environnement', TextAreaType::class,[
+            ->add('environnement', TextareaType::class,[
                 'disabled' => $options['champDesactive'],
                 'help' => 'Ressources et documentations mises à votre disposition' ,
               ])

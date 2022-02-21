@@ -8,7 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextAreaType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class TacheSemaineType extends AbstractType
 {
@@ -16,7 +16,7 @@ class TacheSemaineType extends AbstractType
     {
         $builder
             //->add('description')
-            ->add('description', TextAreaType::class, 
+            ->add('description', TextareaType::class, 
             array('label' => 'description',  
             'help' => 'décrivez une des tâches du jour' 
         ))
