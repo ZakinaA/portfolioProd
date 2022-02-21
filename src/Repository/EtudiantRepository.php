@@ -35,7 +35,7 @@ class EtudiantRepository extends ServiceEntityRepository
             ->join('e.promotion', 'p')
             ->andwhere('p.statut = :pStatutPromo')
             ->setParameter('pStatutPromo', 'AC')
-           //->orderBy('r.nom', 'ASC')
+            ->orderBy('e.nom', 'ASC')
            ->getQuery();
 
        return $qb->execute();
