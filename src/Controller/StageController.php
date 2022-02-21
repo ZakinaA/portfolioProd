@@ -240,10 +240,7 @@ class StageController extends AbstractController
         $etudiant = $stage->getEtudiant(); 
         // Configure Dompdf according to your needs
 
-        if ($stage->getEtudiant()->getid() != $user->getEtudiant()->getId()  ){
-            throw $this->createAccessDeniedException();
-        }
-
+        
         $pdfOptions = new Options();
         $pdfOptions->set('defaultFont', 'Arial');
     
